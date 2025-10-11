@@ -34,8 +34,8 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 
 cd ComfyUI
 
-# --- 2. Install Dependencies ---
-echo "Installing Python dependencies..."
+# --- 2. Install ComfyUI Dependencies ---
+echo "Installing ComfyUI Python dependencies..."
 pip install -r requirements.txt
 
 # --- 3. Install Custom Nodes ---
@@ -43,7 +43,15 @@ echo "Installing custom nodes..."
 cd custom_nodes
 for url in "${CUSTOM_NODES[@]}"; do
     if [ ! -z "$url" ]; then
+        # Get repo name
+        repo_name=$(basename "$url" .git)
+        # Clone the repo
         git clone "$url"
+        # Install requirements.txt if exists
+        if [ -f "$repo_name/requirements.txt" ]; then
+            echo "Installing requirements for $repo_name..."
+            pip install -r "$repo_name/requirements.txt"
+        fi
     fi
 done
 cd ..
