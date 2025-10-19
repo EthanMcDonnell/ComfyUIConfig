@@ -15,7 +15,7 @@ cd "$INSTALL_DIR"
 
 # --- Install One-Trainer ---
 echo "Cloning one-trainer..."
-git clone https://github.com/ONE-Artist/one-trainer.git "$ONE_TRAINER_DIR"
+git clone https://github.com/jhc13/taggui.git "$ONE_TRAINER_DIR"
 
 echo "Installing one-trainer dependencies..."
 cd "$ONE_TRAINER_DIR"
@@ -35,5 +35,5 @@ echo "TagGUI installation complete."
 
 # --- Final Message ---
 echo "Installation finished!"
-echo "To run One-Trainer: python $ONE_TRAINER_DIR/main.py"
-echo "To run TagGUI: python $TAGGUI_DIR/taggui.py"
+echo "To run One-Trainer: python3 $ONE_TRAINER_DIR/main.py"
+echo "To run TagGUI: python3 $TAGGUI_DIR/taggui.py"
