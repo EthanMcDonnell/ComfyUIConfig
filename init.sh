@@ -30,6 +30,11 @@ if [ "$PWD" != "/workspace" ]; then
 fi
 echo "✅  Directory confirmed: /workspace"
 
+if [ -z "$API_KEY" ]; then
+    echo "Error: API_KEY environment variable is not set. Cannot download models." >&2
+    exit 1
+fi
+
 # --- 1. Install ComfyUI ---
 echo "Cloning ComfyUI repository..."
 git clone https://github.com/comfyanonymous/ComfyUI.git
@@ -75,8 +80,11 @@ fi
 echo "Downloading models..."
 for item in "${MODELS[@]}"; do
     IFS=',' read -r url output_path <<< "$item"
-    if [ ! -z "$url" ]; then
-        wget -c "$url" -O "$output_path"
+    if [ ! -z "$url" ] && [ ! -z "$output_path" ]; then
+        # Ensure output directory exists
+        mkdir -p "$(dirname "$output_path")"
+        echo "Downloading $url → $output_path"
+        wget --header="Authorization: Bearer $API_KEY" -c "$url" -O "$output_path"
     fi
 done
 
@@ -84,11 +92,12 @@ done
 echo "Downloading LoRAs..."
 for item in "${LORAS[@]}"; do
     IFS=',' read -r url output_path <<< "$item"
-    if [ ! -z "$url" ]; then
-        wget -c "$url" -O "$output_path"
+    if [ ! -z "$url" ] && [ ! -z "$output_path" ]; then
+        mkdir -p "$(dirname "$output_path")"
+        echo "Downloading $url → $output_path"
+        wget --header="Authorization: Bearer $API_KEY" -c "$url" -O "$output_path"
     fi
 done
-
 # --- 7. Launch ComfyUI ---
 echo "Setup complete! Launching ComfyUI... 🚀"
 python main.py --listen 0.0.0.0
