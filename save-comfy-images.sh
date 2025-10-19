@@ -23,4 +23,4 @@ if [ ${#IMAGES_GDRIVE_FOLDER[@]} -gt 0 ]; then
     done
 else
     echo "No image upload google drives specified."
-fi
+fi 

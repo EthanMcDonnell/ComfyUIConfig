@@ -5,13 +5,10 @@
 set -e
 
 # Define directories
-INSTALL_DIR="$HOME/runpod_tools"
-ONE_TRAINER_DIR="$INSTALL_DIR/one-trainer"
-TAGGUI_DIR="$INSTALL_DIR/taggui"
+WORKSPACE_DIR="/workspace"
+ONE_TRAINER_DIR="$WORKSPACE_DIR/one-trainer"
+TAGGUI_DIR="$WORKSPACE_DIR/taggui"
 
-echo "Creating installation directory..."
-mkdir -p "$INSTALL_DIR"
-cd "$INSTALL_DIR"
 
 # --- Install One-Trainer ---
 echo "Cloning one-trainer..."

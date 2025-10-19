@@ -1,7 +1,7 @@
 #!/bin/bash
 # Setup to work with runpod
 # Expose port 8188 for comfyui access
-
+set -e
 # --- Config ---
 WORKSPACE_DIR="/workspace"
 COMFYUI_DIR="$WORKSPACE_DIR/ComfyUI"
