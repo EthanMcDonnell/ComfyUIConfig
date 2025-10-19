@@ -11,6 +11,7 @@ REPO_DIR="$WORKSPACE_DIR/ComfyUIConfig"
 LORAS_DIR="$COMFYUI_DIR/models/loras"
 REPO_WORKFLOWS_DIR="$REPO_DIR/workflows"
 TARGET_WORKFLOWS_DIR="$COMFYUI_DIR/user/default/workflows"
+PYTHON_GOOGLE_DRIVE_DOWNLOAD_SCRIPT="$REPO_DIR/gdrive_download.py"
 
 
 # Custom nodes
@@ -117,7 +118,7 @@ if [ ${#PERSONAL_LORAS_GDRIVE_FOLDER[@]} -gt 0 ]; then
     mkdir -p "$PERSONAL_LORAS_DIR"
     for folder_id in "${PERSONAL_LORAS_GDRIVE_FOLDER[@]}"; do
         echo "Downloading files from $folder_id → $LORAS_DIR"
-        python3 "$WORKSPACE_DIR/gdrive_download.py" "$GDRIVE_SERVICE_ACCOUNT_JSON" "$LORAS_DIR" "$folder_id"
+        python3 "$PYTHON_GOOGLE_DRIVE_DOWNLOAD_SCRIPT" "$GDRIVE_SERVICE_ACCOUNT_JSON" "$LORAS_DIR" "$folder_id"
     done
 else
     echo "No personal LoRAs specified."
