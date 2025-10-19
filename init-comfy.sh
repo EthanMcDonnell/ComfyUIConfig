@@ -8,7 +8,7 @@ COMFYUI_DIR="$WORKSPACE_DIR/ComfyUI"
 REPO_DIR="$WORKSPACE_DIR/ComfyUIConfig"
 
 
-PERSONAL_LORAS_DIR="$COMFYUI_DIR/models/loras"
+LORAS_DIR="$COMFYUI_DIR/models/loras"
 REPO_WORKFLOWS_DIR="$REPO_DIR/workflows"
 TARGET_WORKFLOWS_DIR="$COMFYUI_DIR/user/default/workflows"
 
@@ -113,11 +113,11 @@ pip install -r "$REPO_DIR/requirements.txt"
 
 # --- 7. Download Personal LoRAs ---
 echo "Downloading personal LoRAs from Google Drive..."
-if [ ${#PERSONAL_LORAS[@]} -gt 0 ]; then
+if [ ${#PERSONAL_LORAS_GDRIVE_FOLDER[@]} -gt 0 ]; then
     mkdir -p "$PERSONAL_LORAS_DIR"
-    for folder_id in "${PERSONAL_LORAS[@]}"; do
-        echo "Downloading files from $folder_id → $PERSONAL_LORAS_DIR"
-        python3 "$WORKSPACE_DIR/gdrive_download.py" "$GDRIVE_SERVICE_ACCOUNT_JSON" "$PERSONAL_LORAS_DIR" "$folder_id"
+    for folder_id in "${PERSONAL_LORAS_GDRIVE_FOLDER[@]}"; do
+        echo "Downloading files from $folder_id → $LORAS_DIR"
+        python3 "$WORKSPACE_DIR/gdrive_download.py" "$GDRIVE_SERVICE_ACCOUNT_JSON" "$LORAS_DIR" "$folder_id"
     done
 else
     echo "No personal LoRAs specified."
