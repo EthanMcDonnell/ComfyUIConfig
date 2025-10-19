@@ -12,11 +12,11 @@ TAGGUI_DIR="$WORKSPACE_DIR/taggui"
 
 # --- Install One-Trainer ---
 echo "Cloning one-trainer..."
-git clone https://github.com/jhc13/taggui.git "$ONE_TRAINER_DIR"
+git clone https://github.com/Nerogar/OneTrainer.git "$ONE_TRAINER_DIR"
 
 echo "Installing one-trainer dependencies..."
 cd "$ONE_TRAINER_DIR"
-pip install -r requirements.txt
+bash "$ONE_TRAINER_DIR/install.sh"
 
 echo "One-trainer installation complete."
 
@@ -33,4 +33,4 @@ echo "TagGUI installation complete."
 # --- Final Message ---
 echo "Installation finished!"
 echo "To run One-Trainer: python3 $ONE_TRAINER_DIR/main.py"
-echo "To run TagGUI: python3 $TAGGUI_DIR/taggui.py"
+echo "To run TagGUI: python3 $TAGGUI_DIR/run_gui.py"
