@@ -56,7 +56,20 @@ for url in "${CUSTOM_NODES[@]}"; do
 done
 cd ..
 
-# --- 4. Download Models ---
+# --- 4. Copy Workflows from repo into ComfyUI ---
+echo "Copying workflows from repository into ComfyUI workflows folder..."
+REPO_WORKFLOWS_DIR="../ComfyUIConfig/workflows"
+TARGET_WORKFLOWS_DIR="./user/default/workflows"
+if [ -d "$REPO_WORKFLOWS_DIR" ]; then
+    mkdir -p "$TARGET_WORKFLOWS_DIR"
+    cp -a "$REPO_WORKFLOWS_DIR/." "$TARGET_WORKFLOWS_DIR/"
+    echo "✅ Workflows copied to $TARGET_WORKFLOWS_DIR"
+else
+    echo "No workflows directory found at $REPO_WORKFLOWS_DIR; skipping."
+fi
+
+
+# --- 5. Download Models ---
 echo "Downloading models..."
 for item in "${MODELS[@]}"; do
     IFS=',' read -r url output_path <<< "$item"
@@ -65,7 +78,7 @@ for item in "${MODELS[@]}"; do
     fi
 done
 
-# --- 5. Download LoRAs ---
+# --- 6. Download LoRAs ---
 echo "Downloading LoRAs..."
 for item in "${LORAS[@]}"; do
     IFS=',' read -r url output_path <<< "$item"
@@ -74,6 +87,6 @@ for item in "${LORAS[@]}"; do
     fi
 done
 
-# --- 6. Launch ComfyUI ---
+# --- 7. Launch ComfyUI ---
 echo "Setup complete! Launching ComfyUI... 🚀"
 python main.py --listen 0.0.0.0
