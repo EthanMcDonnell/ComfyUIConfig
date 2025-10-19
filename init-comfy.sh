@@ -51,8 +51,8 @@ if [ -z "$CIVITAI_API_KEY" ]; then
     exit 1
 fi
 
-if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON" ]; then
-    echo "Error: GDRIVE_SERVICE_ACCOUNT_JSON environment variable is not set." >&2
+if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
+    echo "Error: GDRIVE_SERVICE_ACCOUNT_JSON_B64 environment variable is not set." >&2
     exit 1
 fi
 
@@ -118,7 +118,7 @@ if [ ${#PERSONAL_LORAS_GDRIVE_FOLDER[@]} -gt 0 ]; then
     mkdir -p "$LORAS_DIR"
     for folder_id in "${PERSONAL_LORAS_GDRIVE_FOLDER[@]}"; do
         echo "Downloading files from $folder_id → $LORAS_DIR"
-        python3 "$PYTHON_GOOGLE_DRIVE_DOWNLOAD_SCRIPT" "$GDRIVE_SERVICE_ACCOUNT_JSON" "$LORAS_DIR" "$folder_id"
+        python3 "$PYTHON_GOOGLE_DRIVE_DOWNLOAD_SCRIPT" "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$LORAS_DIR" "$folder_id"
     done
 else
     echo "No personal LoRAs specified."
