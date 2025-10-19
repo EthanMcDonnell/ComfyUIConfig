@@ -1,19 +1,31 @@
 import os
 import sys
 import json
+import base64
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 import io
 
 
-def get_credentials(service_account_json):
-    """Load credentials from a file path or a raw JSON string."""
-    if os.path.isfile(service_account_json):
-        return service_account.Credentials.from_service_account_file(service_account_json)
-    else:
-        info = json.loads(service_account_json)
+def get_credentials(service_account_json_or_b64):
+    """Load credentials from a file path or a base64-encoded JSON string."""
+    # If it's a file, load from file
+    if os.path.isfile(service_account_json_or_b64):
+        return service_account.Credentials.from_service_account_file(service_account_json_or_b64)
+    # If it looks like base64, decode and load as JSON
+    try:
+        decoded = base64.b64decode(service_account_json_or_b64).decode()
+        info = json.loads(decoded)
         return service_account.Credentials.from_service_account_info(info)
+    except Exception:
+        # If not base64, try to load as raw JSON string
+        try:
+            info = json.loads(service_account_json_or_b64)
+            return service_account.Credentials.from_service_account_info(info)
+        except Exception:
+            raise ValueError(
+                "Provided service_account_json_or_b64 is not a valid file path, base64 string, or raw JSON.")
 
 
 def download_file(service, file_id, output_path):
@@ -27,9 +39,9 @@ def download_file(service, file_id, output_path):
         print(f"Downloading {output_path}: {int(status.progress() * 100)}%")
 
 
-def main(service_account_json, output_dir, folder_id):
+def main(service_account_json_or_b64, output_dir, folder_id):
     """Download all files from a Google Drive folder."""
-    creds = get_credentials(service_account_json)
+    creds = get_credentials(service_account_json_or_b64)
     service = build('drive', 'v3', credentials=creds)
 
     # Verify folder
@@ -62,11 +74,11 @@ def main(service_account_json, output_dir, folder_id):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python gdrive_download.py <service_account_json_or_path> <output_dir> <folder_id>")
+        print("Usage: python gdrive_download.py <service_account_json_or_b64> <output_dir> <folder_id>")
         sys.exit(1)
 
-    service_account_json = sys.argv[1]
+    service_account_json_or_b64 = sys.argv[1]
     output_dir = sys.argv[2]
     folder_id = sys.argv[3]
 
-    main(service_account_json, output_dir, folder_id)
+    main(service_account_json_or_b64, output_dir, folder_id)
