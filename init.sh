@@ -81,10 +81,9 @@ echo "Downloading models..."
 for item in "${MODELS[@]}"; do
     IFS=',' read -r url output_path <<< "$item"
     if [ ! -z "$url" ] && [ ! -z "$output_path" ]; then
-        # Ensure output directory exists
         mkdir -p "$(dirname "$output_path")"
         echo "Downloading $url → $output_path"
-        wget --header="Authorization: Bearer $API_KEY" -c "$url" -O "$output_path"
+        curl -L -H "Authorization: Bearer $API_KEY" "$url" -o "$output_path"
     fi
 done
 
@@ -95,7 +94,7 @@ for item in "${LORAS[@]}"; do
     if [ ! -z "$url" ] && [ ! -z "$output_path" ]; then
         mkdir -p "$(dirname "$output_path")"
         echo "Downloading $url → $output_path"
-        wget --header="Authorization: Bearer $API_KEY" -c "$url" -O "$output_path"
+        curl -L -H "Authorization: Bearer $API_KEY" "$url" -o "$output_path"
     fi
 done
 # --- 7. Launch ComfyUI ---
