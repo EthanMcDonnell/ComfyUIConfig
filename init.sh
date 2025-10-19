@@ -11,10 +11,10 @@ declare -a CUSTOM_NODES=(
 # List of models to download. Each entry is a [URL, OutputPath].
 # CyberRealistic, CyberRealistic Pony, JibMix, Juggernaut XL
 declare -a MODELS=(
-    "https://civitai.com/api/download/models/2152184?type=Model&format=SafeTensor&size=pruned&fp=fp16"
-    "https://civitai.com/api/download/models/2255476?type=Model&format=SafeTensor&size=pruned&fp=fp16"
-    "https://civitai.com/api/download/models/1966530?type=Model&format=SafeTensor&size=pruned&fp=fp16"
-    "https://civitai.com/api/download/models/1759168?type=Model&format=SafeTensor&size=full&fp=fp16"
+    "https://civitai.com/api/download/models/2152184?type=Model&format=SafeTensor&size=pruned&fp=fp16,./models/checkpoints/cyberrealistic.safetensors"
+    "https://civitai.com/api/download/models/2255476?type=Model&format=SafeTensor&size=pruned&fp=fp16,./models/checkpoints/cyberrealistic_pony.safetensors"
+    "https://civitai.com/api/download/models/1966530?type=Model&format=SafeTensor&size=pruned&fp=fp16,./models/checkpoints/jibmix.safetensors"
+    "https://civitai.com/api/download/models/1759168?type=Model&format=SafeTensor&size=full&fp=fp16,./models/checkpoints/juggernaut_xl.safetensors"
 )
 
 # List of LoRAs to download. Each entry is a [URL, OutputPath].
