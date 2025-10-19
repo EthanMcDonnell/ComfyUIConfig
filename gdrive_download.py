@@ -1,9 +1,19 @@
 import os
 import sys
+import json
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 import io
+
+
+def get_credentials(service_account_json):
+    """Load credentials from a file path or a raw JSON string."""
+    if os.path.isfile(service_account_json):
+        return service_account.Credentials.from_service_account_file(service_account_json)
+    else:
+        info = json.loads(service_account_json)
+        return service_account.Credentials.from_service_account_info(info)
 
 
 def download_file(service, file_id, output_path):
@@ -19,8 +29,7 @@ def download_file(service, file_id, output_path):
 
 def main(service_account_json, output_dir, folder_id):
     """Download all files from a Google Drive folder."""
-    creds = service_account.Credentials.from_service_account_file(
-        service_account_json)
+    creds = get_credentials(service_account_json)
     service = build('drive', 'v3', credentials=creds)
 
     # Verify folder
@@ -29,7 +38,6 @@ def main(service_account_json, output_dir, folder_id):
     if metadata['mimeType'] != 'application/vnd.google-apps.folder':
         raise ValueError(
             f"Drive item '{metadata['name']}' ({folder_id}) is not a folder.")
-
 
     os.makedirs(output_dir, exist_ok=True)
 
@@ -54,7 +62,7 @@ def main(service_account_json, output_dir, folder_id):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python gdrive_download.py <service_account_json> <output_dir> <folder_id>")
+        print("Usage: python gdrive_download.py <service_account_json_or_path> <output_dir> <folder_id>")
         sys.exit(1)
 
     service_account_json = sys.argv[1]

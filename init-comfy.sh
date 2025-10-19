@@ -115,7 +115,7 @@ pip install -r "$REPO_DIR/requirements.txt"
 # --- 7. Download Personal LoRAs ---
 echo "Downloading personal LoRAs from Google Drive..."
 if [ ${#PERSONAL_LORAS_GDRIVE_FOLDER[@]} -gt 0 ]; then
-    mkdir -p "$PERSONAL_LORAS_DIR"
+    mkdir -p "$LORAS_DIR"
     for folder_id in "${PERSONAL_LORAS_GDRIVE_FOLDER[@]}"; do
         echo "Downloading files from $folder_id → $LORAS_DIR"
         python3 "$PYTHON_GOOGLE_DRIVE_DOWNLOAD_SCRIPT" "$GDRIVE_SERVICE_ACCOUNT_JSON" "$LORAS_DIR" "$folder_id"
