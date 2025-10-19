@@ -5,6 +5,8 @@ import base64
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
+from googleapiclient.http import MediaFileUpload
+
 import io
 
 
@@ -28,6 +30,39 @@ def get_credentials(service_account_json_or_b64):
                 "Provided service_account_json_or_b64 is not a valid file path, base64 string, or raw JSON.")
 
 
+def upload_file(service, file_path, folder_id):
+    """Upload a single file to Google Drive folder."""
+    file_metadata = {
+        'name': os.path.basename(file_path),
+        'parents': [folder_id]
+    }
+    media = MediaFileUpload(file_path, resumable=True)
+    file = service.files().create(
+        body=file_metadata,
+        media_body=media,
+        fields='id, name'
+    ).execute()
+    print(
+        f"Uploaded {file_path} as '{file.get('name')}' (ID: {file.get('id')})")
+
+
+def upload_folder(service_account_json_or_b64, input_dir, folder_id):
+    """Upload all files from a local folder to a Google Drive folder."""
+    creds = get_credentials(service_account_json_or_b64)
+    service = build('drive', 'v3', credentials=creds)
+
+    # Verify folder
+    metadata = service.files().get(
+        fileId=folder_id, fields="id, name, mimeType").execute()
+    if metadata['mimeType'] != 'application/vnd.google-apps.folder':
+        raise ValueError(
+            f"Drive item '{metadata['name']}' ({folder_id}) is not a folder.")
+
+    for filename in os.listdir(input_dir):
+        if os.path.isfile(filename):
+            upload_file(service, filename, folder_id)
+
+
 def download_file(service, file_id, output_path):
     """Download a single file from Google Drive."""
     request = service.files().get_media(fileId=file_id)
@@ -39,7 +74,7 @@ def download_file(service, file_id, output_path):
         print(f"Downloading {output_path}: {int(status.progress() * 100)}%")
 
 
-def main(service_account_json_or_b64, output_dir, folder_id):
+def download_folder(service_account_json_or_b64, output_dir, folder_id):
     """Download all files from a Google Drive folder."""
     creds = get_credentials(service_account_json_or_b64)
     service = build('drive', 'v3', credentials=creds)
@@ -73,12 +108,19 @@ def main(service_account_json_or_b64, output_dir, folder_id):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python gdrive_download.py <service_account_json_or_b64> <output_dir> <folder_id>")
+    if len(sys.argv) != 5:
+        print("Usage: python gdrive.py <download|upload> <service_account_json_b64_or_filepath> <local_dir> <folder_id>")
         sys.exit(1)
 
-    service_account_json_or_b64 = sys.argv[1]
-    output_dir = sys.argv[2]
-    folder_id = sys.argv[3]
+    mode = sys.argv[1].lower()
+    service_account_json_or_b64 = sys.argv[2]
+    local_dir = sys.argv[3]
+    folder_id = sys.argv[4]
 
-    main(service_account_json_or_b64, output_dir, folder_id)
+    if mode == "download":
+        download_folder(service_account_json_or_b64, local_dir, folder_id)
+    elif mode == "upload":
+        upload_folder(service_account_json_or_b64, local_dir, folder_id)
+    else:
+        print("First argument must be 'download' or 'upload'.")
+        sys.exit(1)
