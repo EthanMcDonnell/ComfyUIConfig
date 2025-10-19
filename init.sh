@@ -9,10 +9,12 @@ declare -a CUSTOM_NODES=(
 )
 
 # List of models to download. Each entry is a [URL, OutputPath].
+# CyberRealistic, CyberRealistic Pony, JibMix, Juggernaut XL
 declare -a MODELS=(
-    "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors,./models/checkpoints/sd_xl_base_1.0.safetensors"
-    "https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors,./models/checkpoints/sd_xl_refiner_1.0.safetensors"
-    "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors,./models/vae/sdxl_vae.safetensors"
+    https://civitai.com/api/download/models/2152184?type=Model&format=SafeTensor&size=pruned&fp=fp16
+    https://civitai.com/api/download/models/2255476?type=Model&format=SafeTensor&size=pruned&fp=fp16
+    https://civitai.com/api/download/models/1966530?type=Model&format=SafeTensor&size=pruned&fp=fp16
+    https://civitai.com/api/download/models/1759168?type=Model&format=SafeTensor&size=full&fp=fp16
 )
 
 # List of LoRAs to download. Each entry is a [URL, OutputPath].
