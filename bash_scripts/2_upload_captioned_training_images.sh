@@ -1,0 +1,17 @@
+WORKSPACE_DIR="/workspace"
+COMFYUI_DIR="$WORKSPACE_DIR/ComfyUI"
+REPO_DIR="$WORKSPACE_DIR/ComfyUIConfig"
+
+TRAINING_IMAGE_DIR="$COMFY_DIR/output"
+PYTHON_GOOGLE_DRIVE_SCRIPT="$REPO_DIR/gdrive.py"
+
+# (Google Drive folder IDs)
+TRAINING_IMAGES_GDRIVE_FOLDER="1asuDXv0AGCDNKYKCcnJVyW3kULkMlI1F" # Private GDRIVE Folder ID
+
+if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
+    echo "Error: GDRIVE_SERVICE_ACCOUNT_JSON_B64 environment variable is not set." >&2
+    exit 1
+fi
+
+echo "Uploading files from $TRAINING_IMAGE_DIR → Google Drive"
+python3 upload "$PYTHON_GOOGLE_DRIVE_SCRIPT" "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$TRAINING_IMAGE_DIR" "$TRAINING_IMAGES_GDRIVE_FOLDER"

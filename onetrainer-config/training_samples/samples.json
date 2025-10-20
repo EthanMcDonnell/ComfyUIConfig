@@ -1,0 +1,26 @@
+[
+  {
+    "__version": 0,
+    "enabled": true,
+    "prompt": "hot woman",
+    "negative_prompt": "blurry",
+    "height": 1024,
+    "width": 1024,
+    "frames": 1,
+    "length": 1.0,
+    "seed": 157483485,
+    "random_seed": false,
+    "diffusion_steps": 25,
+    "cfg_scale": 4.0,
+    "noise_scheduler": "DPMPP_SDE_KARRAS",
+    "text_encoder_1_layer_skip": 0,
+    "text_encoder_2_layer_skip": 0,
+    "text_encoder_3_layer_skip": 0,
+    "text_encoder_4_layer_skip": 0,
+    "prior_attention_mask": false,
+    "force_last_timestep": false,
+    "sample_inpainting": false,
+    "base_image_path": "",
+    "mask_image_path": ""
+  }
+]

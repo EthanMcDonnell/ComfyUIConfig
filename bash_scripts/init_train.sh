@@ -15,6 +15,8 @@ echo "Cloning one-trainer..."
 git clone https://github.com/Nerogar/OneTrainer.git "$ONE_TRAINER_DIR"
 
 echo "Installing one-trainer dependencies..."
+sudo apt-get update
+sudo apt-get install -y python3-tk
 cd "$ONE_TRAINER_DIR"
 bash "$ONE_TRAINER_DIR/install.sh"
 
@@ -32,5 +34,5 @@ echo "TagGUI installation complete."
 
 # --- Final Message ---
 echo "Installation finished!"
-echo "To run One-Trainer: python3 $ONE_TRAINER_DIR/main.py"
+echo "To run One-Trainer: python3 $ONE_TRAINER_DIR/start-ui.sh"
 echo "To run TagGUI: python3 $TAGGUI_DIR/run_gui.py"
