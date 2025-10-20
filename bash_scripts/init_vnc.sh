@@ -7,7 +7,7 @@ set -e
 VNC_PASSWORD="taggui"        # Password for VNC
 VNC_DISPLAY=":1"             # Virtual display number
 VNC_RESOLUTION="1920x1080"   # Desktop resolution
-NOVNC_PORT=5000              # Browser-accessible port
+NOVNC_PORT=6080              # Browser-accessible port
 USER_HOME="/root"            # Adjust if using non-root
 
 # --- Install required packages ---
@@ -44,7 +44,7 @@ sudo apt-get install -y \
     libxkbcommon0 \
     mesa-utils \
     x11-xserver-utils
-    
+
 # --- Configure VNC password ---
 mkdir -p $USER_HOME/.vnc
 echo $VNC_PASSWORD | vncpasswd -f > $USER_HOME/.vnc/passwd
