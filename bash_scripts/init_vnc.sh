@@ -19,13 +19,15 @@ sudo apt-get install -y \
     novnc \
     websockify \
     libegl-mesa0 \
-    libgles2-mesa \
+    libgles2-mesa-dev \
     libgl1-mesa-dri \
+    libgl1-mesa-glx \
     libx11-6 \
     libxrender1 \
     libxext6 \
     libxcb1 \
-    mesa-utils
+    mesa-utils \
+    x11-xserver-utils
 
 # --- Configure VNC password ---
 mkdir -p $USER_HOME/.vnc
