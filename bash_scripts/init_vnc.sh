@@ -20,8 +20,9 @@ sudo apt-get install -y \
     websockify \
     libegl-mesa0 \
     libgles2-mesa-dev \
+    libgl1 \
+    libglx-mesa0 \
     libgl1-mesa-dri \
-    libgl1-mesa-glx \
     libx11-6 \
     libxrender1 \
     libxext6 \
