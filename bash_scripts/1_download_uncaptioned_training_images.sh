@@ -20,7 +20,7 @@ if [ ${#UNCAPTIONED_TRAINING_IMAGE_GDRIVE_FOLDER[@]} -gt 0 ]; then
     mkdir -p "$UNCAPTIONED_TRAINING_IMAGE_DIR"
     for folder_id in "${UNCAPTIONED_TRAINING_IMAGE_GDRIVE_FOLDER[@]}"; do
         echo "Downloading files from $folder_id → $UNCAPTIONED_TRAINING_IMAGE_DIR"
-        python3 download "$PYTHON_GOOGLE_DRIVE_SCRIPT" "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$UNCAPTIONED_TRAINING_IMAGE_DIR" "$folder_id"
+        python3 "$PYTHON_GOOGLE_DRIVE_SCRIPT" download "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$UNCAPTIONED_TRAINING_IMAGE_DIR" "$folder_id"
     done
 else
     echo "No image download google drives specified."
