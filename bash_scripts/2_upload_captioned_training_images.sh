@@ -13,5 +13,8 @@ if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
     exit 1
 fi
 
+echo "Installing Repo Dependencies..."
+pip install -r "$REPO_DIR/requirements.txt"
+
 echo "Uploading files from $TRAINING_IMAGE_DIR → Google Drive"
 python3 "$PYTHON_GOOGLE_DRIVE_SCRIPT" upload "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$TRAINING_IMAGE_DIR" "$TRAINING_IMAGES_GDRIVE_FOLDER"

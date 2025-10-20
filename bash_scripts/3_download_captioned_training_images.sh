@@ -16,6 +16,9 @@ if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
     exit 1
 fi
 
+echo "Installing Repo Dependencies..."
+pip install -r "$REPO_DIR/requirements.txt"
+
 echo "Downloading images from Google Drive..."
 if [ ${#CAPTIONED_TRAINING_IMAGE_GDRIVE_FOLDER[@]} -gt 0 ]; then
     mkdir -p "$CAPTIONED_TRAINING_IMAGE_DIR"
