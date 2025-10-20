@@ -9,7 +9,9 @@ ONE_TRAINER_DIR="$WORKSPACE_DIR/one-trainer"
 TAGGUI_DIR="$WORKSPACE_DIR/taggui"
 
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 2
 
+sudo update-alternatives --set python /usr/bin/python3.12
 # --- Function to create venv with a specified Python version ---
 create_venv() {
     local APP_DIR="$1"
@@ -40,6 +42,7 @@ bash "$ONE_TRAINER_DIR/install.sh"
 deactivate
 echo "One-trainer installation complete."
 
+sudo update-alternatives --set python /usr/bin/python3.11
 # --- Install TagGUI ---
 echo "Cloning TagGUI..."
 git clone https://github.com/jhc13/taggui.git "$TAGGUI_DIR"
@@ -52,8 +55,8 @@ cd "$TAGGUI_DIR"
 pip install torch==2.8.0+cu128 --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
 echo "TagGUI installation complete."
-
+sudo update-alternatives --set python /usr/bin/python3.12
 # --- Final Message ---
 echo "Installation finished!"
-echo "To run One-Trainer: source one-trainer/venv/bin/activate && python one-trainer/start-ui.sh"
+echo "To run One-Trainer: source one-trainer/venv/bin/activate && bash one-trainer/start-ui.sh"
 echo "To run TagGUI: export DISPLAY=:1 && source taggui/venv/bin/activate && python taggui/taggui/run_gui.py"
