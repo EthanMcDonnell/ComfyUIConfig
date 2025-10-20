@@ -27,9 +27,24 @@ sudo apt-get install -y \
     libxrender1 \
     libxext6 \
     libxcb1 \
+    libxcb-cursor0 \
+    libxcb-xinerama0 \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-randr0 \
+    libxcb-render-util0 \
+    libxcb-shape0 \
+    libxcb-shm0 \
+    libxcb-sync1 \
+    libxcb-xfixes0 \
+    libxcb-xkb1 \
+    libxcb-xinput0 \
+    libxkbcommon-x11-0 \
+    libxkbcommon0 \
     mesa-utils \
     x11-xserver-utils
-
+    
 # --- Configure VNC password ---
 mkdir -p $USER_HOME/.vnc
 echo $VNC_PASSWORD | vncpasswd -f > $USER_HOME/.vnc/passwd

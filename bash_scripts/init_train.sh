@@ -55,5 +55,5 @@ echo "TagGUI installation complete."
 
 # --- Final Message ---
 echo "Installation finished!"
-echo "To run One-Trainer: source $ONE_TRAINER_DIR/venv/bin/activate && python $ONE_TRAINER_DIR/start-ui.sh"
-echo "To run TagGUI: source taggui/venv/bin/activate && python taggui/taggui/run_gui.py"
+echo "To run One-Trainer: source one-trainer/venv/bin/activate && python one-trainer/start-ui.sh"
+echo "To run TagGUI: export QT_QPA_PLATFORM=vnc && source taggui/venv/bin/activate && python taggui/taggui/run_gui.py"
