@@ -22,7 +22,6 @@ create_venv() {
 
     echo "Upgrading pip, setuptools, wheel..."
     pip install --upgrade pip setuptools wheel
-    deactivate
 }
 
 # --- Install One-Trainer ---
@@ -37,7 +36,6 @@ echo "Installing one-trainer dependencies..."
 sudo apt-get update
 sudo apt-get install -y python3-tk
 cd "$ONE_TRAINER_DIR"
-source "$ONE_TRAINER_DIR/venv/bin/activate"
 bash "$ONE_TRAINER_DIR/install.sh"
 deactivate
 echo "One-trainer installation complete."
@@ -51,9 +49,8 @@ create_venv "$TAGGUI_DIR" "venv" "python3.11"
 
 # Install TagGUI dependencies inside venv
 cd "$TAGGUI_DIR"
-source "$TAGGUI_DIR/venv/bin/activate"
+pip install torch==2.8.0+cu128 --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
-deactivate
 echo "TagGUI installation complete."
 
 # --- Final Message ---
