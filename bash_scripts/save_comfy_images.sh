@@ -19,7 +19,7 @@ echo "Uploading images to Google Drive..."
 if [ ${#IMAGES_GDRIVE_FOLDER[@]} -gt 0 ]; then
     for folder_id in "${IMAGES_GDRIVE_FOLDER[@]}"; do
         echo "Uploading files from $folder_id → Google Drive"
-        python3 upload "$PYTHON_GOOGLE_DRIVE_SCRIPT" "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$COMFY_IMAGE_DIR" "$folder_id"
+        python3 "$PYTHON_GOOGLE_DRIVE_SCRIPT" upload "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$COMFY_IMAGE_DIR" "$folder_id"
     done
 else
     echo "No image upload google drives specified."
