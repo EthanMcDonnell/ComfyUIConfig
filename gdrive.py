@@ -62,7 +62,7 @@ def upload_folder(service_account_json_or_b64, input_dir, folder_id):
         file_path = os.path.join(input_dir, filename)  # full path
         if os.path.isfile(file_path):
             print(f"Uploading {filename}...")
-            upload_file(service, filename, folder_id)
+            upload_file(service, file_path, folder_id)
 
 
 def download_file(service, file_id, output_path):
