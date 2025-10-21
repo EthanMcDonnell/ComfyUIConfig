@@ -60,6 +60,7 @@ def upload_folder(service_account_json_or_b64, input_dir, folder_id):
 
     for filename in os.listdir(input_dir):
         if os.path.isfile(filename):
+            print(f"Uploading {filename}...")
             upload_file(service, filename, folder_id)
 
 
