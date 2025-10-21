@@ -13,5 +13,5 @@ if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
     exit 1  
 fi
 
-echo "Uploading images to Google Drive..."
+echo "Uploading files from $INPUT_COMFY_IMAGE_DIR → Google Drive"
 python3 "$PYTHON_GOOGLE_DRIVE_SCRIPT" upload "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$INPUT_COMFY_IMAGE_DIR" "$IMAGES_GDRIVE_FOLDER"

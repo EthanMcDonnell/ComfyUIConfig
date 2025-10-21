@@ -57,7 +57,7 @@ def upload_folder(service_account_json_or_b64, input_dir, folder_id):
     if metadata['mimeType'] != 'application/vnd.google-apps.folder':
         raise ValueError(
             f"Drive item '{metadata['name']}' ({folder_id}) is not a folder.")
-
+    
     for filename in os.listdir(input_dir):
         if os.path.isfile(filename):
             print(f"Uploading {filename}...")
