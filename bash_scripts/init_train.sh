@@ -55,6 +55,9 @@ cd "$TAGGUI_DIR"
 pip install torch==2.8.0+cu128 --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
 echo "TagGUI installation complete."
+deactivate
+curl -L -o "$TAGGUI_DIR/models/wd-vit-tagger-v3.safetensors" "https://huggingface.co/SmilingWolf/wd-vit-tagger-v3/resolve/main/model.safetensors"
+
 sudo update-alternatives --set python /usr/bin/python3.12
 # --- Final Message ---
 echo "Installation finished!"
