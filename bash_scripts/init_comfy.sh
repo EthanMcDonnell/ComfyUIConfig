@@ -33,8 +33,8 @@ declare -a MODELS=(
 
 # LoRAs
 declare -a LORAS=(
-    https://civitai.com/api/download/models/128461?type=Model&format=SafeTensor
-    https://civitai.com/api/download/models/135867?type=Model&format=SafeTensor
+    "https://civitai.com/api/download/models/128461?type=Model&format=SafeTensor"
+    "https://civitai.com/api/download/models/135867?type=Model&format=SafeTensor"
 )
 
 # Personal LoRAs (Google Drive file IDs)
