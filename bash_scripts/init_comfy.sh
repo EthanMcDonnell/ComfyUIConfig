@@ -19,6 +19,8 @@ declare -a CUSTOM_NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager.git"
     "https://github.com/crystian/comfyui-crystools.git"
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git"
+    "https://github.com/rgthree/rgthree-comfy.git"
+
 )
 
 # Models
@@ -31,6 +33,8 @@ declare -a MODELS=(
 
 # LoRAs
 declare -a LORAS=(
+    https://civitai.com/api/download/models/128461?type=Model&format=SafeTensor
+    https://civitai.com/api/download/models/135867?type=Model&format=SafeTensor
 )
 
 # Personal LoRAs (Google Drive file IDs)

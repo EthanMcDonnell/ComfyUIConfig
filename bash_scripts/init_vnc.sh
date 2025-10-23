@@ -6,7 +6,7 @@ set -e
 # --- Variables ---
 VNC_PASSWORD="taggui"        # Password for VNC
 VNC_DISPLAY=":1"             # Virtual display number
-VNC_RESOLUTION="1920x1080"   # Desktop resolution
+VNC_RESOLUTION="1600x900"   # Fits nicely in most browser windows
 NOVNC_PORT=6080              # Browser-accessible port
 USER_HOME="/root"            # Adjust if using non-root
 
