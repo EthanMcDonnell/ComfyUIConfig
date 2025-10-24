@@ -1,0 +1,161 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 525667312273118,
+      "steps": 20,
+      "cfg": 5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "30",
+        0
+      ],
+      "positive": [
+        "31",
+        0
+      ],
+      "negative": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "jibmix.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "noisy, blurry, soft, deformed, ugly, drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly, jpeg , (worst quality, low quality, normal quality, lowres, low details, oversaturated, undersaturated, overexposed, underexposed, grayscale, bw, bad photo, bad photography, bad art:1.4), (watermark, signature, text font, username, error, logo, words, letters, digits, autograph, trademark, name:1.2), (blur, blurry, grainy), morbid, ugly, asymmetrical, mutated malformed, mutilated, poorly lit, bad shadow, draft, cropped,, censored, jpeg artifacts, duplicate, (airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur:1.3), (3D ,3D Game, 3D Game Scene, 3D Character:1.1), (bad hands, bad anatomy, bad body, bad face, bad teeth, bad arms, bad legs, deformities:1.3)",
+      "clip": [
+        "30",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "16": {
+    "inputs": {
+      "strength": 0.3500000000000001,
+      "conditioning": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ConditioningSetAreaStrength",
+    "_meta": {
+      "title": "ConditioningSetAreaStrength"
+    }
+  },
+  "18": {
+    "inputs": {
+      "dimensions": " 832 x 1216  (portrait)",
+      "clip_scale": 2,
+      "batch_size": 1
+    },
+    "class_type": "SDXL Empty Latent Image (rgthree)",
+    "_meta": {
+      "title": "SDXL Empty Latent Image (rgthree)"
+    }
+  },
+  "27": {
+    "inputs": {
+      "strength": 0.3500000000000001
+    },
+    "class_type": "ConditioningSetAreaStrength",
+    "_meta": {
+      "title": "ConditioningSetAreaStrength"
+    }
+  },
+  "30": {
+    "inputs": {
+      "PowerLoraLoaderHeaderWidget": {
+        "type": "PowerLoraLoaderHeaderWidget"
+      },
+      "lora_1": {
+        "on": true,
+        "lora": "detail_tweaker_xl.safetensors",
+        "strength": 1
+      },
+      "lora_2": {
+        "on": true,
+        "lora": "perfect_eyes_xl.safetensors",
+        "strength": 0.7
+      },
+      "➕ Add Lora": "",
+      "model": [
+        "4",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "Power Lora Loader (rgthree)",
+    "_meta": {
+      "title": "Power Lora Loader (rgthree)"
+    }
+  },
+  "31": {
+    "inputs": {
+      "prompt_g": "beautiful (masterpiece), (extremely intricate:1.3), (realistic) , sharp focus, dramatic, award winning, cinematic lighting, volumetrics dtx, (film grain, blurry background, blurry foreground, bokeh, depth of field, sunset, motion blur:1.3).4k, 8k, highly detailed, cinematic, 8k, dramatic lighting, high detail, highly detailed, hyper realistic, intricate, intricate sharp details, 35mm photograph, film, bokeh, professional, 4k, highly detailed. 35mm photograph, film, bokeh, professional, 4k, highly detailed\n",
+      "prompt_l": "beatiful girl facing away walking towards a castle in the background, back of head, <lora:perfect_eyes_xl:1>, <lora:detail_tweaker_xl:2> ",
+      "insert_lora": "CHOOSE",
+      "opt_clip": [
+        "30",
+        1
+      ]
+    },
+    "class_type": "SDXL Power Prompt - Positive (rgthree)",
+    "_meta": {
+      "title": "SDXL Power Prompt - Positive (rgthree)"
+    }
+  }
+}
