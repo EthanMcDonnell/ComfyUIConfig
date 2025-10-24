@@ -71,100 +71,6 @@
       "widgets_values": [0.3500000000000001]
     },
     {
-      "id": 18,
-      "type": "SDXL Empty Latent Image (rgthree)",
-      "pos": [-536.7827146772103, -236.0713374642876],
-      "size": [322.7037109375, 146],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [29]
-        },
-        {
-          "name": "CLIP_WIDTH",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "CLIP_HEIGHT",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
-        "Node name for S&R": "SDXL Empty Latent Image (rgthree)"
-      },
-      "widgets_values": [" 832 x 1216  (portrait)", 2, 1]
-    },
-    {
-      "id": 9,
-      "type": "SaveImage",
-      "pos": [1271.621337890625, -298.89215087890625],
-      "size": [1838.06689453125, 962.5804443359375],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 9
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.41",
-        "Node name for S&R": "SaveImage",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": ["ComfyUI"]
-    },
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [-535.6387329101562, 21.47828483581543],
-      "size": [310.2159423828125, 98],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "slot_index": 0,
-          "links": [24]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "slot_index": 1,
-          "links": [16]
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "slot_index": 2,
-          "links": [8]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.41",
-        "Node name for S&R": "CheckpointLoaderSimple",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": ["jibmix.safetensors"]
-    },
-    {
       "id": 15,
       "type": "Power Lora Loader (rgthree)",
       "pos": [-167.65538024902344, -11.711173057556152],
@@ -274,7 +180,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        486095772781285,
+        534139180091217,
         "randomize",
         30,
         4,
@@ -282,6 +188,133 @@
         "karras",
         1
       ]
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [212.72781372070312, 100.62173461914062],
+      "size": [425.27801513671875, 180.6060791015625],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [22]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.41",
+        "Node name for S&R": "CLIPTextEncode",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "(deformed iris, deformed pupils) noisy, blurry, soft, deformed, ugly, asymmetrical, mutated, malformed, mutilated, poorly lit, bad shadow, draft, censored, jpeg artifacts, glitch, duplicate, morbid, bad photo, bad photography, bad art, low quality, normal quality, lowres, oversaturated, watermark, signature, text, font, username, error, logo, words, letters, digits, autograph, trademark, name, airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur, 3D, 3D Game, 3D Game Scene, 3D Character, bad hands, bad anatomy, bad body, bad face, bad teeth, bad arms, bad legs, deformities\n"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "SDXL Empty Latent Image (rgthree)",
+      "pos": [-536.7827146772103, -236.0713374642876],
+      "size": [322.7037109375, 146],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [29]
+        },
+        {
+          "name": "CLIP_WIDTH",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "CLIP_HEIGHT",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
+        "Node name for S&R": "SDXL Empty Latent Image (rgthree)"
+      },
+      "widgets_values": [" 832 x 1216  (portrait)", 2, 2]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [-535.6387329101562, 21.47828483581543],
+      "size": [310.2159423828125, 98],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [24]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [16]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [8]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.41",
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": ["jibmix.safetensors"]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [1271.621337890625, -298.89215087890625],
+      "size": [1838.06689453125, 962.5804443359375],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.41",
+        "Node name for S&R": "SaveImage",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": ["ComfyUI"]
     },
     {
       "id": 17,
@@ -366,42 +399,9 @@
         "combos_filter": ""
       },
       "widgets_values": [
-        "<lora:PerfectEyesXL:1.0> <lora:add_detail_xl:2.0> cinematic photo,, (realistic),  (masterpiece), sharp focus,4k, 8k, highly detailed, cinematic, 8k, dramatic lighting, high detail, hyper realistic, intricate sharp details, 35mm photograph, film, professional, 4k, highly detailed. 35mm photograph, film, professional,  highly detailed, atmospheric depth",
-        "iphone mirror selfie, portrait, golden hour, stunning, beautiful, cutest girl in the world, girl, young cute face, seductive, layered shaggy messy long blonde hair, Instagram model, wearing a red cropped sweatshirt",
+        "<lora:PerfectEyesXL:1.0> <lora:add_detail_xl:2.0> cinematic photo, (realistic), (masterpiece), sharp focus,4k, 8k, highly detailed, 8k, high detail, hyper realistic, intricate sharp details, 35mm photograph, film, professional, 4k, highly detailed, atmospheric depth",
+        "portrait, masterpiece, 4k, ray tracing, intricate details, highly-detailed, hyper-realistic, 8k RAW Editorial Photo.\n1girl, solo, blush, short hair, simple background, shirt, black hair, dress, bow, closed mouth, upper body, hair bow, hairband, blunt bangs, black dress, black eyes, black shirt, looking to the side, bob cut, yellow background, yellow bow, pinafore dress, yellow hairband, Flatline,\ncinematic light, dramatic light, shallow depth of field,  high budget, bokeh, cinemascope, film grain,",
         "CHOOSE"
-      ]
-    },
-    {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [212.72781372070312, 100.62173461914062],
-      "size": [425.27801513671875, 180.6060791015625],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 18
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [22]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.41",
-        "Node name for S&R": "CLIPTextEncode",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "(deformed iris, deformed pupils) noisy, blurry, soft, deformed, ugly, asymmetrical, mutated, malformed, mutilated, poorly lit, bad shadow, draft, censored, jpeg artifacts, glitch, duplicate, morbid, bad photo, bad photography, bad art, low quality, normal quality, lowres, oversaturated, watermark, signature, text, font, username, error, logo, words, letters, digits, autograph, trademark, name, airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur, 3D, 3D Game, 3D Game Scene, 3D Character, bad hands, bad anatomy, bad body, bad face, bad teeth, bad arms, bad legs, deformities\n"
       ]
     }
   ],
@@ -423,8 +423,8 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.3513057093104262,
-      "offset": [171.07267761185608, 173.70131793287248]
+      "scale": 0.7627768444385654,
+      "offset": [1079.970558624432, 324.56678599979506]
     },
     "frontendVersion": "1.28.7",
     "ue_links": [],
