@@ -53,7 +53,6 @@ declare -a LORAS=(
     "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,$LORAS_DIR/Qwen-Image-Lightning-4steps-V2.0.safetensors"
 )
 
-        aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" --header="Authorization: Bearer ${CIVITAI_API_KEY}" "https://civitai.com/api/download/models/128461?type=Model&format=SafeTensor"
 # Personal LoRAs (Google Drive file IDs)
 declare -a PERSONAL_LORAS_GDRIVE_FOLDER=(
     "14rD70432WVhb6rZFcN_TeRzymfze-LiD" # Private GDRIVE Folder ID
