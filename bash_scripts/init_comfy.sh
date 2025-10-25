@@ -53,6 +53,7 @@ declare -a LORAS=(
     "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,$LORAS_DIR/Qwen-Image-Lightning-4steps-V2.0.safetensors"
 )
 
+        aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" --header="Authorization: Bearer ${CIVITAI_API_KEY}" "https://civitai.com/api/download/models/128461?type=Model&format=SafeTensor"
 # Personal LoRAs (Google Drive file IDs)
 declare -a PERSONAL_LORAS_GDRIVE_FOLDER=(
     "14rD70432WVhb6rZFcN_TeRzymfze-LiD" # Private GDRIVE Folder ID
@@ -99,35 +100,16 @@ download_file() {
     mkdir -p "$(dirname "$output_path")"
 
     if [[ "$url" == *"civitai.com"* ]]; then
-        aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" --header="Authorization: Bearer $CIVITAI_API_KEY" "$url"
+        # Use curl for Civitai: handles Authorization and redirects correctly
+        echo "Downloading from Civitai via curl: $url → $output_path"
+        curl -L --retry 3 --retry-all-errors --retry-delay 2 --fail --continue-at - \
+            -H "Authorization: Bearer ${CIVITAI_API_KEY}" \
+            -o "$output_path" \
+            "$url"
     else
+        # Use aria2c for everything else: faster downloads
+        echo "Downloading via aria2c: $url → $output_path"
         aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" "$url"
-    fi
-}
-download_file_curl() {
-    local url="$1"
-    local output_path="$2"
-
-    # Ensure output directory exists
-    mkdir -p "$(dirname "$output_path")"
-
-    # Base curl options
-    local curl_opts=(
-        -L              # follow redirects
-        --retry 5       # retry on failure
-        --retry-all-errors
-        --retry-delay 2
-        --fail
-        --continue-at - # resume if partially downloaded
-        -o "$output_path"
-        -v              # verbose (optional)
-    )
-
-    # Add Civita API header if needed
-    if [[ "$url" == *"civitai.com"* ]] && [ -n "$CIVITAI_API_KEY" ]; then
-        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url"
-    else
-        curl "${curl_opts[@]}" "$url"
     fi
 }
 
