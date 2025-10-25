@@ -7,7 +7,8 @@ WORKSPACE_DIR="/workspace"
 COMFYUI_DIR="$WORKSPACE_DIR/ComfyUI"
 REPO_DIR="$WORKSPACE_DIR/ComfyUIConfig"
 
-
+TEXT_ENCODERS_DIR="$COMFYUI_DIR/models/text_encoders"
+VAE_DIR="$COMFYUI_DIR/models/vae"
 LORAS_DIR="$COMFYUI_DIR/models/loras"
 REPO_WORKFLOWS_DIR="$REPO_DIR/workflows"
 TARGET_WORKFLOWS_DIR="$COMFYUI_DIR/user/default/workflows"
@@ -29,6 +30,18 @@ declare -a MODELS=(
     # "https://civitai.com/api/download/models/2255476?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/cyberrealistic_pony.safetensors"
     "https://civitai.com/api/download/models/1966530?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/jibmix.safetensors"
     "https://civitai.com/api/download/models/1759168?type=Model&format=SafeTensor&size=full&fp=fp16,$COMFYUI_DIR/models/checkpoints/juggernaut_xl.safetensors"
+    "https://civitai.com/api/download/models/1920523?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/epicrealismXL_vxviiCrystalclear.safetensors"
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors,$COMFYUI_DIR/models/checkpoints/qwen_image_fp8_e4m3fn.safetensors"
+
+)
+
+# --- VAEs ---
+declare -a VAES=(
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors,$VAE_DIR/qwen_image_vae.safetensors"
+)
+
+declare -a TEXT_ENCODERS=(
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors,$TEXT_ENCODERS_DIR/qwen_2.5_vl_7b_fp8_scaled.safetensors"
 )
 
 # LoRAs
@@ -108,7 +121,27 @@ for item in "${MODELS[@]}"; do
     curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
 done
 
-# --- 6. Download LoRAs ---
+# --- 6. Download VAEs ---
+echo "Downloading VAEs..."
+for item in "${VAES[@]}"; do
+    IFS=',' read -r url output_path <<< "$item"
+    [ -z "$url" ] && continue
+    mkdir -p "$(dirname "$output_path")"
+    echo "Downloading $url → $output_path"
+    curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+done
+
+# --- 7. Download Text Encoders ---
+echo "Downloading Text Encoders..."
+for item in "${TEXT_ENCODERS[@]}"; do
+    IFS=',' read -r url output_path <<< "$item"
+    [ -z "$url" ] && continue
+    mkdir -p "$(dirname "$output_path")"
+    echo "Downloading $url → $output_path"
+    curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+done
+
+# --- 8. Download LoRAs ---
 echo "Downloading LoRAs..."
 for item in "${LORAS[@]}"; do
     IFS=',' read -r url output_path <<< "$item"
@@ -118,7 +151,7 @@ for item in "${LORAS[@]}"; do
     curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
 done
 
-# --- 7. Download Personal LoRAs ---
+# --- 9. Download Personal LoRAs ---
 echo "Downloading personal LoRAs from Google Drive..."
 if [ ${#PERSONAL_LORAS_GDRIVE_FOLDER[@]} -gt 0 ]; then
     mkdir -p "$LORAS_DIR"
@@ -130,6 +163,6 @@ else
     echo "No personal LoRAs specified."
 fi
 
-# --- 8. Launch ComfyUI ---
+# --- 10. Launch ComfyUI ---
 echo "Setup complete! Launching ComfyUI... 🚀"
 python3 "$COMFYUI_DIR/main.py" --listen 0.0.0.0
