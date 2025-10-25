@@ -122,24 +122,9 @@ curl_opts=(
 #     echo "✅ Workflows copied to $TARGET_WORKFLOWS_DIR"
 # fi
 
-# --- 5. Download Models ---
-echo "Downloading models..."
-for item in "${MODELS[@]}"; do
-    IFS=',' read -r url output_path <<< "$item"
-    [ -z "$url" ] && continue
-    mkdir -p "$(dirname "$output_path")"
-    echo "Downloading $url → $output_path"
-
-    if [[ "$url" == *"civitai.com"* ]]; then
-        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
-    else
-        curl "${curl_opts[@]}" "$url" -o "$output_path"
-    fi
-done
-
-# # --- 6. Download VAEs ---
-# echo "Downloading VAEs..."
-# for item in "${VAES[@]}"; do
+# # --- 5. Download Models ---
+# echo "Downloading models..."
+# for item in "${MODELS[@]}"; do
 #     IFS=',' read -r url output_path <<< "$item"
 #     [ -z "$url" ] && continue
 #     mkdir -p "$(dirname "$output_path")"
@@ -151,6 +136,21 @@ done
 #         curl "${curl_opts[@]}" "$url" -o "$output_path"
 #     fi
 # done
+
+# --- 6. Download VAEs ---
+echo "Downloading VAEs..."
+for item in "${VAES[@]}"; do
+    IFS=',' read -r url output_path <<< "$item"
+    [ -z "$url" ] && continue
+    mkdir -p "$(dirname "$output_path")"
+    echo "Downloading $url → $output_path"
+
+    if [[ "$url" == *"civitai.com"* ]]; then
+        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+    else
+        curl "${curl_opts[@]}" "$url" -o "$output_path"
+    fi
+done
 
 # # --- 7. Download Text Encoders ---
 # echo "Downloading Text Encoders..."
