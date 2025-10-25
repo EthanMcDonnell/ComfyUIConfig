@@ -162,11 +162,7 @@ for item in "${MODELS[@]}"; do
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
 
-    if [[ "$url" == *"civitai.com"* ]]; then
-        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
-    else
-        curl "${curl_opts[@]}" "$url" -o "$output_path"
-    fi
+    download_file "$url" "$output_path"
 done
 
 # --- 6. Download VAEs ---
