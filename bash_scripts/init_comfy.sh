@@ -89,15 +89,44 @@ cd "$COMFYUI_DIR"
 echo "Installing ComfyUI Python dependencies..."
 pip install -r "$COMFYUI_DIR/requirements.txt"
 
-# Common curl options
-curl_opts=(
-    -L -v
-    --retry 5
-    --retry-all-errors
-    --retry-delay 2
-    --fail
-    --continue-at -
-)
+download_file() {
+    local url="$1"
+    local output_path="$2"
+    mkdir -p "$(dirname "$output_path")"
+
+    if [[ "$url" == *"civitai.com"* ]]; then
+        aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" --header="Authorization: Bearer $CIVITAI_API_KEY" "$url"
+    else
+        aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" "$url"
+    fi
+}
+
+download_file_curl() {
+    local url="$1"
+    local output_path="$2"
+
+    # Ensure output directory exists
+    mkdir -p "$(dirname "$output_path")"
+
+    # Base curl options
+    local curl_opts=(
+        -L              # follow redirects
+        --retry 5       # retry on failure
+        --retry-all-errors
+        --retry-delay 2
+        --fail
+        --continue-at - # resume if partially downloaded
+        -o "$output_path"
+        -v              # verbose (optional)
+    )
+
+    # Add Civita API header if needed
+    if [[ "$url" == *"civitai.com"* ]] && [ -n "$CIVITAI_API_KEY" ]; then
+        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url"
+    else
+        curl "${curl_opts[@]}" "$url"
+    fi
+}
 
 
 # --- 3. Install Custom Nodes ---
@@ -144,12 +173,7 @@ for item in "${VAES[@]}"; do
     [ -z "$url" ] && continue
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
-
-    if [[ "$url" == *"civitai.com"* ]]; then
-        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
-    else
-        curl "${curl_opts[@]}" "$url" -o "$output_path"
-    fi
+    download_file "$url" "$output_path"
 done
 
 # --- 7. Download Text Encoders ---
@@ -160,11 +184,7 @@ for item in "${TEXT_ENCODERS[@]}"; do
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
 
-    if [[ "$url" == *"civitai.com"* ]]; then
-        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
-    else
-        curl "${curl_opts[@]}" "$url" -o "$output_path"
-    fi
+    download_file "$url" "$output_path"
 done
 
 # --- 8. Download LoRAs ---
@@ -174,12 +194,7 @@ for item in "${LORAS[@]}"; do
     [ -z "$url" ] && continue
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
-
-    if [[ "$url" == *"civitai.com"* ]]; then
-        curl "${curl_opts[@]}" -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
-    else
-        curl "${curl_opts[@]}" "$url" -o "$output_path"
-    fi
+    download_file "$url" "$output_path"
 done
 
 # --- 9. Download Personal LoRAs ---
