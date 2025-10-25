@@ -118,7 +118,12 @@ for item in "${MODELS[@]}"; do
     [ -z "$url" ] && continue
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
-    curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+
+    if [[ "$url" == *"civitai.com"* ]]; then
+        curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+    else
+        curl -L "$url" -o "$output_path"
+    fi
 done
 
 # --- 6. Download VAEs ---
@@ -128,7 +133,12 @@ for item in "${VAES[@]}"; do
     [ -z "$url" ] && continue
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
-    curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+
+    if [[ "$url" == *"civitai.com"* ]]; then
+        curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+    else
+        curl -L "$url" -o "$output_path"
+    fi
 done
 
 # --- 7. Download Text Encoders ---
@@ -138,7 +148,12 @@ for item in "${TEXT_ENCODERS[@]}"; do
     [ -z "$url" ] && continue
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
-    curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+
+    if [[ "$url" == *"civitai.com"* ]]; then
+        curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+    else
+        curl -L "$url" -o "$output_path"
+    fi
 done
 
 # --- 8. Download LoRAs ---
@@ -148,7 +163,12 @@ for item in "${LORAS[@]}"; do
     [ -z "$url" ] && continue
     mkdir -p "$(dirname "$output_path")"
     echo "Downloading $url → $output_path"
-    curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+
+    if [[ "$url" == *"civitai.com"* ]]; then
+        curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+    else
+        curl -L "$url" -o "$output_path"
+    fi
 done
 
 # --- 9. Download Personal LoRAs ---
