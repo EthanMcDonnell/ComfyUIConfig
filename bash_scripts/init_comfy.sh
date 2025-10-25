@@ -76,18 +76,18 @@ if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
 fi
 
 
-echo "Installing Repo Dependencies..."
-pip install -r "$REPO_DIR/requirements.txt"
+# echo "Installing Repo Dependencies..."
+# pip install -r "$REPO_DIR/requirements.txt"
 
 
-# --- 1. Install ComfyUI ---
-echo "Cloning ComfyUI repository..."
-git clone https://github.com/comfyanonymous/ComfyUI.git "$COMFYUI_DIR"
-cd "$COMFYUI_DIR"
+# # --- 1. Install ComfyUI ---
+# echo "Cloning ComfyUI repository..."
+# git clone https://github.com/comfyanonymous/ComfyUI.git "$COMFYUI_DIR"
+# cd "$COMFYUI_DIR"
 
-# --- 2. Install Dependencies ---
-echo "Installing ComfyUI Python dependencies..."
-pip install -r "$COMFYUI_DIR/requirements.txt"
+# # --- 2. Install Dependencies ---
+# echo "Installing ComfyUI Python dependencies..."
+# pip install -r "$COMFYUI_DIR/requirements.txt"
 
 # # --- 3. Install Custom Nodes ---
 # echo "Installing custom nodes..."
