@@ -120,9 +120,9 @@ for item in "${MODELS[@]}"; do
     echo "Downloading $url → $output_path"
 
     if [[ "$url" == *"civitai.com"* ]]; then
-        curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+        curl -L --retry 5 --retry-all-errors --retry-delay 2 --fail --continue-at - -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
     else
-        curl -L "$url" -o "$output_path"
+        curl -L --retry 5 --retry-all-errors --retry-delay 2 --fail --continue-at - "$url" -o "$output_path"
     fi
 done
 
@@ -137,7 +137,7 @@ for item in "${VAES[@]}"; do
     if [[ "$url" == *"civitai.com"* ]]; then
         curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
     else
-        curl -L "$url" -o "$output_path"
+        curl -L --retry 5 --retry-all-errors --retry-delay 2 --fail --continue-at - "$url" -o "$output_path"
     fi
 done
 
@@ -150,9 +150,9 @@ for item in "${TEXT_ENCODERS[@]}"; do
     echo "Downloading $url → $output_path"
 
     if [[ "$url" == *"civitai.com"* ]]; then
-        curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+        curl -L --retry 5 --retry-all-errors --retry-delay 2 --fail --continue-at - -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
     else
-        curl -L "$url" -o "$output_path"
+        curl -L --retry 5 --retry-all-errors --retry-delay 2 --fail --continue-at - "$url" -o "$output_path"
     fi
 done
 
@@ -165,9 +165,9 @@ for item in "${LORAS[@]}"; do
     echo "Downloading $url → $output_path"
 
     if [[ "$url" == *"civitai.com"* ]]; then
-        curl -L -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
+        curl -L --retry 5 --retry-all-errors --retry-delay 2 --fail --continue-at - -H "Authorization: Bearer $CIVITAI_API_KEY" "$url" -o "$output_path"
     else
-        curl -L "$url" -o "$output_path"
+        curl -L --retry 5 --retry-all-errors --retry-delay 2 --fail --continue-at - "$url" -o "$output_path"
     fi
 done
 
