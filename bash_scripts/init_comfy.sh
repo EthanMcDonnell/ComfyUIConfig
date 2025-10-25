@@ -50,6 +50,7 @@ declare -a TEXT_ENCODERS=(
 declare -a LORAS=(
     "https://civitai.com/api/download/models/128461?type=Model&format=SafeTensor,$LORAS_DIR/PerfectEyesXL.safetensors"
     "https://civitai.com/api/download/models/135867?type=Model&format=SafeTensor,$LORAS_DIR/add_detail_xl.safetensors"
+    "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,$LORAS_DIR/Qwen-Image-Lightning-4steps-V2.0.safetensors"
 )
 
 # Personal LoRAs (Google Drive file IDs)
@@ -100,7 +101,6 @@ download_file() {
         aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" "$url"
     fi
 }
-
 download_file_curl() {
     local url="$1"
     local output_path="$2"
@@ -211,4 +211,5 @@ fi
 
 # --- 10. Launch ComfyUI ---
 echo "Setup complete! Launching ComfyUI... 🚀"
+#python3 "ComfyUI/main.py" --listen
 python3 "$COMFYUI_DIR/main.py" --listen 0.0.0.0

@@ -1,87 +1,13 @@
 {
-  "id": "91f6bbe2-ed41-4fd6-bac7-71d5b5864ecb",
+  "id": "0de6c257-d141-4418-8acf-edee3afa3fd3",
   "revision": 0,
-  "last_node_id": 77,
-  "last_link_id": 138,
+  "last_node_id": 19,
+  "last_link_id": 19,
   "nodes": [
     {
-      "id": 58,
-      "type": "EmptySD3LatentImage",
-      "pos": [50, 510],
-      "size": [270, 106],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": []
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "EmptySD3LatentImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [1328, 1328, 1]
-    },
-    {
-      "id": 6,
+      "id": 3,
       "type": "CLIPTextEncode",
-      "pos": [390, 240],
-      "size": [422.84503173828125, 164.31304931640625],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 74
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [46]
-        }
-      ],
-      "title": "CLIP Text Encode (Positive Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "CLIPTextEncode",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "\"A vibrant, warm neon-lit street scene in Hong Kong at the afternoon, with a mix of colorful Chinese and English signs glowing brightly. The atmosphere is lively, cinematic, and rain-washed with reflections on the pavement. The colors are vivid, full of pink, blue, red, and green hues. Crowded buildings with overlapping neon signs. 1980s Hong Kong style. Signs include:\n\"龍鳳冰室\" \"金華燒臘\" \"HAPPY HAIR\" \"鴻運茶餐廳\" \"EASY BAR\" \"永發魚蛋粉\" \"添記粥麵\" \"SUNSHINE MOTEL\" \"美都餐室\" \"富記糖水\" \"太平館\" \"雅芳髮型屋\" \"STAR KTV\" \"銀河娛樂城\" \"百樂門舞廳\" \"BUBBLE CAFE\" \"萬豪麻雀館\" \"CITY LIGHTS BAR\" \"瑞祥香燭莊\" \"文記文具\" \"GOLDEN JADE HOTEL\" \"LOVELY BEAUTY\" \"合興百貨\" \"興旺電器\" And the background is warm yellow street and with all stores' lights on."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [390, 440],
+      "pos": [1761, 870],
       "size": [425.27801513671875, 180.6060791015625],
       "flags": {},
       "order": 11,
@@ -90,7 +16,7 @@
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 75
+          "link": 2
         }
       ],
       "outputs": [
@@ -98,7 +24,7 @@
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "slot_index": 0,
-          "links": [52]
+          "links": [10]
         }
       ],
       "title": "CLIP Text Encode (Negative Prompt)",
@@ -120,12 +46,12 @@
       "bgcolor": "#533"
     },
     {
-      "id": 69,
+      "id": 4,
       "type": "MarkdownNote",
-      "pos": [-540, -220],
+      "pos": [831, 210],
       "size": [390, 180],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -140,12 +66,12 @@
       "bgcolor": "#653"
     },
     {
-      "id": 71,
+      "id": 5,
       "type": "Note",
-      "pos": [850, -120],
+      "pos": [2221, 310],
       "size": [300, 88],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -157,12 +83,12 @@
       "bgcolor": "#653"
     },
     {
-      "id": 70,
+      "id": 6,
       "type": "Note",
-      "pos": [850, 910],
+      "pos": [2221, 1340],
       "size": [310, 120],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -175,12 +101,12 @@
       "bgcolor": "#653"
     },
     {
-      "id": 67,
+      "id": 7,
       "type": "MarkdownNote",
-      "pos": [-540, 10],
+      "pos": [831, 440],
       "size": [540, 630],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -195,12 +121,12 @@
       "bgcolor": "#653"
     },
     {
-      "id": 38,
+      "id": 8,
       "type": "CLIPLoader",
-      "pos": [20, 190],
+      "pos": [1391, 620],
       "size": [330, 110],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -208,7 +134,7 @@
           "name": "CLIP",
           "type": "CLIP",
           "slot_index": 0,
-          "links": [74, 75]
+          "links": [1, 2]
         }
       ],
       "properties": {
@@ -238,12 +164,12 @@
       ]
     },
     {
-      "id": 37,
+      "id": 9,
       "type": "UNETLoader",
-      "pos": [20, 50],
+      "pos": [1391, 480],
       "size": [330, 90],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -251,7 +177,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "slot_index": 0,
-          "links": [129]
+          "links": [3]
         }
       ],
       "properties": {
@@ -277,12 +203,12 @@
       "widgets_values": ["qwen_image_fp8_e4m3fn.safetensors", "default"]
     },
     {
-      "id": 74,
+      "id": 10,
       "type": "MarkdownNote",
-      "pos": [803.3704662156391, 771.6282778474097],
+      "pos": [1816.210466215639, 1246.398277847411],
       "size": [310, 210],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -295,9 +221,9 @@
       "bgcolor": "#653"
     },
     {
-      "id": 73,
+      "id": 11,
       "type": "LoraLoaderModelOnly",
-      "pos": [430.2253238677032, 54.706552278260524],
+      "pos": [1804.225323867703, 486.70655227826046],
       "size": [270, 82],
       "flags": {},
       "order": 12,
@@ -306,14 +232,14 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 129
+          "link": 3
         }
       ],
       "outputs": [
         {
           "name": "MODEL",
           "type": "MODEL",
-          "links": [131]
+          "links": [13]
         }
       ],
       "properties": {
@@ -331,9 +257,172 @@
       "widgets_values": ["Qwen-Image-Lightning-8steps-V1.0.safetensors", 1]
     },
     {
-      "id": 75,
+      "id": 18,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [2222.1920000000005, 443.9930000000002],
+      "size": [324.82119140625, 118],
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 13
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [14]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
+        "Show Strengths": "Single Strength",
+        "aux_id": "rgthree/rgthree-comfy"
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {},
+        ""
+      ]
+    },
+    {
+      "id": 1,
+      "type": "EmptySD3LatentImage",
+      "pos": [1421, 940],
+      "size": [270, 106],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [17]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "EmptySD3LatentImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [1328, 1328, 1]
+    },
+    {
+      "id": 14,
+      "type": "VAEDecode",
+      "pos": [2744.720377766702, 458.52932637326086],
+      "size": [210, 46],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 4
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [12]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 15,
+      "type": "VAEEncode",
+      "pos": [2571.031544626055, 454.84156329256956],
+      "size": [140, 46],
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.66",
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
       "type": "LoadImage",
-      "pos": [893.3938850536232, 299.0819334739851],
+      "pos": [2267.0338850536227, 777.6519334739855],
       "size": [274.080078125, 314.00000000000006],
       "flags": {},
       "order": 8,
@@ -343,7 +432,7 @@
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": [134]
+          "links": [18]
         },
         {
           "name": "MASK",
@@ -359,9 +448,9 @@
       "widgets_values": ["example.png", "image"]
     },
     {
-      "id": 39,
+      "id": 13,
       "type": "VAELoader",
-      "pos": [20, 340],
+      "pos": [1391, 770],
       "size": [330, 60],
       "flags": {},
       "order": 9,
@@ -372,7 +461,7 @@
           "name": "VAE",
           "type": "VAE",
           "slot_index": 0,
-          "links": [136, 138]
+          "links": [5, 19]
         }
       ],
       "properties": {
@@ -398,39 +487,33 @@
       "widgets_values": ["qwen_image_vae.safetensors"]
     },
     {
-      "id": 8,
-      "type": "VAEDecode",
-      "pos": [1377.713377766702, 25.867326373260536],
-      "size": [210, 46],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 17,
+      "id": 2,
+      "type": "CLIPTextEncode",
+      "pos": [1761, 670],
+      "size": [422.84503173828125, 164.31304931640625],
+      "flags": {},
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 128
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 138
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1
         }
       ],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
           "slot_index": 0,
-          "links": [110]
+          "links": [9]
         }
       ],
+      "title": "CLIP Text Encode (Positive Prompt)",
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.3.48",
-        "Node name for S&R": "VAEDecode",
+        "Node name for S&R": "CLIPTextEncode",
         "enableTabs": false,
         "tabWidth": 65,
         "tabXOffset": 10,
@@ -440,45 +523,16 @@
         "secondTabWidth": 65,
         "widget_ue_connectable": {}
       },
-      "widgets_values": []
+      "widgets_values": [
+        "portrait, masterpiece, 4k, ray tracing, intricate details, highly-detailed, hyper-realistic, 8k RAW Editorial Photo.1girl, solo, blush, short hair, simple background, shirt, black hair, dress, bow, closed mouth, upper body, hair bow, hairband, blunt bangs, black dress, black eyes, black shirt, looking to the side, bob cut, yellow background, yellow bow, pinafore dress, yellow hairband, Flatline,cinematic light, dramatic light, shallow depth of field,  high budget, bokeh, cinemascope, film grain,"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
-      "id": 77,
-      "type": "VAEEncode",
-      "pos": [1234.6375446260536, 26.172563292568793],
-      "size": [140, 46],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "pixels",
-          "type": "IMAGE",
-          "link": 134
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 136
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [137]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.66",
-        "Node name for S&R": "VAEEncode"
-      }
-    },
-    {
-      "id": 3,
+      "id": 16,
       "type": "KSampler",
-      "pos": [1259.2888549312793, 131.55081127809837],
+      "pos": [2620.5778549312804, 650.5298112780985],
       "size": [300, 474],
       "flags": {},
       "order": 16,
@@ -487,22 +541,22 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 133
+          "link": 8
         },
         {
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 46
+          "link": 9
         },
         {
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 52
+          "link": 10
         },
         {
           "name": "latent_image",
           "type": "LATENT",
-          "link": 137
+          "link": 17
         }
       ],
       "outputs": [
@@ -510,7 +564,7 @@
           "name": "LATENT",
           "type": "LATENT",
           "slot_index": 0,
-          "links": [128]
+          "links": [4]
         }
       ],
       "properties": {
@@ -527,9 +581,9 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        1125488487853216,
+        222518378103538,
         "randomize",
-        20,
+        40,
         2.5,
         "euler",
         "simple",
@@ -537,9 +591,9 @@
       ]
     },
     {
-      "id": 60,
+      "id": 17,
       "type": "SaveImage",
-      "pos": [1620.9156493903167, 20.685204961855785],
+      "pos": [2991.9156493903165, 450.6852049618558],
       "size": [490, 600],
       "flags": {},
       "order": 18,
@@ -548,7 +602,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 110
+          "link": 12
         }
       ],
       "outputs": [],
@@ -568,61 +622,9 @@
       "widgets_values": ["ComfyUI"]
     },
     {
-      "id": 76,
-      "type": "Power Lora Loader (rgthree)",
-      "pos": [857.8296632381242, 14.791769136031398],
-      "size": [324.82119140625, 118],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "dir": 3,
-          "name": "model",
-          "type": "MODEL",
-          "link": 131
-        },
-        {
-          "dir": 3,
-          "name": "clip",
-          "type": "CLIP",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "MODEL",
-          "shape": 3,
-          "type": "MODEL",
-          "links": [132]
-        },
-        {
-          "dir": 4,
-          "name": "CLIP",
-          "shape": 3,
-          "type": "CLIP",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
-        "Show Strengths": "Single Strength"
-      },
-      "widgets_values": [
-        {},
-        {
-          "type": "PowerLoraLoaderHeaderWidget"
-        },
-        {},
-        ""
-      ]
-    },
-    {
-      "id": 66,
+      "id": 19,
       "type": "ModelSamplingAuraFlow",
-      "pos": [873.207881063748, 183.35810101208583],
+      "pos": [2280.1448810637457, 637.3161010120858],
       "size": [300, 58],
       "flags": {},
       "order": 15,
@@ -631,14 +633,14 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 132
+          "link": 14
         }
       ],
       "outputs": [
         {
           "name": "MODEL",
           "type": "MODEL",
-          "links": [133]
+          "links": [8]
         }
       ],
       "properties": {
@@ -654,30 +656,30 @@
         "secondTabWidth": 65,
         "widget_ue_connectable": {}
       },
-      "widgets_values": [3.1000000000000005]
+      "widgets_values": [1]
     }
   ],
   "links": [
-    [46, 6, 0, 3, 1, "CONDITIONING"],
-    [52, 7, 0, 3, 2, "CONDITIONING"],
-    [74, 38, 0, 6, 0, "CLIP"],
-    [75, 38, 0, 7, 0, "CLIP"],
-    [110, 8, 0, 60, 0, "IMAGE"],
-    [128, 3, 0, 8, 0, "LATENT"],
-    [129, 37, 0, 73, 0, "MODEL"],
-    [131, 73, 0, 76, 0, "MODEL"],
-    [132, 76, 0, 66, 0, "MODEL"],
-    [133, 66, 0, 3, 0, "MODEL"],
-    [134, 75, 0, 77, 0, "IMAGE"],
-    [136, 39, 0, 77, 1, "VAE"],
-    [137, 77, 0, 3, 3, "LATENT"],
-    [138, 39, 0, 8, 1, "VAE"]
+    [1, 8, 0, 2, 0, "CLIP"],
+    [2, 8, 0, 3, 0, "CLIP"],
+    [3, 9, 0, 11, 0, "MODEL"],
+    [4, 16, 0, 14, 0, "LATENT"],
+    [5, 13, 0, 14, 1, "VAE"],
+    [8, 19, 0, 16, 0, "MODEL"],
+    [9, 2, 0, 16, 1, "CONDITIONING"],
+    [10, 3, 0, 16, 2, "CONDITIONING"],
+    [12, 14, 0, 17, 0, "IMAGE"],
+    [13, 11, 0, 18, 0, "MODEL"],
+    [14, 18, 0, 19, 0, "MODEL"],
+    [17, 1, 0, 16, 3, "LATENT"],
+    [18, 12, 0, 15, 0, "IMAGE"],
+    [19, 13, 0, 15, 1, "VAE"]
   ],
   "groups": [
     {
       "id": 1,
       "title": "Step1 - Load models",
-      "bounding": [10, -20, 350, 433.6000061035156],
+      "bounding": [1381, 410, 350, 433.6000061035156],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
@@ -685,7 +687,7 @@
     {
       "id": 2,
       "title": "Step2 - Image size",
-      "bounding": [10, 430, 350, 210],
+      "bounding": [1381, 860, 350, 210],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
@@ -693,7 +695,7 @@
     {
       "id": 3,
       "title": "Step3 - Prompt",
-      "bounding": [380, 160, 450, 470],
+      "bounding": [1751, 590, 450, 470],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
@@ -701,7 +703,7 @@
     {
       "id": 4,
       "title": "Lightx2v 8steps LoRA",
-      "bounding": [380, -20, 450, 170],
+      "bounding": [1751, 410, 450, 170],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
@@ -710,16 +712,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7077059820629805,
-      "offset": [83.70654691360197, 194.257960051682]
+      "scale": 0.8264462809917354,
+      "offset": [-1220.4722036793748, -260.51467673877175]
     },
-    "frontendVersion": "1.28.7",
-    "ue_links": [],
-    "links_added_by_ue": [],
-    "VHS_latentpreview": false,
-    "VHS_latentpreviewrate": 0,
-    "VHS_MetadataImage": true,
-    "VHS_KeepIntermediate": true
+    "frontendVersion": "1.28.7"
   },
   "version": 0.4
 }
