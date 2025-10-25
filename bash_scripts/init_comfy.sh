@@ -90,6 +90,9 @@ cd "$COMFYUI_DIR"
 echo "Installing ComfyUI Python dependencies..."
 pip install -r "$COMFYUI_DIR/requirements.txt"
 
+sudo apt update
+sudo apt install aria2 -y
+
 download_file() {
     local url="$1"
     local output_path="$2"
