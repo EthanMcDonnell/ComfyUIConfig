@@ -7,14 +7,8 @@
     {
       "id": 37,
       "type": "UNETLoader",
-      "pos": [
-        -1666.994140625,
-        -486.8506774902344
-      ],
-      "size": [
-        340,
-        82
-      ],
+      "pos": [-1666.994140625, -486.8506774902344],
+      "size": [340, 82],
       "flags": {},
       "order": 0,
       "mode": 0,
@@ -24,9 +18,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "slot_index": 0,
-          "links": [
-            221
-          ]
+          "links": [221]
         }
       ],
       "properties": {
@@ -60,14 +52,8 @@
     {
       "id": 206,
       "type": "Text Multiline",
-      "pos": [
-        -1659.053466796875,
-        828.7407836914062
-      ],
-      "size": [
-        346.8598327636719,
-        88
-      ],
+      "pos": [-1659.053466796875, 828.7407836914062],
+      "size": [346.8598327636719, 88],
       "flags": {},
       "order": 1,
       "mode": 0,
@@ -76,15 +62,14 @@
         {
           "name": "STRING",
           "type": "STRING",
-          "links": [
-            709
-          ]
+          "links": [709]
         }
       ],
       "properties": {
-        "cnr_id": "was-ns",
+        "aux_id": "ltdrdata/was-node-suite-comfyui",
         "ver": "ab9d53c71a83a33d9725a48b570a2f74056e04e2",
         "Node name for S&R": "Text Multiline",
+        "cnr_id": "was-ns",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -92,80 +77,13 @@
           }
         }
       },
-      "widgets_values": [
-        "Z:\\COMFY10\\COMFY11\\ComfyUI\\output\\models"
-      ]
-    },
-    {
-      "id": 179,
-      "type": "CR Prompt List",
-      "pos": [
-        -2655.92236328125,
-        -518.659423828125
-      ],
-      "size": [
-        905.6195678710938,
-        481.6252136230469
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "prompt",
-          "shape": 6,
-          "type": "STRING",
-          "links": [
-            408
-          ]
-        },
-        {
-          "name": "body_text",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        },
-        {
-          "name": "show_help",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
-        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
-        "Node name for S&R": "CR Prompt List",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {
-            "prepend_text": true,
-            "multiline_text": true,
-            "append_text": true,
-            "start_index": true,
-            "max_rows": true
-          }
-        }
-      },
-      "widgets_values": [
-        "",
-        "Photorealistic profile view of the subject's face from the left, against a plain white wall background.\nHyperrealistic profile view of the subject's face from the right, against a clean white wall.\nDSLR photograph, three-quarter view of the subject's face, looking towards the camera, against a plain white wall.\nUltra-realistic three-quarter view of the subject, looking slightly away from the camera, against a seamless white wall.\nLow-angle shot, looking up at the subject's face with a neutral expression, against a plain white wall.\nHigh-angle shot, looking down at the subject's face, against a stark white wall.\nPhotorealistic headshot with the subject's head tilted slightly to the side, looking directly at the camera, against a white wall.\nHyperrealistic shot of the subject looking over their shoulder at the camera, against a white wall background.\nDramatic Rembrandt lighting portrait, with one side of the subject's face illuminated, from a three-quarter angle against a white wall.\nExtreme close-up shot from a slight angle, focusing on the subject's facial features, against a white wall.\nPhotorealistic headshot with a slight Dutch angle, where the camera is tilted, against a plain white wall background.\nDSLR photo of the subject looking up and away, past the camera, in a three-quarter turn against a white wall.\nUltra-realistic shot of the subject looking down and to the side, with their face angled away from the camera, against a white wall.\nHyperrealistic shot from behind the subject, as they turn their head to the side to look towards the camera, against a white wall.\nPhotorealistic portrait from a 45-degree angle, showing the face and shoulders, against a seamless white wall.\nMacro shot from a three-quarter perspective, with a shallow depth of field focusing sharply on the subject's eyes, against a white wall.\nWorm's-eye view looking directly up at the subject's chin and face, against a plain white wall.\nBird's-eye view looking directly down on the top of the subject's head as they look up towards the camera, against a white wall.\nPhotorealistic shot of the subject with their head tilted back, exposing the neck and looking upwards, against a white wall.\nRealistic headshot with the subject's chin tucked down, looking up at the camera from under their brow, against a white wall.",
-        "",
-        0,
-        1000
-      ]
+      "widgets_values": ["Z:\\COMFY10\\COMFY11\\ComfyUI\\output\\models"]
     },
     {
       "id": 174,
       "type": "TextEncodeQwenImageEditPlus",
-      "pos": [
-        -1642.7396240234375,
-        66.90589141845703
-      ],
-      "size": [
-        400,
-        200
-      ],
+      "pos": [-1642.7396240234375, 66.90589141845703],
+      "size": [400, 200],
       "flags": {},
       "order": 21,
       "mode": 0,
@@ -212,9 +130,7 @@
         {
           "name": "CONDITIONING",
           "type": "CONDITIONING",
-          "links": [
-            394
-          ]
+          "links": [394]
         }
       ],
       "properties": {
@@ -235,14 +151,8 @@
     {
       "id": 3,
       "type": "KSampler",
-      "pos": [
-        -1187.7178955078125,
-        68.87885284423828
-      ],
-      "size": [
-        300,
-        474
-      ],
+      "pos": [-1187.7178955078125, 68.87885284423828],
+      "size": [300, 474],
       "flags": {},
       "order": 24,
       "mode": 0,
@@ -273,9 +183,7 @@
           "name": "LATENT",
           "type": "LATENT",
           "slot_index": 0,
-          "links": [
-            128
-          ]
+          "links": [128]
         }
       ],
       "properties": {
@@ -294,149 +202,13 @@
           "widget_ue_connectable": {}
         }
       },
-      "widgets_values": [
-        884578149671194,
-        "fixed",
-        4,
-        1,
-        "euler",
-        "beta",
-        1
-      ]
-    },
-    {
-      "id": 89,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        -1262.2181396484375,
-        -464.6015319824219
-      ],
-      "size": [
-        490,
-        82
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 221
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            343
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.50",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "models": [
-          {
-            "name": "Qwen-Image-Lightning-4steps-V1.0.safetensors",
-            "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V1.0.safetensors",
-            "directory": "loras"
-          }
-        ],
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {
-            "lora_name": true,
-            "strength_model": true
-          }
-        }
-      },
-      "widgets_values": [
-        "Qwen-Image-Lightning-4steps-V1.0.safetensors",
-        1
-      ]
-    },
-    {
-      "id": 155,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        -1257.8590087890625,
-        -321.87640380859375
-      ],
-      "size": [
-        490,
-        82
-      ],
-      "flags": {},
-      "order": 19,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 343
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            344
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.50",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "models": [
-          {
-            "name": "Qwen-Image-Lightning-4steps-V1.0.safetensors",
-            "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V1.0.safetensors",
-            "directory": "loras"
-          }
-        ],
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {
-            "lora_name": true,
-            "strength_model": true
-          }
-        }
-      },
-      "widgets_values": [
-        "lenovoqwen.safetensors",
-        1
-      ]
+      "widgets_values": [884578149671194, "fixed", 4, 1, "euler", "beta", 1]
     },
     {
       "id": 111,
       "type": "CLIPTextEncode",
-      "pos": [
-        -1632.36474609375,
-        319.180419921875
-      ],
-      "size": [
-        360,
-        130
-      ],
+      "pos": [-1632.36474609375, 319.180419921875],
+      "size": [360, 130],
       "flags": {
         "collapsed": false
       },
@@ -455,27 +227,8 @@
           "type": "CONDITIONING",
           "slot_index": 0,
           "links": [
-            1790,
-            1789,
-            1788,
-            1787,
-            1786,
-            1785,
-            1784,
-            1783,
-            1782,
-            1781,
-            1780,
-            1779,
-            1778,
-            1777,
-            1776,
-            1775,
-            1774,
-            1773,
-            1772,
-            1771,
-            1829
+            1790, 1789, 1788, 1787, 1786, 1785, 1784, 1783, 1782, 1781, 1780,
+            1779, 1778, 1777, 1776, 1775, 1774, 1773, 1772, 1771, 1829
           ]
         }
       ],
@@ -496,27 +249,19 @@
           "widget_ue_connectable": {}
         }
       },
-      "widgets_values": [
-        ""
-      ],
+      "widgets_values": [""],
       "color": "#232",
       "bgcolor": "#353"
     },
     {
       "id": 638,
       "type": "Label (rgthree)",
-      "pos": [
-        -3216.6279296875,
-        -267.0207214355469
-      ],
-      "size": [
-        559.8499755859375,
-        50
-      ],
+      "pos": [-3216.6279296875, -267.0207214355469],
+      "size": [559.9853515625, 50],
       "flags": {
         "allow_interaction": true
       },
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -540,14 +285,8 @@
     {
       "id": 405,
       "type": "StringConcatenate",
-      "pos": [
-        -1228.03515625,
-        836.35986328125
-      ],
-      "size": [
-        400,
-        200
-      ],
+      "pos": [-1228.03515625, 836.35986328125],
+      "size": [400, 200],
       "flags": {},
       "order": 16,
       "mode": 0,
@@ -573,9 +312,7 @@
         {
           "name": "STRING",
           "type": "STRING",
-          "links": [
-            711
-          ]
+          "links": [711]
         }
       ],
       "properties": {
@@ -591,27 +328,17 @@
           }
         }
       },
-      "widgets_values": [
-        "",
-        "",
-        "\\"
-      ]
+      "widgets_values": ["", "", "\\"]
     },
     {
       "id": 637,
       "type": "Label (rgthree)",
-      "pos": [
-        -3216.722412109375,
-        386.5531005859375
-      ],
-      "size": [
-        501.6166687011719,
-        50
-      ],
+      "pos": [-3216.722412109375, 386.5531005859375],
+      "size": [501.7333984375, 50],
       "flags": {
         "allow_interaction": true
       },
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -635,33 +362,24 @@
     {
       "id": 406,
       "type": "Text Multiline",
-      "pos": [
-        -1657.1300048828125,
-        959.8787841796875
-      ],
-      "size": [
-        346.8598327636719,
-        88
-      ],
+      "pos": [-1657.1300048828125, 959.8787841796875],
+      "size": [346.8598327636719, 88],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "STRING",
           "type": "STRING",
-          "links": [
-            710,
-            712,
-            713
-          ]
+          "links": [710, 712, 713]
         }
       ],
       "properties": {
-        "cnr_id": "was-ns",
+        "aux_id": "ltdrdata/was-node-suite-comfyui",
         "ver": "ab9d53c71a83a33d9725a48b570a2f74056e04e2",
         "Node name for S&R": "Text Multiline",
+        "cnr_id": "was-ns",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -669,25 +387,17 @@
           }
         }
       },
-      "widgets_values": [
-        "Chl0e\n"
-      ]
+      "widgets_values": ["Chl0e\n"]
     },
     {
       "id": 641,
       "type": "Label (rgthree)",
-      "pos": [
-        -1887.6248779296875,
-        993.4441528320312
-      ],
-      "size": [
-        200.8000030517578,
-        25
-      ],
+      "pos": [-1887.6248779296875, 993.4441528320312],
+      "size": [200.79345703125, 25],
       "flags": {
         "allow_interaction": true
       },
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -711,14 +421,8 @@
     {
       "id": 181,
       "type": "SaveImageKJ",
-      "pos": [
-        -749.95556640625,
-        851.8121337890625
-      ],
-      "size": [
-        282.751953125,
-        126
-      ],
+      "pos": [-749.95556640625, 851.8121337890625],
+      "size": [282.751953125, 126],
       "flags": {},
       "order": 27,
       "mode": 0,
@@ -759,9 +463,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "1.1.3",
         "Node name for S&R": "SaveImageKJ",
+        "cnr_id": "comfyui-kjnodes",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -771,27 +476,17 @@
           }
         }
       },
-      "widgets_values": [
-        "ComfyUI",
-        "output",
-        ".txt"
-      ]
+      "widgets_values": ["ComfyUI", "output", ".txt"]
     },
     {
       "id": 642,
       "type": "Label (rgthree)",
-      "pos": [
-        -1839.1943359375,
-        874.3569946289062
-      ],
-      "size": [
-        156.3333282470703,
-        25
-      ],
+      "pos": [-1839.1943359375, 874.3569946289062],
+      "size": [156.35986328125, 25],
       "flags": {
         "allow_interaction": true
       },
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -815,14 +510,8 @@
     {
       "id": 126,
       "type": "ImageScaleToTotalPixels",
-      "pos": [
-        -1621.4403076171875,
-        539.2855834960938
-      ],
-      "size": [
-        270,
-        82
-      ],
+      "pos": [-1621.4403076171875, 539.2855834960938],
+      "size": [270, 82],
       "flags": {
         "collapsed": true
       },
@@ -839,10 +528,7 @@
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": [
-            399,
-            406
-          ]
+          "links": [399, 406]
         }
       ],
       "properties": {
@@ -857,22 +543,13 @@
           }
         }
       },
-      "widgets_values": [
-        "lanczos",
-        1.0000000000000002
-      ]
+      "widgets_values": ["lanczos", 1.0000000000000002]
     },
     {
       "id": 177,
       "type": "GetImageSize",
-      "pos": [
-        -1615.1552734375,
-        591.4926147460938
-      ],
-      "size": [
-        231.37278747558594,
-        136
-      ],
+      "pos": [-1615.1552734375, 591.4926147460938],
+      "size": [231.37278747558594, 136],
       "flags": {
         "collapsed": true
       },
@@ -889,16 +566,12 @@
         {
           "name": "width",
           "type": "INT",
-          "links": [
-            396
-          ]
+          "links": [396]
         },
         {
           "name": "height",
           "type": "INT",
-          "links": [
-            397
-          ]
+          "links": [397]
         },
         {
           "name": "batch_size",
@@ -920,14 +593,8 @@
     {
       "id": 176,
       "type": "EmptyLatentImage",
-      "pos": [
-        -1613.44384765625,
-        652.4160766601562
-      ],
-      "size": [
-        270,
-        106
-      ],
+      "pos": [-1613.44384765625, 652.4160766601562],
+      "size": [270, 106],
       "flags": {
         "collapsed": true
       },
@@ -955,9 +622,7 @@
         {
           "name": "LATENT",
           "type": "LATENT",
-          "links": [
-            398
-          ]
+          "links": [398]
         }
       ],
       "properties": {
@@ -973,23 +638,13 @@
           }
         }
       },
-      "widgets_values": [
-        512,
-        512,
-        1
-      ]
+      "widgets_values": [512, 512, 1]
     },
     {
       "id": 146,
       "type": "PreviewImage",
-      "pos": [
-        -839.8090209960938,
-        55.889305114746094
-      ],
-      "size": [
-        468.7991943359375,
-        623.0355834960938
-      ],
+      "pos": [-839.8090209960938, 55.889305114746094],
+      "size": [468.7991943359375, 623.0355834960938],
       "flags": {},
       "order": 26,
       "mode": 0,
@@ -1015,18 +670,12 @@
     {
       "id": 636,
       "type": "Label (rgthree)",
-      "pos": [
-        -792.5426025390625,
-        1006.6900634765625
-      ],
-      "size": [
-        401.9333190917969,
-        30
-      ],
+      "pos": [-792.5426025390625, 1006.6900634765625],
+      "size": [401.953125, 30],
       "flags": {
         "allow_interaction": true
       },
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1050,14 +699,8 @@
     {
       "id": 66,
       "type": "ModelSamplingAuraFlow",
-      "pos": [
-        -1256.66064453125,
-        -184.24766540527344
-      ],
-      "size": [
-        210,
-        58
-      ],
+      "pos": [-1256.66064453125, -184.24766540527344],
+      "size": [210, 58],
       "flags": {},
       "order": 22,
       "mode": 0,
@@ -1072,9 +715,7 @@
         {
           "name": "MODEL",
           "type": "MODEL",
-          "links": [
-            1828
-          ]
+          "links": [1828]
         }
       ],
       "properties": {
@@ -1093,25 +734,17 @@
           "widget_ue_connectable": {}
         }
       },
-      "widgets_values": [
-        3
-      ]
+      "widgets_values": [3]
     },
     {
       "id": 639,
       "type": "Label (rgthree)",
-      "pos": [
-        -1050.2437744140625,
-        -139.14743041992188
-      ],
-      "size": [
-        336.2833251953125,
-        50
-      ],
+      "pos": [-1050.2437744140625, -139.14743041992188],
+      "size": [336.328125, 50],
       "flags": {
         "allow_interaction": true
       },
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1135,18 +768,12 @@
     {
       "id": 643,
       "type": "Label (rgthree)",
-      "pos": [
-        -677.9462890625,
-        -461.73687744140625
-      ],
-      "size": [
-        276.5,
-        50
-      ],
+      "pos": [-677.9462890625, -461.73687744140625],
+      "size": [276.5625, 50],
       "flags": {
         "allow_interaction": true
       },
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1170,18 +797,12 @@
     {
       "id": 640,
       "type": "Label (rgthree)",
-      "pos": [
-        -282.6087646484375,
-        341.9801940917969
-      ],
-      "size": [
-        465.5,
-        50
-      ],
+      "pos": [-282.6087646484375, 341.9801940917969],
+      "size": [465.6005859375, 50],
       "flags": {
         "allow_interaction": true
       },
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1205,16 +826,10 @@
     {
       "id": 38,
       "type": "CLIPLoader",
-      "pos": [
-        -1657.724609375,
-        -341.78692626953125
-      ],
-      "size": [
-        330,
-        110
-      ],
+      "pos": [-1657.724609375, -341.78692626953125],
+      "size": [330, 110],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1223,28 +838,8 @@
           "type": "CLIP",
           "slot_index": 0,
           "links": [
-            212,
-            1730,
-            1729,
-            1728,
-            1727,
-            1726,
-            1725,
-            1724,
-            1723,
-            1722,
-            1721,
-            1720,
-            1719,
-            1718,
-            1717,
-            1716,
-            1715,
-            1714,
-            1713,
-            1712,
-            1711,
-            1831
+            212, 1730, 1729, 1728, 1727, 1726, 1725, 1724, 1723, 1722, 1721,
+            1720, 1719, 1718, 1717, 1716, 1715, 1714, 1713, 1712, 1711, 1831
           ]
         }
       ],
@@ -1280,14 +875,8 @@
     {
       "id": 8,
       "type": "VAEDecode",
-      "pos": [
-        -1135.2147216796875,
-        600.6857299804688
-      ],
-      "size": [
-        210,
-        46
-      ],
+      "pos": [-1135.2147216796875, 600.6857299804688],
+      "size": [210, 46],
       "flags": {
         "collapsed": false
       },
@@ -1310,10 +899,7 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "slot_index": 0,
-          "links": [
-            400,
-            1004
-          ]
+          "links": [400, 1004]
         }
       ],
       "properties": {
@@ -1337,16 +923,10 @@
     {
       "id": 39,
       "type": "VAELoader",
-      "pos": [
-        -1659.056640625,
-        -174.0113067626953
-      ],
-      "size": [
-        330,
-        60
-      ],
+      "pos": [-1659.056640625, -174.0113067626953],
+      "size": [330, 60],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1355,48 +935,10 @@
           "type": "VAE",
           "slot_index": 0,
           "links": [
-            1770,
-            1769,
-            1768,
-            1767,
-            1766,
-            1765,
-            1764,
-            1763,
-            1762,
-            1761,
-            1760,
-            1759,
-            1758,
-            1757,
-            1756,
-            1755,
-            1754,
-            1753,
-            1752,
-            1751,
-            1750,
-            1749,
-            1748,
-            1747,
-            1746,
-            1745,
-            1744,
-            1743,
-            1742,
-            1741,
-            1740,
-            1739,
-            1738,
-            1737,
-            1736,
-            1735,
-            1734,
-            1733,
-            1732,
-            1731,
-            1830,
-            1832
+            1770, 1769, 1768, 1767, 1766, 1765, 1764, 1763, 1762, 1761, 1760,
+            1759, 1758, 1757, 1756, 1755, 1754, 1753, 1752, 1751, 1750, 1749,
+            1748, 1747, 1746, 1745, 1744, 1743, 1742, 1741, 1740, 1739, 1738,
+            1737, 1736, 1735, 1734, 1733, 1732, 1731, 1830, 1832
           ]
         }
       ],
@@ -1423,32 +965,22 @@
           "widget_ue_connectable": {}
         }
       },
-      "widgets_values": [
-        "qwen_image_vae.safetensors"
-      ]
+      "widgets_values": ["qwen_image_vae.safetensors"]
     },
     {
       "id": 366,
       "type": "LoadImage",
-      "pos": [
-        -2644.22314453125,
-        34.92596435546875
-      ],
-      "size": [
-        529.079833984375,
-        788.8272094726562
-      ],
+      "pos": [-2644.22314453125, 34.92596435546875],
+      "size": [529.079833984375, 788.8272094726562],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": [
-            702
-          ]
+          "links": [702]
         },
         {
           "name": "MASK",
@@ -1468,223 +1000,194 @@
           }
         }
       },
+      "widgets_values": ["pasted/image (60).png", "image"]
+    },
+    {
+      "id": 179,
+      "type": "CR Prompt List",
+      "pos": [-2655.92236328125, -518.659423828125],
+      "size": [905.6195678710938, 481.6252136230469],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "prompt",
+          "shape": 6,
+          "type": "STRING",
+          "links": [408]
+        },
+        {
+          "name": "body_text",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "Suzie1/ComfyUI_Comfyroll_CustomNodes",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Prompt List",
+        "cnr_id": "ComfyUI_Comfyroll_CustomNodes",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "prepend_text": true,
+            "multiline_text": true,
+            "append_text": true,
+            "start_index": true,
+            "max_rows": true
+          }
+        }
+      },
       "widgets_values": [
-        "pasted/image (60).png",
-        "image"
+        "",
+        "Photorealistic profile view of the subject's face from the left, against a plain white wall background.\nHyperrealistic profile view of the subject's face from the right, against a clean white wall.\nDSLR photograph, three-quarter view of the subject's face, looking towards the camera, against a plain white wall.\nUltra-realistic three-quarter view of the subject, looking slightly away from the camera, against a seamless white wall.\nLow-angle shot, looking up at the subject's face with a neutral expression, against a plain white wall.\nHigh-angle shot, looking down at the subject's face, against a stark white wall.\nPhotorealistic headshot with the subject's head tilted slightly to the side, looking directly at the camera, against a white wall.\nHyperrealistic shot of the subject looking over their shoulder at the camera, against a white wall background.\nDramatic Rembrandt lighting portrait, with one side of the subject's face illuminated, from a three-quarter angle against a white wall.\nExtreme close-up shot from a slight angle, focusing on the subject's facial features, against a white wall.\nPhotorealistic headshot with a slight Dutch angle, where the camera is tilted, against a plain white wall background.\nDSLR photo of the subject looking up and away, past the camera, in a three-quarter turn against a white wall.\nUltra-realistic shot of the subject looking down and to the side, with their face angled away from the camera, against a white wall.\nHyperrealistic shot from behind the subject, as they turn their head to the side to look towards the camera, against a white wall.\nPhotorealistic portrait from a 45-degree angle, showing the face and shoulders, against a seamless white wall.\nMacro shot from a three-quarter perspective, with a shallow depth of field focusing sharply on the subject's eyes, against a white wall.\nWorm's-eye view looking directly up at the subject's chin and face, against a plain white wall.\nBird's-eye view looking directly down on the top of the subject's head as they look up towards the camera, against a white wall.\nPhotorealistic shot of the subject with their head tilted back, exposing the neck and looking upwards, against a white wall.\nRealistic headshot with the subject's chin tucked down, looking up at the camera from under their brow, against a white wall.",
+        "",
+        0,
+        1000
       ]
+    },
+    {
+      "id": 155,
+      "type": "LoraLoaderModelOnly",
+      "pos": [-1257.8590087890625, -321.87640380859375],
+      "size": [490, 82],
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 343
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [344]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "models": [
+          {
+            "name": "Qwen-Image-Lightning-4steps-V1.0.safetensors",
+            "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V1.0.safetensors",
+            "directory": "loras"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "lora_name": true,
+            "strength_model": true
+          }
+        }
+      },
+      "widgets_values": ["lenovoqwen.safetensors", 1]
+    },
+    {
+      "id": 89,
+      "type": "LoraLoaderModelOnly",
+      "pos": [-1262.2181396484375, -464.6015319824219],
+      "size": [490, 82],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 221
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [343]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "models": [
+          {
+            "name": "Qwen-Image-Lightning-4steps-V1.0.safetensors",
+            "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V1.0.safetensors",
+            "directory": "loras"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "lora_name": true,
+            "strength_model": true
+          }
+        }
+      },
+      "widgets_values": ["Qwen-Image-Lightning-4steps-V2.0.safetensors", 1]
     }
   ],
   "links": [
-    [
-      128,
-      3,
-      0,
-      8,
-      0,
-      "LATENT"
-    ],
-    [
-      212,
-      38,
-      0,
-      111,
-      0,
-      "CLIP"
-    ],
-    [
-      221,
-      37,
-      0,
-      89,
-      0,
-      "MODEL"
-    ],
-    [
-      343,
-      89,
-      0,
-      155,
-      0,
-      "MODEL"
-    ],
-    [
-      344,
-      155,
-      0,
-      66,
-      0,
-      "MODEL"
-    ],
-    [
-      394,
-      174,
-      0,
-      3,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      396,
-      177,
-      0,
-      176,
-      0,
-      "INT"
-    ],
-    [
-      397,
-      177,
-      1,
-      176,
-      1,
-      "INT"
-    ],
-    [
-      398,
-      176,
-      0,
-      3,
-      3,
-      "LATENT"
-    ],
-    [
-      399,
-      126,
-      0,
-      177,
-      0,
-      "IMAGE"
-    ],
-    [
-      400,
-      8,
-      0,
-      146,
-      0,
-      "IMAGE"
-    ],
-    [
-      406,
-      126,
-      0,
-      174,
-      2,
-      "IMAGE"
-    ],
-    [
-      408,
-      179,
-      0,
-      174,
-      5,
-      "STRING"
-    ],
-    [
-      702,
-      366,
-      0,
-      126,
-      0,
-      "IMAGE"
-    ],
-    [
-      709,
-      206,
-      0,
-      405,
-      0,
-      "STRING"
-    ],
-    [
-      710,
-      406,
-      0,
-      405,
-      1,
-      "STRING"
-    ],
-    [
-      711,
-      405,
-      0,
-      181,
-      3,
-      "STRING"
-    ],
-    [
-      712,
-      406,
-      0,
-      181,
-      1,
-      "STRING"
-    ],
-    [
-      713,
-      406,
-      0,
-      181,
-      2,
-      "STRING"
-    ],
-    [
-      1004,
-      8,
-      0,
-      181,
-      0,
-      "IMAGE"
-    ],
-    [
-      1828,
-      66,
-      0,
-      3,
-      0,
-      "MODEL"
-    ],
-    [
-      1829,
-      111,
-      0,
-      3,
-      2,
-      "CONDITIONING"
-    ],
-    [
-      1830,
-      39,
-      0,
-      174,
-      1,
-      "VAE"
-    ],
-    [
-      1831,
-      38,
-      0,
-      174,
-      0,
-      "CLIP"
-    ],
-    [
-      1832,
-      39,
-      0,
-      8,
-      1,
-      "VAE"
-    ]
+    [128, 3, 0, 8, 0, "LATENT"],
+    [212, 38, 0, 111, 0, "CLIP"],
+    [221, 37, 0, 89, 0, "MODEL"],
+    [343, 89, 0, 155, 0, "MODEL"],
+    [344, 155, 0, 66, 0, "MODEL"],
+    [394, 174, 0, 3, 1, "CONDITIONING"],
+    [396, 177, 0, 176, 0, "INT"],
+    [397, 177, 1, 176, 1, "INT"],
+    [398, 176, 0, 3, 3, "LATENT"],
+    [399, 126, 0, 177, 0, "IMAGE"],
+    [400, 8, 0, 146, 0, "IMAGE"],
+    [406, 126, 0, 174, 2, "IMAGE"],
+    [408, 179, 0, 174, 5, "STRING"],
+    [702, 366, 0, 126, 0, "IMAGE"],
+    [709, 206, 0, 405, 0, "STRING"],
+    [710, 406, 0, 405, 1, "STRING"],
+    [711, 405, 0, 181, 3, "STRING"],
+    [712, 406, 0, 181, 1, "STRING"],
+    [713, 406, 0, 181, 2, "STRING"],
+    [1004, 8, 0, 181, 0, "IMAGE"],
+    [1828, 66, 0, 3, 0, "MODEL"],
+    [1829, 111, 0, 3, 2, "CONDITIONING"],
+    [1830, 39, 0, 174, 1, "VAE"],
+    [1831, 38, 0, 174, 0, "CLIP"],
+    [1832, 39, 0, 8, 1, "VAE"]
   ],
   "groups": [
     {
       "id": 1,
       "title": "Group",
       "bounding": [
-        -1676.994140625,
-        -560.4506225585938,
-        966.53955078125,
-        484.27587890625
+        -1676.994140625, -560.4506225585938, 966.53955078125, 484.27587890625
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1694,9 +1197,7 @@
       "id": 3,
       "title": "Group",
       "bounding": [
-        -1673.816162109375,
-        -38.52659225463867,
-        1340.2838134765625,
+        -1673.816162109375, -38.52659225463867, 1340.2838134765625,
         753.02099609375
       ],
       "color": "#3f789e",
@@ -1707,9 +1208,7 @@
       "id": 4,
       "title": "Group",
       "bounding": [
-        -1669.053466796875,
-        755.1408081054688,
-        1339.369384765625,
+        -1669.053466796875, 755.1408081054688, 1339.369384765625,
         316.87713623046875
       ],
       "color": "#3f789e",
@@ -1722,13 +1221,10 @@
   },
   "extra": {
     "ds": {
-      "scale": 0.6727499949325847,
-      "offset": [
-        4156.548076769594,
-        661.4632444138479
-      ]
+      "scale": 0.7400249944258446,
+      "offset": [2706.8657470223266, 431.40877750635843]
     },
-    "frontendVersion": "1.27.10",
+    "frontendVersion": "1.28.7",
     "ue_links": [],
     "links_added_by_ue": [],
     "VHS_latentpreview": false,

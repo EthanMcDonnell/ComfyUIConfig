@@ -24,7 +24,6 @@ declare -a CUSTOM_NODES=(
     "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git"
     "https://github.com/kijai/ComfyUI-KJNodes.git"
     "https://github.com/ltdrdata/was-node-suite-comfyui.git"
-
 )
 
 # Models
@@ -35,7 +34,7 @@ declare -a MODELS=(
     # "https://civitai.com/api/download/models/1759168?type=Model&format=SafeTensor&size=full&fp=fp16,$COMFYUI_DIR/models/checkpoints/juggernaut_xl.safetensors"
     # "https://civitai.com/api/download/models/1920523?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/epicrealismXL_vxviiCrystalclear.safetensors"
     "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors,$COMFYUI_DIR/models/diffusion_models/qwen_image_fp8_e4m3fn.safetensors"
-
+    "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors,$COMFYUI_DIR/models/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors"
 )
 
 # --- VAEs ---
@@ -80,119 +79,111 @@ if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
 fi
 
 
-echo "Installing Repo Dependencies..."
-pip install -r "$REPO_DIR/requirements.txt"
+# --- Install base dependencies ---
+echo "📦 Installing Repo dependencies..."
+pip install -r "$REPO_DIR/requirements.txt" --quiet
 
+# --- Clone ComfyUI if missing ---
+if [ ! -d "$COMFYUI_DIR" ]; then
+    echo "🧠 Cloning ComfyUI..."
+    git clone https://github.com/comfyanonymous/ComfyUI.git "$COMFYUI_DIR"
+    cd "$COMFYUI_DIR"
+    pip install -r "$COMFYUI_DIR/requirements.txt"
+else
+    echo "✅ ComfyUI already exists, skipping clone."
+fi
 
-# --- 1. Install ComfyUI ---
-echo "Cloning ComfyUI repository..."
-git clone https://github.com/comfyanonymous/ComfyUI.git "$COMFYUI_DIR"
-cd "$COMFYUI_DIR"
-
-# --- 2. Install Dependencies ---
-echo "Installing ComfyUI Python dependencies..."
-pip install -r "$COMFYUI_DIR/requirements.txt"
 
 sudo apt update
 sudo apt install aria2 -y
 
+# --- Download helper ---
 download_file() {
     local url="$1"
     local output_path="$2"
     mkdir -p "$(dirname "$output_path")"
 
+    if [ -f "$output_path" ]; then
+        echo "⏭️  Skipping existing file: $output_path"
+        return
+    fi
+
+    echo "⬇️  Downloading $url → $output_path"
     if [[ "$url" == *"civitai.com"* ]]; then
-        # Use curl for Civitai: handles Authorization and redirects correctly
-        echo "Downloading from Civitai via curl: $url → $output_path"
         curl -L --retry 3 --retry-all-errors --retry-delay 2 --fail --continue-at - \
             -H "Authorization: Bearer ${CIVITAI_API_KEY}" \
             -o "$output_path" \
             "$url"
     else
-        # Use aria2c for everything else: faster downloads
-        echo "Downloading via aria2c: $url → $output_path"
         aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" "$url"
     fi
 }
 
+# --- Downloads ---
+download_category() {
+    local category_name="$1"
+    shift
+    local arr=("$@")
 
-# --- 3. Install Custom Nodes ---
-echo "Installing custom nodes..."
+    echo "📂 Downloading $category_name..."
+    for item in "${arr[@]}"; do
+        IFS=',' read -r url output_path <<< "$item"
+        [ -z "$url" ] && continue
+        download_file "$url" "$output_path"
+    done
+}
+
+
+# --- Custom Nodes ---
+echo "🧩 Installing custom nodes..."
 cd "$COMFYUI_DIR/custom_nodes"
 for url in "${CUSTOM_NODES[@]}"; do
-    [ -z "$url" ] && continue
     repo_name=$(basename "$url" .git)
-    git clone "$url" "$COMFYUI_DIR/custom_nodes/$repo_name"
-    if [ -f "$COMFYUI_DIR/custom_nodes/$repo_name/requirements.txt" ]; then
-        echo "Installing requirements for $repo_name..."
-        pip install -r "$COMFYUI_DIR/custom_nodes/$repo_name/requirements.txt"
+    if [ -d "$repo_name" ]; then
+        echo "⏭️  Skipping existing node: $repo_name"
+        continue
+    fi
+    echo "🔗 Cloning $repo_name..."
+    git clone "$url" "$repo_name"
+    if [ -f "$repo_name/requirements.txt" ]; then
+    echo "Installing requirements for $repo_name..."
+        pip install -r "$repo_name/requirements.txt" --quiet
     fi
 done
 cd "$COMFYUI_DIR"
 
-# --- 4. Copy Workflows ---
-
+# --- Copy Workflows ---
 if [ -d "$REPO_WORKFLOWS_DIR" ]; then
     mkdir -p "$TARGET_WORKFLOWS_DIR"
-    cp -a "$REPO_WORKFLOWS_DIR/." "$TARGET_WORKFLOWS_DIR/"
+    cp -an "$REPO_WORKFLOWS_DIR/." "$TARGET_WORKFLOWS_DIR/"
     echo "✅ Workflows copied to $TARGET_WORKFLOWS_DIR"
 fi
 
-# --- 5. Download Models ---
-echo "Downloading models..."
-for item in "${MODELS[@]}"; do
-    IFS=',' read -r url output_path <<< "$item"
-    [ -z "$url" ] && continue
-    mkdir -p "$(dirname "$output_path")"
-    echo "Downloading $url → $output_path"
+   
 
-    download_file "$url" "$output_path"
-done
+download_category "Models" "${MODELS[@]}"
+download_category "VAEs" "${VAES[@]}"
+download_category "Text Encoders" "${TEXT_ENCODERS[@]}"
+download_category "LoRAs" "${LORAS[@]}"
 
-# --- 6. Download VAEs ---
-echo "Downloading VAEs..."
-for item in "${VAES[@]}"; do
-    IFS=',' read -r url output_path <<< "$item"
-    [ -z "$url" ] && continue
-    mkdir -p "$(dirname "$output_path")"
-    echo "Downloading $url → $output_path"
-    download_file "$url" "$output_path"
-done
 
-# --- 7. Download Text Encoders ---
-echo "Downloading Text Encoders..."
-for item in "${TEXT_ENCODERS[@]}"; do
-    IFS=',' read -r url output_path <<< "$item"
-    [ -z "$url" ] && continue
-    mkdir -p "$(dirname "$output_path")"
-    echo "Downloading $url → $output_path"
-
-    download_file "$url" "$output_path"
-done
-
-# --- 8. Download LoRAs ---
-echo "Downloading LoRAs..."
-for item in "${LORAS[@]}"; do
-    IFS=',' read -r url output_path <<< "$item"
-    [ -z "$url" ] && continue
-    mkdir -p "$(dirname "$output_path")"
-    echo "Downloading $url → $output_path"
-    download_file "$url" "$output_path"
-done
-
-# --- 9. Download Personal LoRAs ---
-echo "Downloading personal LoRAs from Google Drive..."
+# --- Personal LoRAs ---
 if [ ${#PERSONAL_LORAS_GDRIVE_FOLDER[@]} -gt 0 ]; then
+    echo "📁 Downloading personal LoRAs from Google Drive..."
     mkdir -p "$LORAS_DIR"
     for folder_id in "${PERSONAL_LORAS_GDRIVE_FOLDER[@]}"; do
         echo "Downloading files from $folder_id → $LORAS_DIR"
         python3 "$PYTHON_GOOGLE_DRIVE_SCRIPT" download "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" "$LORAS_DIR" "$folder_id"
     done
 else
-    echo "No personal LoRAs specified."
+    echo "ℹ️  No personal LoRAs specified."
 fi
 
-# --- 10. Launch ComfyUI ---
-echo "Setup complete! Launching ComfyUI... 🚀"
-echo "Run python3 ComfyUI/main.py --listen in the terminal to start ComfyUI."
+# --- Launch hint ---
+echo ""
+echo "✅ Setup complete!"
+echo "To start ComfyUI, run:"
+echo "👉  python3 ComfyUI/main.py --listen"
+echo ""
+echo "You can re-run this script anytime — it will skip already installed content."
 
