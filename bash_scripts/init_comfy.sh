@@ -21,6 +21,9 @@ declare -a CUSTOM_NODES=(
     "https://github.com/crystian/comfyui-crystools.git"
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git"
     "https://github.com/rgthree/rgthree-comfy.git"
+    "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git"
+    "https://github.com/kijai/ComfyUI-KJNodes.git"
+    "https://github.com/ltdrdata/was-node-suite-comfyui.git"
 
 )
 
@@ -191,5 +194,5 @@ fi
 
 # --- 10. Launch ComfyUI ---
 echo "Setup complete! Launching ComfyUI... 🚀"
-#python3 "ComfyUI/main.py" --listen
-python3 "$COMFYUI_DIR/main.py" --listen 0.0.0.0
+echo "Run python3 ComfyUI/main.py --listen in the terminal to start ComfyUI."
+
