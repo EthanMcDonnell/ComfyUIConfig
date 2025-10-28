@@ -24,6 +24,8 @@ declare -a CUSTOM_NODES=(
     "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git"
     "https://github.com/kijai/ComfyUI-KJNodes.git"
     "https://github.com/ltdrdata/was-node-suite-comfyui.git"
+    "https://github.com/city96/ComfyUI-GGUF.git"
+    "https://github.com/giriss/comfy-image-saver.git"
 )
 
 # Models
@@ -42,10 +44,12 @@ declare -a MODELS=(
 # --- VAEs ---
 declare -a VAES=(
     "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors,$VAE_DIR/qwen_image_vae.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors,$VAE_DIR/wan_2.1_vae.safetensors"
 )
 
 declare -a TEXT_ENCODERS=(
     "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors,$TEXT_ENCODERS_DIR/qwen_2.5_vl_7b_fp8_scaled.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors,$TEXT_ENCODERS_DIR/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
 )
 
 # LoRAs
