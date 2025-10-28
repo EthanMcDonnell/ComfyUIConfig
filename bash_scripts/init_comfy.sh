@@ -38,8 +38,8 @@ declare -a MODELS=(
     "https://civitai.com/api/download/models/1920523?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/epicrealismXL_vxviiCrystalclear.safetensors"
     "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors,$COMFYUI_DIR/models/diffusion_models/qwen_image_fp8_e4m3fn.safetensors"
     "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors,$COMFYUI_DIR/models/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors"
-    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/LowNoise/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf,$COMFYUI_DIR/unet/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf"
-    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/HighNoise/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf,$COMFYUI_DIR/unet/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf"
+    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/LowNoise/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf,$COMFYUI_DIR/models/unet/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf"
+    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/HighNoise/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf,$COMFYUI_DIR/models/unet/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf"
 )
 
 # --- VAEs ---
@@ -62,7 +62,7 @@ declare -a LORAS=(
     "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,$LORAS_DIR/Qwen-Image-Lightning-4steps-V2.0.safetensors"
     "https://civitai.com/api/download/models/2124694?type=Model&format=Diffusers,$LORAS_DIR/instareal.zip"
     "https://civitai.com/api/download/models/2066914?type=Model&format=SafeTensor,$LORAS_DIR/lenovo.safetensors"
-    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors?download=true,$LORAS_DIR/Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors"
+    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors,$LORAS_DIR/Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors"
 )
 
 # Personal LoRAs (Google Drive file IDs)
