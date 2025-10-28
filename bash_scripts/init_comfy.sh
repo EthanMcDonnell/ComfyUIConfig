@@ -91,17 +91,17 @@ fi
 
 # --- Install base dependencies ---
 echo "📦 Installing Repo dependencies..."
-pip install -r "$REPO_DIR/requirements.txt" --quiet
+pip install -r "$REPO_DIR/requirements.txt"
 
 # --- Clone ComfyUI if missing ---
 if [ ! -d "$COMFYUI_DIR" ]; then
     echo "🧠 Cloning ComfyUI..."
     git clone https://github.com/comfyanonymous/ComfyUI.git "$COMFYUI_DIR"
-    cd "$COMFYUI_DIR"
-    pip install -r "$COMFYUI_DIR/requirements.txt"
 else
     echo "✅ ComfyUI already exists, skipping clone."
 fi
+
+pip install -r "$COMFYUI_DIR/requirements.txt"
 
 
 sudo apt update
