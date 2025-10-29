@@ -105,6 +105,8 @@ pip install -r "$COMFYUI_DIR/requirements.txt"
 
 sudo apt update
 sudo apt install aria2 -y
+sudo apt install unzip -y
+pip install --no-build-isolation sageattention
 
 # --- Download helper ---
 download_file() {
@@ -125,6 +127,12 @@ download_file() {
             "$url"
     else
         aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" "$url"
+    fi
+        # --- Auto-extract ZIP files ---
+    if [[ "$output_path" == *.zip ]]; then
+        echo "🗜️  Extracting $output_path..."
+        unzip -o "$output_path" -d "$(dirname "$output_path")"
+        echo "✅ Extracted to $(dirname "$output_path")"
     fi
 }
 
