@@ -15,6 +15,7 @@ TARGET_WORKFLOWS_DIR="$COMFYUI_DIR/user/default/workflows"
 PYTHON_GOOGLE_DRIVE_SCRIPT="$REPO_DIR/gdrive.py"
 
 
+
 # Custom nodes
 declare -a CUSTOM_NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager.git"
@@ -28,54 +29,20 @@ declare -a CUSTOM_NODES=(
     "https://github.com/giriss/comfy-image-saver.git"
     "https://github.com/ClownsharkBatwing/RES4LYF.git"
 )
+MODELS=()
+VAES=()
+TEXT_ENCODERS=()
+LORAS=()
 
-# Models
-declare -a MODELS=(
-    # "https://civitai.com/api/download/models/2152184?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/cyberrealistic.safetensors"
-    # # "https://civitai.com/api/download/models/2255476?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/cyberrealistic_pony.safetensors"
-    # "https://civitai.com/api/download/models/1966530?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/jibmix.safetensors"
-    # "https://civitai.com/api/download/models/1759168?type=Model&format=SafeTensor&size=full&fp=fp16,$COMFYUI_DIR/models/checkpoints/juggernaut_xl.safetensors"
-    # "https://civitai.com/api/download/models/1920523?type=Model&format=SafeTensor&size=pruned&fp=fp16,$COMFYUI_DIR/models/checkpoints/epicrealismXL_vxviiCrystalclear.safetensors"
-    # "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors,$COMFYUI_DIR/models/diffusion_models/qwen_image_fp8_e4m3fn.safetensors"
-    # "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors,$COMFYUI_DIR/models/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors"
-    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/LowNoise/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf,$COMFYUI_DIR/models/unet/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf"
-    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/HighNoise/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf,$COMFYUI_DIR/models/unet/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf"
-)
-
-# --- VAEs ---
-declare -a VAES=(
-    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors,$VAE_DIR/qwen_image_vae.safetensors"
-    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors,$VAE_DIR/wan_2.1_vae.safetensors"
-)
-
-declare -a TEXT_ENCODERS=(
-    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors,$TEXT_ENCODERS_DIR/qwen_2.5_vl_7b_fp8_scaled.safetensors"
-    "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors,$TEXT_ENCODERS_DIR/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
-)
-
-# LoRAs
-# <lora:PerfectEyesXL:1.0>
-# <lora:add-detail-xl:3> [-3, 3]
-declare -a LORAS=(
-    "https://civitai.com/api/download/models/128461?type=Model&format=SafeTensor,$LORAS_DIR/PerfectEyesXL.safetensors"
-    "https://civitai.com/api/download/models/135867?type=Model&format=SafeTensor,$LORAS_DIR/add_detail_xl.safetensors"
-    "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,$LORAS_DIR/Qwen-Image-Lightning-4steps-V2.0.safetensors"
-    "https://civitai.com/api/download/models/2124694?type=Model&format=Diffusers,$LORAS_DIR/instareal.zip"
-    "https://civitai.com/api/download/models/2066914?type=Model&format=SafeTensor,$LORAS_DIR/lenovo.safetensors"
-    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors,$LORAS_DIR/Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors"
-)
 
 # Personal LoRAs (Google Drive file IDs)
 declare -a PERSONAL_LORAS_GDRIVE_FOLDER=(
     "14rD70432WVhb6rZFcN_TeRzymfze-LiD" # Private GDRIVE Folder ID
 )
 
-
 # --- 0. Checking Prerequisites ---
-if [ "$PWD" != "$WORKSPACE_DIR" ]; then
-    echo "Error: This script must be run from $WORKSPACE_DIR." >&2
-    exit 1
-fi
+
+cd "$WORKSPACE_DIR"
 echo "✅ Directory confirmed: $WORKSPACE_DIR"
 
 if [ -z "$CIVITAI_API_KEY" ]; then
@@ -88,6 +55,32 @@ if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
     exit 1
 fi
 
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -c)
+            CONFIG_FILES+=("$2")
+            shift 2
+            ;;
+        *)
+            echo "Unknown parameter: $1" >&2
+            exit 1
+            ;;
+    esac
+done
+if [ ${#CONFIG_FILES[@]} -eq 0 ]; then
+    echo "Usage: $0 --config <config1.json> [--config <config2.json> ...]"
+    exit 1
+fi
+# Loop through each config
+for cfg in "${CONFIG_FILES[@]}"; do
+    [ ! -f "$cfg" ] && { echo "Config not found: $cfg"; exit 1; }
+
+    # Merge arrays
+    MODELS+=($(jq -r '.models[]?' "$cfg"))
+    VAES+=($(jq -r '.vaes[]?' "$cfg"))
+    TEXT_ENCODERS+=($(jq -r '.text_encoders[]?' "$cfg"))
+    LORAS+=($(jq -r '.loras[]?' "$cfg"))
+done
 
 # --- Install base dependencies ---
 echo "📦 Installing Repo dependencies..."
@@ -107,6 +100,7 @@ sudo apt update
 sudo apt install aria2 -y
 sudo apt install unzip -y
 pip install --no-build-isolation sageattention
+
 
 # --- Download helper ---
 download_file() {
@@ -149,7 +143,6 @@ download_category() {
         download_file "$url" "$output_path"
     done
 }
-
 
 # --- Custom Nodes ---
 echo "🧩 Installing custom nodes..."

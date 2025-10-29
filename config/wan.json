@@ -1,0 +1,17 @@
+{
+  "models": [
+    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/LowNoise/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf,/workspace/ComfyUI/models/unet/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf",
+    "https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/HighNoise/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf,/workspace/ComfyUI/models/unet/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf"
+  ],
+  "vaes": [
+    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors,/workspace/ComfyUI/models/vae/wan_2.1_vae.safetensors"
+  ],
+  "text_encoders": [
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors,/workspace/ComfyUI/models/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors"
+  ],
+  "loras": [
+    "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,/workspace/ComfyUI/models/loras/Qwen-Image-Lightning-4steps-V2.0.safetensors",
+    "https://civitai.com/api/download/models/2124694?type=Model&format=Diffusers,/workspace/ComfyUI/models/loras/instareal.zip",
+    "https://civitai.com/api/download/models/2066914?type=Model&format=SafeTensor,/workspace/ComfyUI/models/loras/lenovo.safetensors"
+  ]
+}
