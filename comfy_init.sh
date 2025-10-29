@@ -59,22 +59,12 @@ if [ -z "$GDRIVE_SERVICE_ACCOUNT_JSON_B64" ]; then
     exit 1
 fi
 
-while [[ "$#" -gt 0 ]]; do
-    case $1 in
-        -c)
-            CONFIG_FILES+=("$2")
-            shift 2
-            ;;
-        *)
-            echo "Unknown parameter: $1" >&2
-            exit 1
-            ;;
-    esac
-done
-if [ ${#CONFIG_FILES[@]} -eq 0 ]; then
-    echo "Usage: $0 --config <config1.json> [--config <config2.json> ...]"
+# --- Check arguments ---
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <config_id1> [<config_id2> ...]"
     exit 1
 fi
+CONFIG_IDS=("$@")  # all arguments
 for id in "${CONFIG_IDS[@]}"; do
     cfg_file="$CONFIG_DIR/${id,,}.json"  # ${id,,} converts to lowercase (WAN → wan.json)
     
