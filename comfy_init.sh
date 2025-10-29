@@ -104,7 +104,7 @@ sudo apt install unzip -y
 if [ ! -d "SageAttention" ]; then
     echo "🧠 Cloning ComfyUI..."
     git clone https://github.com/thu-ml/SageAttention.git
-    cd sageattention 
+    cd SageAttention 
     python setup.py install
     cd ..
 else
