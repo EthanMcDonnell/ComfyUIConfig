@@ -14,6 +14,10 @@ REPO_WORKFLOWS_DIR="$REPO_DIR/workflows"
 TARGET_WORKFLOWS_DIR="$COMFYUI_DIR/user/default/workflows"
 PYTHON_GOOGLE_DRIVE_SCRIPT="$REPO_DIR/gdrive.py"
 
+# --- Config identifiers (no need for -c) ---
+CONFIG_IDS=("WAN" "QWEN" "SDXL")  # Add as many as you want
+CONFIG_DIR="$REPO_DIR/config"  # Folder where your JSON files live
+
 
 
 # Custom nodes
@@ -71,15 +75,19 @@ if [ ${#CONFIG_FILES[@]} -eq 0 ]; then
     echo "Usage: $0 --config <config1.json> [--config <config2.json> ...]"
     exit 1
 fi
-# Loop through each config
-for cfg in "${CONFIG_FILES[@]}"; do
-    [ ! -f "$cfg" ] && { echo "Config not found: $cfg"; exit 1; }
+for id in "${CONFIG_IDS[@]}"; do
+    cfg_file="$CONFIG_DIR/${id,,}.json"  # ${id,,} converts to lowercase (WAN → wan.json)
+    
+    if [ ! -f "$cfg_file" ]; then
+        echo "❌ Config not found: $cfg_file"
+        exit 1
+    fi
 
-    # Merge arrays
-    MODELS+=($(jq -r '.models[]?' "$cfg"))
-    VAES+=($(jq -r '.vaes[]?' "$cfg"))
-    TEXT_ENCODERS+=($(jq -r '.text_encoders[]?' "$cfg"))
-    LORAS+=($(jq -r '.loras[]?' "$cfg"))
+    # Merge arrays from JSON
+    MODELS+=($(jq -r '.models[]?' "$cfg_file"))
+    VAES+=($(jq -r '.vaes[]?' "$cfg_file"))
+    TEXT_ENCODERS+=($(jq -r '.text_encoders[]?' "$cfg_file"))
+    LORAS+=($(jq -r '.loras[]?' "$cfg_file"))
 done
 
 # --- Install base dependencies ---
