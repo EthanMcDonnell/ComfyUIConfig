@@ -1,6 +1,9 @@
 #!/bin/bash
 # Setup to work with runpod
 # Expose port 8188 for comfyui access
+# eval "$COMFYINIT wan qwen sdxl"
+
+
 set -e
 # --- Config ---
 WORKSPACE_DIR="/workspace"
@@ -97,7 +100,16 @@ pip install -r "$COMFYUI_DIR/requirements.txt"
 sudo apt update
 sudo apt install aria2 -y
 sudo apt install unzip -y
-pip install --no-build-isolation sageattention
+
+if [ ! -d "SageAttention" ]; then
+    echo "🧠 Cloning ComfyUI..."
+    git clone https://github.com/thu-ml/SageAttention.git
+    cd sageattention 
+    python setup.py install
+    cd ..
+else
+    echo "✅ SageAttention already exists, skipping clone."
+fi
 
 
 # --- Download helper ---
