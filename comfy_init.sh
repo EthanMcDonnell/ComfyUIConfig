@@ -3,7 +3,6 @@
 # Expose port 8188 for comfyui access
 # eval "$COMFYINIT wan qwen sdxl"
 
-
 set -e
 # --- Config ---
 WORKSPACE_DIR="/workspace"
@@ -20,8 +19,6 @@ PYTHON_GOOGLE_DRIVE_SCRIPT="$REPO_DIR/gdrive.py"
 # --- Config identifiers (no need for -c) ---
 CONFIG_IDS=("WAN" "QWEN" "SDXL")  # Add as many as you want
 CONFIG_DIR="$REPO_DIR/config"  # Folder where your JSON files live
-
-
 
 # Custom nodes
 declare -a CUSTOM_NODES=(
@@ -40,7 +37,6 @@ MODELS=()
 VAES=()
 TEXT_ENCODERS=()
 LORAS=()
-
 
 # Personal LoRAs (Google Drive file IDs)
 declare -a PERSONAL_LORAS_GDRIVE_FOLDER=(
@@ -84,33 +80,32 @@ for id in "${CONFIG_IDS[@]}"; do
 done
 
 # --- Install base dependencies ---
-echo "📦 Installing Repo dependencies..."
-pip install -r "$REPO_DIR/requirements.txt"
+echo "📦 Installing system dependencies..."
+sudo apt update
+sudo apt install -y aria2 unzip
+
+echo "📦 Installing Python dependencies..."
+pip install -q -r "$REPO_DIR/requirements.txt"
 
 # --- Clone ComfyUI if missing ---
 if [ ! -d "$COMFYUI_DIR" ]; then
     echo "🧠 Cloning ComfyUI..."
-    git clone https://github.com/comfyanonymous/ComfyUI.git "$COMFYUI_DIR"
+    git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git "$COMFYUI_DIR"
 else
     echo "✅ ComfyUI already exists, skipping clone."
 fi
 
-pip install -r "$COMFYUI_DIR/requirements.txt"
-
-sudo apt update
-sudo apt install aria2 -y
-sudo apt install unzip -y
+pip install -q -r "$COMFYUI_DIR/requirements.txt"
 
 if [ ! -d "SageAttention" ]; then
-    echo "🧠 Cloning ComfyUI..."
-    git clone https://github.com/thu-ml/SageAttention.git
+    echo "🧠 Cloning SageAttention..."
+    git clone --depth 1 https://github.com/thu-ml/SageAttention.git
     cd SageAttention 
     python setup.py install
     cd ..
 else
     echo "✅ SageAttention already exists, skipping clone."
 fi
-
 
 # --- Download helper ---
 download_file() {
@@ -125,14 +120,47 @@ download_file() {
 
     echo "⬇️  Downloading $url → $output_path"
     if [[ "$url" == *"civitai.com"* ]]; then
-        curl -L --retry 3 --retry-all-errors --retry-delay 2 --fail --continue-at - \
-            -H "Authorization: Bearer ${CIVITAI_API_KEY}" \
-            -o "$output_path" \
+        # Use aria2c for CivitAI with proper header handling
+        aria2c \
+            --console-log-level=warn \
+            --max-connection-per-server=16 \
+            --split=16 \
+            --min-split-size=1M \
+            --max-concurrent-downloads=5 \
+            --file-allocation=none \
+            --header="Authorization: Bearer ${CIVITAI_API_KEY}" \
+            --allow-overwrite=false \
+            --auto-file-renaming=false \
+            --continue=true \
+            --max-tries=5 \
+            --retry-wait=3 \
+            --timeout=60 \
+            --connect-timeout=30 \
+            --follow-metalink=mem \
+            --check-certificate=false \
+            --out="$(basename "$output_path")" \
+            --dir="$(dirname "$output_path")" \
             "$url"
     else
-        aria2c -x 16 -s 16 -k 1M -o "$(basename "$output_path")" -d "$(dirname "$output_path")" "$url"
+        # Standard aria2c for other sources
+        aria2c \
+            --console-log-level=warn \
+            --max-connection-per-server=16 \
+            --split=16 \
+            --min-split-size=1M \
+            --max-concurrent-downloads=5 \
+            --file-allocation=none \
+            --allow-overwrite=false \
+            --auto-file-renaming=false \
+            --continue=true \
+            --max-tries=5 \
+            --retry-wait=3 \
+            --out="$(basename "$output_path")" \
+            --dir="$(dirname "$output_path")" \
+            "$url"
     fi
-        # --- Auto-extract ZIP files ---
+    
+    # --- Auto-extract ZIP files ---
     if [[ "$output_path" == *.zip ]]; then
         echo "🗜️  Extracting $output_path..."
         unzip -o "$output_path" -d "$(dirname "$output_path")"
@@ -140,36 +168,61 @@ download_file() {
     fi
 }
 
-# --- Downloads ---
+# --- Parallel download wrapper ---
 download_category() {
     local category_name="$1"
     shift
     local arr=("$@")
 
+    if [ ${#arr[@]} -eq 0 ]; then
+        return
+    fi
+
     echo "📂 Downloading $category_name..."
+    
+    # Create temporary file list for parallel downloads
+    local temp_list=$(mktemp)
     for item in "${arr[@]}"; do
         IFS=',' read -r url output_path <<< "$item"
         [ -z "$url" ] && continue
-        download_file "$url" "$output_path"
+        echo "$url,$output_path" >> "$temp_list"
     done
+    
+    # Process downloads with parallel execution (4 at a time)
+    cat "$temp_list" | xargs -P 4 -I {} bash -c '
+        IFS="," read -r url output_path <<< "{}"
+        '"$(declare -f download_file)"'
+        download_file "$url" "$output_path"
+    '
+    
+    rm "$temp_list"
 }
 
-# --- Custom Nodes ---
+# --- Custom Nodes (parallel clone) ---
 echo "🧩 Installing custom nodes..."
 cd "$COMFYUI_DIR/custom_nodes"
-for url in "${CUSTOM_NODES[@]}"; do
+
+# Clone repos in parallel
+echo "${CUSTOM_NODES[@]}" | tr ' ' '\n' | xargs -P 4 -I {} bash -c '
+    url="{}"
     repo_name=$(basename "$url" .git)
     if [ -d "$repo_name" ]; then
         echo "⏭️  Skipping existing node: $repo_name"
-        continue
+        exit 0
     fi
     echo "🔗 Cloning $repo_name..."
-    git clone "$url" "$repo_name"
+    git clone --depth 1 "$url" "$repo_name"
+'
+
+# Install requirements sequentially (to avoid pip conflicts)
+for url in "${CUSTOM_NODES[@]}"; do
+    repo_name=$(basename "$url" .git)
     if [ -f "$repo_name/requirements.txt" ]; then
-    echo "Installing requirements for $repo_name..."
-        pip install -r "$repo_name/requirements.txt" --quiet
+        echo "📦 Installing requirements for $repo_name..."
+        pip install -q -r "$repo_name/requirements.txt"
     fi
 done
+
 cd "$COMFYUI_DIR"
 
 # --- Copy Workflows ---
@@ -179,13 +232,11 @@ if [ -d "$REPO_WORKFLOWS_DIR" ]; then
     echo "✅ Workflows copied to $TARGET_WORKFLOWS_DIR"
 fi
 
-   
-
+# --- Download all categories ---
 download_category "Models" "${MODELS[@]}"
 download_category "VAEs" "${VAES[@]}"
 download_category "Text Encoders" "${TEXT_ENCODERS[@]}"
 download_category "LoRAs" "${LORAS[@]}"
-
 
 # --- Personal LoRAs ---
 if [ ${#PERSONAL_LORAS_GDRIVE_FOLDER[@]} -gt 0 ]; then
@@ -206,4 +257,3 @@ echo "To start ComfyUI, run:"
 echo "👉  python3 ComfyUI/main.py --listen"
 echo ""
 echo "You can re-run this script anytime — it will skip already installed content."
-
