@@ -2,7 +2,7 @@
   "id": "5daf90a6-e4ad-4553-98b7-90814f579e2e",
   "revision": 0,
   "last_node_id": 103,
-  "last_link_id": 181,
+  "last_link_id": 182,
   "nodes": [
     {
       "id": 5,
@@ -79,39 +79,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 76,
-      "type": "LoraLoaderModelOnly",
-      "pos": [3340.78564453125, 113.19093322753906],
-      "size": [270, 82],
-      "flags": {},
-      "order": 12,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 137
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [138]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.49",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["Instamodel_1.safetensors", 1]
-    },
-    {
       "id": 4,
       "type": "CLIPTextEncode",
       "pos": [3642.8974609375, 58.09259796142578],
@@ -119,7 +86,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -170,10 +137,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfy-image-saver",
+        "aux_id": "giriss/comfy-image-saver",
         "ver": "65e6903eff274a50f8b5cd768f0f96baf37baea1",
         "Node name for S&R": "Seed Generator",
-        "aux_id": "giriss/comfy-image-saver",
+        "cnr_id": "comfy-image-saver",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {}
@@ -182,101 +149,12 @@
       "widgets_values": [669817269655390, "fixed"]
     },
     {
-      "id": 72,
-      "type": "LoraLoaderModelOnly",
-      "pos": [3343.666748046875, 251.63912963867188],
-      "size": [270, 82],
-      "flags": {},
-      "order": 14,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 138
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [179]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["l3n0v0.safetensors", 0.6000000000000001]
-    },
-    {
-      "id": 73,
-      "type": "UnetLoaderGGUF",
-      "pos": [3041.61181640625, -302.9368591308594],
-      "size": [270, 58],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [135]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
-        "Node name for S&R": "UnetLoaderGGUF",
-        "aux_id": "city96/ComfyUI-GGUF",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf"]
-    },
-    {
-      "id": 74,
-      "type": "UnetLoaderGGUF",
-      "pos": [3042.22900390625, -197.35244750976562],
-      "size": [270, 58],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [136]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
-        "Node name for S&R": "UnetLoaderGGUF",
-        "aux_id": "city96/ComfyUI-GGUF",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf"]
-    },
-    {
       "id": 22,
       "type": "CLIPLoader",
       "pos": [3014.672119140625, -88.59371185302734],
       "size": [302.9598083496094, 125.00395202636719],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -313,7 +191,7 @@
       "pos": [3099.625732421875, 84.64628601074219],
       "size": [210, 58],
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -344,7 +222,7 @@
       "pos": [3346.9189453125, -28.68145751953125],
       "size": [270, 82],
       "flags": {},
-      "order": 8,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -380,7 +258,7 @@
       "pos": [3343.465087890625, -338.3649597167969],
       "size": [259.98895263671875, 126],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -423,7 +301,7 @@
       "pos": [3342.34765625, -164.2708282470703],
       "size": [270, 82],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -533,40 +411,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 100,
-      "type": "TorchCompileModelWanVideoV2",
-      "pos": [3216.448193926403, -703.7900918365488],
-      "size": [342.74609375, 202],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 176
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [175]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
-        "Node name for S&R": "TorchCompileModelWanVideoV2",
-        "aux_id": "kijai/ComfyUI-KJNodes",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["inductor", false, "default", false, true, 64, true]
-    },
-    {
       "id": 103,
       "type": "TorchCompileModelWanVideoV2",
       "pos": [3974.86132253056, -655.8628185539224],
@@ -589,10 +433,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
         "Node name for S&R": "TorchCompileModelWanVideoV2",
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {}
@@ -601,49 +445,18 @@
       "widgets_values": ["inductor", false, "default", false, true, 64, true]
     },
     {
-      "id": 10,
-      "type": "SaveImage",
-      "pos": [4666.77783203125, -334.7976989746094],
-      "size": [788.8705444335938, 772.3082275390625],
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 8
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.43",
-        "Node name for S&R": "SaveImage",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {
-            "filename_prefix": true
-          }
-        }
-      },
-      "widgets_values": ["ComfyUI"],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 35,
       "type": "KSamplerAdvanced",
       "pos": [4104.745651044655, -357.55185669020824],
       "size": [244.748046875, 643.8882165038964],
       "flags": {},
-      "order": 15,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": 181
+          "link": 182
         },
         {
           "name": "positive",
@@ -711,13 +524,203 @@
       "bgcolor": "#335"
     },
     {
+      "id": 100,
+      "type": "TorchCompileModelWanVideoV2",
+      "pos": [3216.448193926403, -703.7900918365488],
+      "size": [342.74609375, 202],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 176
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [175, 182]
+        }
+      ],
+      "properties": {
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
+        "Node name for S&R": "TorchCompileModelWanVideoV2",
+        "cnr_id": "comfyui-kjnodes",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["inductor", false, "default", false, true, 64, true]
+    },
+    {
+      "id": 101,
+      "type": "PathchSageAttentionKJ",
+      "pos": [3598.550593190692, -518.3553434636209],
+      "size": [270, 58],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 175
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
+        "Node name for S&R": "PathchSageAttentionKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["auto"]
+    },
+    {
+      "id": 76,
+      "type": "LoraLoaderModelOnly",
+      "pos": [3340.78564453125, 113.19093322753906],
+      "size": [270, 82],
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 137
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [138]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["Instamodel_1.safetensors", 1]
+    },
+    {
+      "id": 72,
+      "type": "LoraLoaderModelOnly",
+      "pos": [3343.666748046875, 251.63912963867188],
+      "size": [270, 82],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 138
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [179]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["lenovo.safetensors", 0.6000000000000001]
+    },
+    {
+      "id": 73,
+      "type": "UnetLoaderGGUF",
+      "pos": [3041.61181640625, -302.9368591308594],
+      "size": [270, 58],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [135]
+        }
+      ],
+      "properties": {
+        "aux_id": "city96/ComfyUI-GGUF",
+        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
+        "Node name for S&R": "UnetLoaderGGUF",
+        "cnr_id": "ComfyUI-GGUF",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["Wan2.2-T2V-A14B-HighNoise-Q6_K.gguf"]
+    },
+    {
+      "id": 74,
+      "type": "UnetLoaderGGUF",
+      "pos": [3042.22900390625, -197.35244750976562],
+      "size": [270, 58],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [136]
+        }
+      ],
+      "properties": {
+        "aux_id": "city96/ComfyUI-GGUF",
+        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
+        "Node name for S&R": "UnetLoaderGGUF",
+        "cnr_id": "ComfyUI-GGUF",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["Wan2.2-T2V-A14B-LowNoise-Q6_K.gguf"]
+    },
+    {
       "id": 102,
       "type": "PathchSageAttentionKJ",
       "pos": [4371.749909668556, -591.868234300433],
       "size": [270, 58],
       "flags": {},
       "order": 17,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "model",
@@ -733,10 +736,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
         "Node name for S&R": "PathchSageAttentionKJ",
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {}
@@ -745,38 +748,35 @@
       "widgets_values": ["auto"]
     },
     {
-      "id": 101,
-      "type": "PathchSageAttentionKJ",
-      "pos": [3649.6917531516874, -554.5803317693261],
-      "size": [270, 58],
+      "id": 10,
+      "type": "SaveImage",
+      "pos": [4666.77783203125, -334.7976989746094],
+      "size": [788.8705444335938, 772.3082275390625],
       "flags": {},
-      "order": 13,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
-          "name": "model",
-          "type": "MODEL",
-          "link": 175
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
         }
       ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [181]
-        }
-      ],
+      "outputs": [],
       "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
-        "Node name for S&R": "PathchSageAttentionKJ",
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.43",
+        "Node name for S&R": "SaveImage",
         "ue_properties": {
           "version": "7.0.1",
-          "widget_ue_connectable": {}
+          "widget_ue_connectable": {
+            "filename_prefix": true
+          }
         }
       },
-      "widgets_values": ["auto"]
+      "widgets_values": ["ComfyUI"],
+      "color": "#233",
+      "bgcolor": "#355"
     },
     {
       "id": 3,
@@ -784,7 +784,7 @@
       "pos": [3637.72607421875, -338.9566955566406],
       "size": [450, 350],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -813,7 +813,7 @@
         }
       },
       "widgets_values": [
-        "Instareal, shot from a slightly high angle in a dark, modern garage, a young woman is hinging forward over the rear of a white Lamborghini Aventador, hands clasped behind her back, a pose that pushes her hips back and lifts her extremely short, black pleated miniskirt to create a deliberate upskirt view, she is looking back over her shoulder with a direct, confident, almost challenging gaze, her long, straight blonde hair with dark roots cascades down her back, she's wearing intricate black floral lace thigh-high stockings that reveal a black thong underneath, the scene is lit by the harsh, even light of the garage's hexagonal ceiling grid, submissive-dominant charm, kept delicate noise texture, amateur cellphone quality, visible sensor noise, heavy HDR glow, amateur photo, the bright overhead lights create sharp, blown-out highlights on the car's white paint and her skin, deeply crushed shadows. "
+        "Instareal,l3n0v0 A captivating black-haired influencer with sleek, straight jet-black hair cascading to her mid-back, hyper-realistic face featuring subtle freckles across her high cheekbones, natural skin with fine pores and soft olive undertones, sharp hazel eyes behind thin gold-rimmed glasses with reflective lenses, glossy mauve lips. She’s wearing a cropped black mesh long-sleeve top that’s completely see-through except for strategic black pasties barely concealing her chest, paired with ultra-low-rise distressed denim micro-shorts unbuttoned and unzipped just enough to tease without revealing, fishnet thigh-high stockings torn at the knees, one hand pushing her glasses up the bridge of her nose while the other tugs the hem of her mesh top upward, city neon signs flickering in the background casting vibrant pink and blue glows across her oiled, ultra-realistic skin with lifelike texture and micro-details, photorealistic, 8k resolution, cinematic shallow depth of field, hyper-detailed facial realism and reflective glasses, moody Instagram/OnlyFans alleyway tease aesthetic without full nudity."
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -844,14 +844,14 @@
     [178, 103, 0, 102, 0, "MODEL"],
     [179, 72, 0, 103, 0, "MODEL"],
     [180, 102, 0, 36, 0, "MODEL"],
-    [181, 101, 0, 35, 0, "MODEL"]
+    [182, 100, 0, 35, 0, "MODEL"]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6410618351739998,
-      "offset": [-2582.581046815305, 743.7797069346104]
+      "scale": 0.5827834865218183,
+      "offset": [-2228.1015000255093, 517.4572851864915]
     },
     "frontendVersion": "1.28.8",
     "ue_links": [],

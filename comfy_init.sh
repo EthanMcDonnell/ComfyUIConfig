@@ -97,15 +97,15 @@ fi
 
 pip install -q -r "$COMFYUI_DIR/requirements.txt"
 
-if [ ! -d "SageAttention" ]; then
-    echo "🧠 Cloning SageAttention..."
-    git clone --depth 1 https://github.com/thu-ml/SageAttention.git
-    cd SageAttention 
-    python setup.py install
-    cd ..
-else
-    echo "✅ SageAttention already exists, skipping clone."
-fi
+# if [ ! -d "SageAttention" ]; then
+#     echo "🧠 Cloning SageAttention..."
+#     git clone --depth 1 https://github.com/thu-ml/SageAttention.git
+#     cd SageAttention 
+#     python setup.py install
+#     cd ..
+# else
+#     echo "✅ SageAttention already exists, skipping clone."
+# fi
 
 # --- Download helper ---
 download_file() {
