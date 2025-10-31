@@ -121,25 +121,9 @@ download_file() {
     echo "⬇️  Downloading $url → $output_path"
     if [[ "$url" == *"civitai.com"* ]]; then
         # Use aria2c for CivitAI with proper header handling
-        aria2c \
-            --console-log-level=warn \
-            --max-connection-per-server=16 \
-            --split=16 \
-            --min-split-size=1M \
-            --max-concurrent-downloads=5 \
-            --file-allocation=none \
-            --header="Authorization: Bearer ${CIVITAI_API_KEY}" \
-            --allow-overwrite=false \
-            --auto-file-renaming=false \
-            --continue=true \
-            --max-tries=5 \
-            --retry-wait=3 \
-            --timeout=60 \
-            --connect-timeout=30 \
-            --follow-metalink=mem \
-            --check-certificate=false \
-            --out="$(basename "$output_path")" \
-            --dir="$(dirname "$output_path")" \
+        curl -L --retry 3 --retry-all-errors --retry-delay 2 --fail --continue-at - \
+            -H "Authorization: Bearer ${CIVITAI_API_KEY}" \
+            -o "$output_path" \
             "$url"
     else
         # Standard aria2c for other sources
