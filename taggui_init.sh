@@ -8,8 +8,8 @@ WORKSPACE_DIR="/workspace"
 TAGGUI_DIR="$WORKSPACE_DIR/taggui"
 
 # Set Python to 3.11
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
-sudo update-alternatives --set python /usr/bin/python3.11
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 1
+sudo update-alternatives --set python /usr/bin/python3.12
 
 # --- Function to create venv with a specified Python version ---
 create_venv() {
@@ -28,12 +28,16 @@ create_venv() {
 echo "Cloning TagGUI..."
 git clone https://github.com/jhc13/taggui.git "$TAGGUI_DIR"
 
-# Create venv for TagGUI using Python 3.11
-create_venv "$TAGGUI_DIR" "venv" "python3.11"
+# Create venv for TagGUI using Python 3.12
+create_venv "$TAGGUI_DIR" "venv" "python3.12"
 
 # Install TagGUI dependencies inside venv
 cd "$TAGGUI_DIR"
-pip install torch==2.8.0+cu128 --index-url https://download.pytorch.org/whl/cu128
+# pip install torch==2.8.0+cu128 --index-url https://download.pytorch.org/whl/cu128
+curl -L -o flash_attn-2.8.3+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl \
+"https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl"
+pip install ./flash_attn-2.8.3+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+
 pip install -r requirements.txt
 
 echo "Downloading WD-VIT-Tagger model..."
