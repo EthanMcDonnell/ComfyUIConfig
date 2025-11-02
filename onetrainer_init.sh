@@ -6,6 +6,7 @@ set -e
 # Define directories
 WORKSPACE_DIR="/workspace"
 ONE_TRAINER_DIR="$WORKSPACE_DIR/one-trainer"
+REPO_DIR="$WORKSPACE_DIR/ComfyUIConfig"
 
 # Set Python to 3.12
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 2
@@ -38,7 +39,11 @@ sudo apt-get install -y python3-tk
 
 cd "$ONE_TRAINER_DIR"
 bash "$ONE_TRAINER_DIR/install.sh"
+bash "$ONE_TRAINER_DIR/update.sh"
+pip install deepdiff
 deactivate
 
+cp -r "$REPO_DIR/one-trainer-config/"* "$ONE_TRAINER_DIR/"
+
 echo "One-trainer installation complete."
-echo "To run One-Trainer: source $ONE_TRAINER_DIR/venv/bin/activate && bash $ONE_TRAINER_DIR/start-ui.sh"
+echo "To run One-Trainer: export DISPLAY=:1 && source $ONE_TRAINER_DIR/venv/bin/activate && bash $ONE_TRAINER_DIR/start-ui.sh"
