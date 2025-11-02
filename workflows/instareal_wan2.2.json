@@ -5,40 +5,6 @@
   "last_link_id": 182,
   "nodes": [
     {
-      "id": 5,
-      "type": "EmptyHunyuanLatentVideo",
-      "pos": [3647.158935546875, 260.2233581542969],
-      "size": [450, 150],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [60]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.43",
-        "Node name for S&R": "EmptyHunyuanLatentVideo",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {
-            "width": true,
-            "height": true,
-            "length": true,
-            "batch_size": true
-          }
-        }
-      },
-      "widgets_values": [1088, 1440, 1, 1],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 9,
       "type": "VAEDecode",
       "pos": [4427.91357421875, 361.8782653808594],
@@ -126,7 +92,7 @@
       "pos": [3659.67333984375, 464.1074523925781],
       "size": [270, 82],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -137,10 +103,10 @@
         }
       ],
       "properties": {
-        "aux_id": "giriss/comfy-image-saver",
+        "cnr_id": "comfy-image-saver",
         "ver": "65e6903eff274a50f8b5cd768f0f96baf37baea1",
         "Node name for S&R": "Seed Generator",
-        "cnr_id": "comfy-image-saver",
+        "aux_id": "giriss/comfy-image-saver",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {}
@@ -154,7 +120,7 @@
       "pos": [3014.672119140625, -88.59371185302734],
       "size": [302.9598083496094, 125.00395202636719],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -191,7 +157,7 @@
       "pos": [3099.625732421875, 84.64628601074219],
       "size": [210, 58],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -215,42 +181,6 @@
       "widgets_values": ["wan_2.1_vae.safetensors"],
       "color": "#323",
       "bgcolor": "#535"
-    },
-    {
-      "id": 71,
-      "type": "LoraLoaderModelOnly",
-      "pos": [3346.9189453125, -28.68145751953125],
-      "size": [270, 82],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 128
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [137]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": [
-        "Instareal/Instareal_low.safetensors",
-        0.8000000000000002
-      ]
     },
     {
       "id": 68,
@@ -411,40 +341,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 103,
-      "type": "TorchCompileModelWanVideoV2",
-      "pos": [3974.86132253056, -655.8628185539224],
-      "size": [342.74609375, 202],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 179
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [178]
-        }
-      ],
-      "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
-        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
-        "Node name for S&R": "TorchCompileModelWanVideoV2",
-        "cnr_id": "comfyui-kjnodes",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["inductor", false, "default", false, true, 64, true]
-    },
-    {
       "id": 35,
       "type": "KSamplerAdvanced",
       "pos": [4104.745651044655, -357.55185669020824],
@@ -524,40 +420,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 100,
-      "type": "TorchCompileModelWanVideoV2",
-      "pos": [3216.448193926403, -703.7900918365488],
-      "size": [342.74609375, 202],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 176
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [175, 182]
-        }
-      ],
-      "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
-        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
-        "Node name for S&R": "TorchCompileModelWanVideoV2",
-        "cnr_id": "comfyui-kjnodes",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["inductor", false, "default", false, true, 64, true]
-    },
-    {
       "id": 101,
       "type": "PathchSageAttentionKJ",
       "pos": [3598.550593190692, -518.3553434636209],
@@ -580,10 +442,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
         "Node name for S&R": "PathchSageAttentionKJ",
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {}
@@ -663,7 +525,7 @@
       "pos": [3041.61181640625, -302.9368591308594],
       "size": [270, 58],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -674,44 +536,16 @@
         }
       ],
       "properties": {
-        "aux_id": "city96/ComfyUI-GGUF",
+        "cnr_id": "ComfyUI-GGUF",
         "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
         "Node name for S&R": "UnetLoaderGGUF",
-        "cnr_id": "ComfyUI-GGUF",
+        "aux_id": "city96/ComfyUI-GGUF",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {}
         }
       },
       "widgets_values": ["Wan2.2-T2V-A14B-HighNoise-Q6_K.gguf"]
-    },
-    {
-      "id": 74,
-      "type": "UnetLoaderGGUF",
-      "pos": [3042.22900390625, -197.35244750976562],
-      "size": [270, 58],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [136]
-        }
-      ],
-      "properties": {
-        "aux_id": "city96/ComfyUI-GGUF",
-        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
-        "Node name for S&R": "UnetLoaderGGUF",
-        "cnr_id": "ComfyUI-GGUF",
-        "ue_properties": {
-          "version": "7.0.1",
-          "widget_ue_connectable": {}
-        }
-      },
-      "widgets_values": ["Wan2.2-T2V-A14B-LowNoise-Q6_K.gguf"]
     },
     {
       "id": 102,
@@ -736,10 +570,10 @@
         }
       ],
       "properties": {
-        "aux_id": "kijai/ComfyUI-KJNodes",
+        "cnr_id": "comfyui-kjnodes",
         "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
         "Node name for S&R": "PathchSageAttentionKJ",
-        "cnr_id": "comfyui-kjnodes",
+        "aux_id": "kijai/ComfyUI-KJNodes",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {}
@@ -779,6 +613,176 @@
       "bgcolor": "#355"
     },
     {
+      "id": 5,
+      "type": "EmptyHunyuanLatentVideo",
+      "pos": [3647.158935546875, 260.2233581542969],
+      "size": [450, 150],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [60]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.43",
+        "Node name for S&R": "EmptyHunyuanLatentVideo",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {
+            "width": true,
+            "height": true,
+            "length": true,
+            "batch_size": true
+          }
+        }
+      },
+      "widgets_values": [1088, 960, 1, 1],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 71,
+      "type": "LoraLoaderModelOnly",
+      "pos": [3346.9189453125, -28.68145751953125],
+      "size": [270, 82],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 128
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [137]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [
+        "Instareal/Instareal_low.safetensors",
+        0.8000000000000002
+      ]
+    },
+    {
+      "id": 74,
+      "type": "UnetLoaderGGUF",
+      "pos": [3042.22900390625, -197.35244750976562],
+      "size": [270, 58],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [136]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
+        "Node name for S&R": "UnetLoaderGGUF",
+        "aux_id": "city96/ComfyUI-GGUF",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["Wan2.2-T2V-A14B-LowNoise-Q6_K.gguf"]
+    },
+    {
+      "id": 100,
+      "type": "TorchCompileModelWanVideoV2",
+      "pos": [3216.448193926403, -703.7900918365488],
+      "size": [342.74609375, 202],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 176
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [175, 182]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
+        "Node name for S&R": "TorchCompileModelWanVideoV2",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["inductor", false, "default", false, true, 16, true]
+    },
+    {
+      "id": 103,
+      "type": "TorchCompileModelWanVideoV2",
+      "pos": [3974.86132253056, -655.8628185539224],
+      "size": [342.74609375, 202],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 179
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [178]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
+        "Node name for S&R": "TorchCompileModelWanVideoV2",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "ue_properties": {
+          "version": "7.0.1",
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": ["inductor", false, "default", false, true, 16, true]
+    },
+    {
       "id": 3,
       "type": "CLIPTextEncode",
       "pos": [3637.72607421875, -338.9566955566406],
@@ -813,7 +817,7 @@
         }
       },
       "widgets_values": [
-        "Instareal,l3n0v0 A captivating black-haired influencer with sleek, straight jet-black hair cascading to her mid-back, hyper-realistic face featuring subtle freckles across her high cheekbones, natural skin with fine pores and soft olive undertones, sharp hazel eyes behind thin gold-rimmed glasses with reflective lenses, glossy mauve lips. She’s wearing a cropped black mesh long-sleeve top that’s completely see-through except for strategic black pasties barely concealing her chest, paired with ultra-low-rise distressed denim micro-shorts unbuttoned and unzipped just enough to tease without revealing, fishnet thigh-high stockings torn at the knees, one hand pushing her glasses up the bridge of her nose while the other tugs the hem of her mesh top upward, city neon signs flickering in the background casting vibrant pink and blue glows across her oiled, ultra-realistic skin with lifelike texture and micro-details, photorealistic, 8k resolution, cinematic shallow depth of field, hyper-detailed facial realism and reflective glasses, moody Instagram/OnlyFans alleyway tease aesthetic without full nudity."
+        "Instareal,l3n0v0 A sexy woman with long, sleek black hair and bold bangs sits confidently in a dynamic pose, wearing an unzipped yellow jumpsuit that drapes stylishly around her figure. The ambient and backlighting create a rich interplay of light and shadow, adding depth and mystery to the scene. The indoor setting features a neutral color palette with carefully placed decorative lighting, casting a moody yet sophisticated atmosphere. Captured in a grainy, vintage 35mm film style reminiscent of classic Kodachrome and Lomography, the image has a slightly faded look with subtle imperfections like ISO 200 grain, soft vignettes, and a delicate patina of time. The composition blends hyperrealistic textures with an impressionistic painting-like quality, creating an evocative and timeless aesthetic.\n"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -850,8 +854,8 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.5827834865218183,
-      "offset": [-2228.1015000255093, 517.4572851864915]
+      "scale": 1.0324364961660801,
+      "offset": [-2514.5847479869, 392.84664845284607]
     },
     "frontendVersion": "1.28.8",
     "ue_links": [],
