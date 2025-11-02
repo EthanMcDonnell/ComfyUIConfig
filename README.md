@@ -19,6 +19,13 @@ https://civitai.com/models/1822984/instagirl-wan-22
 instareal lenovo wan 2.2
 https://www.reddit.com/r/civitai/comments/1n0vhc1/wan_22_realism_workflow_results_instareal_lenovo/
 
+qwen edit
+Can do carasaeul images
+
+qwen image with load image
+Can be used to replicate similar image
+https://www.youtube.com/watch?v=McI8Z9lCahk
+
 Information from author:\
 I'd be happy to explain.
 I start by doing the regular image generation, that uses the high noise model, then the low noise model.
