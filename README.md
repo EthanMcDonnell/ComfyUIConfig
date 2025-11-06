@@ -26,6 +26,11 @@ qwen image with load image
 Can be used to replicate similar image
 https://www.youtube.com/watch?v=McI8Z9lCahk
 
+wan2.2 basic inference with simple postprocessing
+https://www.youtube.com/watch?v=PhiPASFYBmk
+
+
+
 Information from author:\
 I'd be happy to explain.
 I start by doing the regular image generation, that uses the high noise model, then the low noise model.

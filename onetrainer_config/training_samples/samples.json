@@ -1,0 +1,26 @@
+[
+  {
+    "__version": 0,
+    "enabled": true,
+    "prompt": "A photorealistic outdoor poolside selfie of an adult woman in a white micro bikini, upper body close to camera with arm extended, slight wide-angle perspective and subtle distortion, head tilted slightly left, hair pulled into a high messy bun with loose strands, natural makeup, parted lips, neutral yet confident expression, soft, diffuse daylight (open shade), even key with gentle fill; minimize eyelash/eyebrow shadowing, no harsh facial shadows, smooth specular roll-off, key: fill ≈ 1.2:1, white balance neutral, no overhead sun; face uniformly lit, tanned sunlit skin with visible micro-texture, faint freckles and tiny moles on chest and shoulders, realistic soft tissue compression at bikini edges, pronounced cleavage with smooth specular roll-off not oily, white manicure visible as she lightly lifts one hand near her shoulder, standing in shallow turquoise pool water up to upper thighs with concentric ripples and refracted light patterns on skin and bikini, foreground water detail sharp with gentle caustics, background shows modern house architecture with beige tile coping, glass doors, patio furniture in shade, trimmed greenery, bright midday sunlight from high angle creating hard shadows and strong contrast, color palette of turquoise blue water, warm tan skin, white swimwear, neutral beige and gray architecture, overall mood vibrant, summery, candid, highly detailed and sharp focus, intricate skin and water textures, realistic reflections, natural color rendering without plastic sheen, minimal depth of field blur typical of a smartphone front camera, low ISO noise, fast shutter feel, 24–28 mm equivalent wide lens look, no HDR glow, cinematic yet documentary realism, optimized for  Seedream 4.0 / SDXL, ultra-realistic, 8k resolution, clean tone curve, balanced mid-contrast, accurate white balance, crisp edges, professional lighting behavior and lifelike anatomy.",
+    "negative_prompt": "blurry",
+    "height": 1024,
+    "width": 1024,
+    "frames": 1,
+    "length": 1.0,
+    "seed": 157483485,
+    "random_seed": false,
+    "diffusion_steps": 25,
+    "cfg_scale": 4.0,
+    "noise_scheduler": "DPMPP_SDE_KARRAS",
+    "text_encoder_1_layer_skip": 0,
+    "text_encoder_2_layer_skip": 0,
+    "text_encoder_3_layer_skip": 0,
+    "text_encoder_4_layer_skip": 0,
+    "prior_attention_mask": false,
+    "force_last_timestep": false,
+    "sample_inpainting": false,
+    "base_image_path": "",
+    "mask_image_path": ""
+  }
+]
