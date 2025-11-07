@@ -32,6 +32,9 @@ git clone https://github.com/ostris/ai-toolkit.git "$AI_TOOLKIT_DIR"
 # Create venv for AI Toolkit using Python 3.12
 create_venv "$AI_TOOLKIT_DIR" "venv" "python3.12"
 
+sudo apt update
+sudo apt install -y nodejs npm
+
 # Install AI Toolkit dependencies inside venv
 echo "Installing ai-toolkit dependencies..."
 cd "$AI_TOOLKIT_DIR"
@@ -53,5 +56,5 @@ fi
 deactivate
 
 echo "AI Toolkit installation complete."
-echo "To run AI Toolkit: source $AI_TOOLKIT_DIR/venv/bin/activate && cd $AI_TOOLKIT_DIR && python run.py"
+echo "To run AI Toolkit: source $AI_TOOLKIT_DIR/venv/bin/activate && cd $AI_TOOLKIT_DIR/ui && npm run build_and_start"
 echo "Example training: python run.py config/examples/train_lora_flux_24gb.yaml"

@@ -1,0 +1,119 @@
+---
+job: extension
+config:
+  # For default ref: https://github.com/ostris/ai-toolkit/blob/6f308fc46e52f5470213182fa47c2fea73b84cf0/ui/src/app/jobs/new/jobConfig.ts#L74
+  # For Options ref: https://github.com/ostris/ai-toolkit/blob/6f308fc46e52f5470213182fa47c2fea73b84cf0/ui/src/app/jobs/new/options.ts#L480
+  # this name will be the folder and filename name
+  name: "my_first_qwen_image_lora_v1"
+  process:
+    - type: 'sd_trainer'
+      # root folder to save training sessions/samples/weights
+      training_folder: "output"
+      # uncomment to see performance stats in the terminal every N steps
+#      performance_log_every: 1000
+      device: cuda:0
+      # if a trigger word is specified, it will be added to captions of training data if it does not already exist
+      # alternatively, in your captions you can add [trigger] and it will be replaced with the trigger word
+      # Trigger words will not work when caching text embeddings
+#      trigger_word: "p3r5on"
+      network:
+        type: "lora"
+        linear: 16
+        linear_alpha: 16
+      save:
+        dtype: float16 # precision to save
+        save_every: 250 # save every this many steps
+        max_step_saves_to_keep: 4 # how many intermittent saves to keep
+      datasets:
+        # datasets are a folder of images. captions need to be txt files with the same name as the image
+        # for instance image2.jpg and image2.txt. Only jpg, jpeg, and png are supported currently
+        # images will automatically be resized and bucketed into the resolution specified
+        # on windows, escape back slashes with another backslash so
+        # "C:\\path\\to\\images\\folder"
+        - folder_path: "/workspace/dataset"
+          caption_ext: "txt"
+          # default_caption: "a person" # if caching text embeddings, if you dont have captions, this will get cached
+          caption_dropout_rate: 0.05  # will drop out the caption 5% of time
+          shuffle_tokens: false  # shuffle caption order, split by commas
+          cache_latents_to_disk: true  # leave this true unless you have a large dataset
+          # if you OOM, 1024 may be too much, but should work
+          resolution: [ 512, 768, 1024 ]  # qwen image enjoys multiple resolutions
+
+      train:
+        batch_size: 1
+        bypass_guidance_embedding: true
+        steps: 3000 # total number of steps to train 500 - 4000 is a good range
+        gradient_accumulation: 1
+        train_unet: true
+        train_text_encoder: false  # probably won't work with qwen image
+        gradient_checkpointing: true # need the on unless you have a ton of vram
+        noise_scheduler: "flowmatch" # for training only
+        timestep_type: "sigmoid"
+        content_or_style: "balanced"  # UI: Timestep Bias
+        optimizer: "adamw8bit"
+        lr: 2e-4
+        # ema_config:
+        #   use_ema: false # not specified
+        #   ema_decay: 0.99 # not specified
+        dtype: "bf16"
+        # unload_text_encoder: false  # not specified
+        cache_text_embeddings: true # caching text embeddings is required for 24GB
+        optimizer_params:
+          weight_decay: 1e-4
+        # skip_first_sample: true  # not specified # skip the pre training sample
+        # force_first_sample: false  # not specified
+        # disable_sampling: true  # not specified
+        # diff_output_preservation: false  # not specified
+        # diff_output_preservation_multiplier: 1.0  # not specified
+        # diff_output_preservation_class: ""  # not specified
+        # blank_prompt_preservation: false  # not specified
+        # blank_prompt_preservation_multiplier: 1.0  # not specified
+        # switch_boundary_every: 0  # not specified
+        # loss_type: "mse"  # not specified
+
+
+      model:
+        # huggingface model name or path
+        name_or_path: "models/qwen_image"
+        quantize: true
+        quantize_te: true
+        # to use the ARA use the | pipe to point to hf path, or a local path if you have one.
+        # 3bit is required for 24GB
+        # 3bit with ARA: uint6|ostris/accuracy_recovery_adapters/qwen_image_torchao_uint3.safetensors
+        qtype: "uint6" # UI: Transformer
+        qtype_te: "qfloat8"
+        # quantize_kwargs:  # not specified
+        arch: "qwen_image"
+        low_vram: true # required for 5090
+        # model_kwargs: {}  # not specified
+        # layer_offloading: false  # not specified
+        # layer_offloading_transformer_percent: 0  # not specified
+        # layer_offloading_text_encoder_percent: 0  # not specified
+
+      sample:
+        sampler: "flowmatch" # must match train.noise_scheduler
+        sample_every: 250 # sample every this many steps
+        width: 1024
+        height: 1024
+        prompts:
+          # you can add [trigger] to the prompts here and it will be replaced with the trigger word
+          # - "[trigger] holding a sign that says 'I LOVE PROMPTS!'"\ 
+          - "woman with red hair, playing chess at the park, bomb going off in the background"
+          - "a woman holding a coffee cup, in a beanie, sitting at a cafe"
+          - "a horse is a DJ at a night club, fish eye lens, smoke machine, lazer lights, holding a martini"
+          - "a man showing off his cool new t shirt at the beach, a shark is jumping out of the water in the background"
+          - "a bear building a log cabin in the snow covered mountains"
+          - "woman playing the guitar, on stage, singing a song, laser lights, punk rocker"
+          - "hipster man with a beard, building a chair, in a wood shop"
+          - "photo of a man, white background, medium shot, modeling clothing, studio lighting, white backdrop"
+          - "a man holding a sign that says, 'this is a sign'"
+          - "a bulldog, in a post apocalyptic world, with a shotgun, in a leather jacket, in a desert, with a motorcycle"
+        neg: ""
+        seed: 42
+        walk_seed: true
+        guidance_scale: 3
+        sample_steps: 25
+# you can add any additional meta info here. [name] is replaced with config name at top
+meta:
+  name: "[name]"
+  version: '1.0'
