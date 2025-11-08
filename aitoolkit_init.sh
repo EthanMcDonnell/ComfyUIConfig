@@ -57,5 +57,6 @@ fi
 deactivate
 
 echo "AI Toolkit installation complete."
-echo "To run AI Toolkit: source $AI_TOOLKIT_DIR/venv/bin/activate && cd $AI_TOOLKIT_DIR/ui && npm run build_and_start"
+echo "To run AI Toolkit: source /workspace/ai-toolkit/venv/bin/activate && cd /workspace/ai-toolkit/ui && npm run build && npm start"
+
 echo "Example training: python run.py config/examples/train_lora_flux_24gb.yaml"
