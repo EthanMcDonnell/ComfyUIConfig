@@ -99,16 +99,11 @@ config:
         prompts:
           # you can add [trigger] to the prompts here and it will be replaced with the trigger word
           # - "[trigger] holding a sign that says 'I LOVE PROMPTS!'"\ 
-          - "woman with red hair, playing chess at the park, bomb going off in the background"
-          - "a woman holding a coffee cup, in a beanie, sitting at a cafe"
-          - "a horse is a DJ at a night club, fish eye lens, smoke machine, lazer lights, holding a martini"
-          - "a man showing off his cool new t shirt at the beach, a shark is jumping out of the water in the background"
-          - "a bear building a log cabin in the snow covered mountains"
-          - "woman playing the guitar, on stage, singing a song, laser lights, punk rocker"
-          - "hipster man with a beard, building a chair, in a wood shop"
-          - "photo of a man, white background, medium shot, modeling clothing, studio lighting, white backdrop"
-          - "a man holding a sign that says, 'this is a sign'"
-          - "a bulldog, in a post apocalyptic world, with a shotgun, in a leather jacket, in a desert, with a motorcycle"
+          - "am0rgn, A photorealistic outdoor portrait of a woman standing on a sandy beach near the shoreline, wind moving her hair, ocean waves softly blurred behind her, natural sunlight with even facial lighting, warm color tones, crisp focus, realistic skin texture."
+          - "am0rgn, A realistic daytime photo of a woman walking on a busy city street, wearing casual jeans and a light jacket, sunlight reflecting off shop windows, shallow depth of field separating her from the background, true-to-life color rendering, subtle motion in her stride."
+          - "am0rgn, A natural daylight portrait of a woman standing on a forest path surrounded by green trees, soft filtered sunlight through leaves, even exposure across face and clothes, calm neutral color tones, visible fine detail in hair and foliage."
+          - "am0rgn, A realistic indoor photo of a woman sitting at a café table by a window, natural side light illuminating her face, warm tones from wood and sunlight, cup of coffee in hand, depth of field softly blurring the background, balanced exposure and lifelike color."
+          - "am0rgn, A photorealistic outdoor shot of a woman standing on a rooftop at golden hour, city skyline behind her, warm orange and pink sky tones, natural directional lighting on her face, subtle lens flare, relaxed expression, soft wind movement in hair."
         neg: ""
         seed: 42
         walk_seed: true
