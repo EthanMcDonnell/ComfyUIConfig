@@ -41,7 +41,8 @@ cd "$AI_TOOLKIT_DIR"
 
 # Install PyTorch with CUDA support first
 echo "Installing PyTorch with CUDA support..."
-pip install --no-cache-dir torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu126
+# specific version as outlined in Github issue: https://github.com/ostris/ai-toolkit/issues/484
+pip3 install --no-cache-dir torch==2.8.0+cu129 torchvision==0.23.0+cu129 torchaudio==2.8.0+cu129 --index-url https://download.pytorch.org/whl/cu129
 
 # Install AI Toolkit requirements
 echo "Installing ai-toolkit requirements..."
