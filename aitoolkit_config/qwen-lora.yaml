@@ -4,7 +4,7 @@ config:
   # For default ref: https://github.com/ostris/ai-toolkit/blob/6f308fc46e52f5470213182fa47c2fea73b84cf0/ui/src/app/jobs/new/jobConfig.ts#L74
   # For Options ref: https://github.com/ostris/ai-toolkit/blob/6f308fc46e52f5470213182fa47c2fea73b84cf0/ui/src/app/jobs/new/options.ts#L480
   # this name will be the folder and filename name
-  name: "my_first_qwen_image_lora_v1"
+  name: "qwen-lora"
   process:
     - type: 'sd_trainer'
       # root folder to save training sessions/samples/weights
@@ -38,6 +38,7 @@ config:
           cache_latents_to_disk: true  # leave this true unless you have a large dataset
           # if you OOM, 1024 may be too much, but should work
           resolution: [ 512, 768, 1024 ]  # qwen image enjoys multiple resolutions
+          network_weight: 1
 
       train:
         batch_size: 1
@@ -74,7 +75,7 @@ config:
 
       model:
         # huggingface model name or path
-        name_or_path: "models/qwen_image"
+        name_or_path: "Qwen/Qwen-Image"
         quantize: true
         quantize_te: true
         # to use the ARA use the | pipe to point to hf path, or a local path if you have one.
