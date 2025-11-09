@@ -21,7 +21,7 @@ config:
         linear: 16
         linear_alpha: 16
       save:
-        dtype: float16 # precision to save
+        dtype: "bf16"
         save_every: 250 # save every this many steps
         max_step_saves_to_keep: 4 # how many intermittent saves to keep
       datasets:
