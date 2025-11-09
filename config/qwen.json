@@ -10,6 +10,8 @@
     "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors,/workspace/ComfyUI/models/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors"
   ],
   "loras": [
-    "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,/workspace/ComfyUI/models/loras/Qwen-Image-Lightning-4steps-V2.0.safetensors"
+    "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,/workspace/ComfyUI/models/loras/Qwen-Image-Lightning-4steps-V2.0.safetensors",
+    "https://civitai.com/api/download/models/2335968?type=Model&format=SafeTensor,/workspace/ComfyUI/models/loras/1GIRL_QWEN_V3.safetensors",
+    "https://civitai.com/api/download/models/2270374?type=Model&format=SafeTensor,/workspace/ComfyUI/models/loras/Samsung.safetensors"
   ]
 }

@@ -29,6 +29,8 @@ https://www.youtube.com/watch?v=McI8Z9lCahk
 wan2.2 basic inference with simple postprocessing
 https://www.youtube.com/watch?v=PhiPASFYBmk
 
+qwen 1girl+samsung
+https://civitai.com/models/1923241/1girl-qwen-image
 
 
 Information from author:\

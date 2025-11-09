@@ -94,8 +94,8 @@ config:
       sample:
         sampler: "flowmatch" # must match train.noise_scheduler
         sample_every: 250 # sample every this many steps
-        width: 1024
-        height: 1024
+        width: 768
+        height: 768
         prompts:
           # you can add [trigger] to the prompts here and it will be replaced with the trigger word
           # - "[trigger] holding a sign that says 'I LOVE PROMPTS!'"\ 
@@ -108,7 +108,7 @@ config:
         seed: 42
         walk_seed: true
         guidance_scale: 3
-        sample_steps: 25
+        sample_steps: 20
 # you can add any additional meta info here. [name] is replaced with config name at top
 meta:
   name: "[name]"
