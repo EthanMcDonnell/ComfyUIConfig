@@ -180,110 +180,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [390, 440],
-      "size": [425.27801513671875, 180.6060791015625],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 75
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [52]
-        }
-      ],
-      "title": "CLIP Text Encode (Negative Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "CLIPTextEncode",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "low quality, blurry, bad anatomy, deformed,extra fingers, missing limbs, malformed hands, cartoonish, watermark"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 3,
-      "type": "KSampler",
-      "pos": [850, 120],
-      "size": [300, 474],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 125
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 46
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 52
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 107
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "slot_index": 0,
-          "links": [128]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "KSampler",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        3519372993289,
-        "randomize",
-        40,
-        2.5,
-        "euler",
-        "simple",
-        1
-      ]
-    },
-    {
       "id": 66,
       "type": "ModelSamplingAuraFlow",
       "pos": [850, 10],
@@ -414,9 +310,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "aux_id": "ltdrdata/was-node-suite-comfyui",
         "ver": "9ae952b1b435d2bd846bfe6516919b5a8b9201aa",
         "Node name for S&R": "Image Chromatic Aberration",
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -455,9 +352,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "aux_id": "ltdrdata/was-node-suite-comfyui",
         "ver": "9ae952b1b435d2bd846bfe6516919b5a8b9201aa",
         "Node name for S&R": "Image Lucy Sharpen",
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -493,9 +391,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "aux_id": "ltdrdata/was-node-suite-comfyui",
         "ver": "9ae952b1b435d2bd846bfe6516919b5a8b9201aa",
         "Node name for S&R": "Image Bloom Filter",
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
         "ue_properties": {
           "version": "7.0.1",
           "widget_ue_connectable": {
@@ -553,113 +452,6 @@
       "widgets_values": []
     },
     {
-      "id": 76,
-      "type": "Power Lora Loader (rgthree)",
-      "pos": [437.21949041546316, -34.872493815615975],
-      "size": [324.82119140625, 166],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "dir": 3,
-          "name": "model",
-          "type": "MODEL",
-          "link": 131
-        },
-        {
-          "dir": 3,
-          "name": "clip",
-          "type": "CLIP",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "MODEL",
-          "shape": 3,
-          "type": "MODEL",
-          "links": [132]
-        },
-        {
-          "dir": 4,
-          "name": "CLIP",
-          "shape": 3,
-          "type": "CLIP",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "67c3ba1b7c406d3d935a775e0d118a718b219868",
-        "Show Strengths": "Single Strength"
-      },
-      "widgets_values": [
-        {},
-        {
-          "type": "PowerLoraLoaderHeaderWidget"
-        },
-        {
-          "on": true,
-          "lora": "qwen-lora.safetensors",
-          "strength": 1,
-          "strengthTwo": null
-        },
-        {
-          "on": true,
-          "lora": "None",
-          "strength": 0.3,
-          "strengthTwo": null
-        },
-        {},
-        ""
-      ]
-    },
-    {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [390, 240],
-      "size": [422.84503173828125, 164.31304931640625],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 74
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [46]
-        }
-      ],
-      "title": "CLIP Text Encode (Positive Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "CLIPTextEncode",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "am0rgn, 1girl, Female subject, medium close-up selfie taken from a high angle, lying down on white bedding. Black hair and bangs frames the face. The subject wears a white ribbed tank top with wide straps, and a delicate gold chain necklace with a small pendant resting on the upper chest. Makeup includes defined eyebrows, dark lashes, and matte pink lipstick. The subject's eyes look directly toward the camera. Cleavage. \n\nvisible sensor noise, jpeg artifacts \n\nNatural light illuminates the subject from above and slightly to the left, causing subtle highlights on the skin and fabric. The depth of field is shallow, with the subject in sharp focus and the white bedding directly behind her appearing slightly soft, indicating a mildly blurred background. "
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 84,
       "type": "Film Grain",
       "pos": [1458.0587952118399, 463.0005864014717],
@@ -682,9 +474,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "RES4LYF",
+        "aux_id": "ClownsharkBatwing/RES4LYF",
         "ver": "7750bf7800b6ad9d670308a09989fc0c04c40cec",
         "Node name for S&R": "Film Grain",
+        "cnr_id": "RES4LYF",
         "ue_properties": {
           "widget_ue_connectable": {},
           "input_ue_unconnectable": {},
@@ -724,6 +517,224 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [1024, 1024, 1]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [390, 240],
+      "size": [422.84503173828125, 164.31304931640625],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [46]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "am0rgn, 1girl, Female subject, medium close-up selfie taken from a high angle, lying down on white bedding. Black hair and bangs frames the face. The subject wears a white ribbed tank top with wide straps, and a delicate gold chain necklace with a small pendant resting on the upper chest. Makeup includes defined eyebrows, dark lashes, and matte pink lipstick. The subject's eyes look directly toward the camera. Cleavage.  \n\nvisible sensor noise, jpeg artifacts \n\nNatural light illuminates the subject from above and slightly to the left, causing subtle highlights on the skin and fabric. The depth of field is shallow, with the subject in sharp focus and the white bedding directly behind her appearing slightly soft, indicating a mildly blurred background. "
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [390, 440],
+      "size": [425.27801513671875, 180.6060791015625],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [52]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "low quality, blurry, bad anatomy, deformed,extra fingers, missing limbs, malformed hands, cartoonish, watermark "
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [956.161996640392, 210.23769714433584],
+      "size": [300, 474],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 125
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 46
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 52
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 107
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [128]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        737996637708222,
+        "randomize",
+        40,
+        2.5,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 76,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [437.21949041546316, -34.872493815615975],
+      "size": [324.82119140625, 190],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 131
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [132]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "rgthree/rgthree-comfy",
+        "ver": "67c3ba1b7c406d3d935a775e0d118a718b219868",
+        "Show Strengths": "Single Strength",
+        "cnr_id": "rgthree-comfy"
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": true,
+          "lora": "am0rgn-qwen-lora-000003000.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "1GIRL_QWEN_V3.safetensors",
+          "strength": 0.85,
+          "strengthTwo": null
+        },
+        {
+          "on": true,
+          "lora": "Samsung.safetensors",
+          "strength": 0.55,
+          "strengthTwo": null
+        },
+        {},
+        ""
+      ]
     }
   ],
   "links": [
@@ -780,8 +791,8 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.643369074602712,
-      "offset": [745.8511536218009, 176.04251311952677]
+      "scale": 0.6433690746027123,
+      "offset": [607.6994321005727, 134.5263510773883]
     },
     "frontendVersion": "1.28.8",
     "ue_links": [],
