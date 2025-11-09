@@ -2,49 +2,8 @@
   "id": "0de6c257-d141-4418-8acf-edee3afa3fd3",
   "revision": 0,
   "last_node_id": 19,
-  "last_link_id": 19,
+  "last_link_id": 21,
   "nodes": [
-    {
-      "id": 3,
-      "type": "CLIPTextEncode",
-      "pos": [1761, 870],
-      "size": [425.27801513671875, 180.6060791015625],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [10]
-        }
-      ],
-      "title": "CLIP Text Encode (Negative Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "CLIPTextEncode",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [""],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
     {
       "id": 4,
       "type": "MarkdownNote",
@@ -66,47 +25,12 @@
       "bgcolor": "#653"
     },
     {
-      "id": 5,
-      "type": "Note",
-      "pos": [2221, 310],
-      "size": [300, 88],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "Increase the shift if you get too many blury/dark/bad images. Decrease if you want to try increasing detail."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 6,
-      "type": "Note",
-      "pos": [2221, 1340],
-      "size": [310, 120],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "For fp8 without 8steps LoRA",
-      "properties": {},
-      "widgets_values": [
-        "Set cfg to 1.0 for a speed boost at the cost of consistency. Samplers like res_multistep work pretty well at cfg 1.0\n\nThe official number of steps is 50 but I think that's too much. Even just 10 steps seems to work."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 7,
       "type": "MarkdownNote",
       "pos": [831, 440],
       "size": [540, 630],
       "flags": {},
-      "order": 3,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -123,10 +47,10 @@
     {
       "id": 8,
       "type": "CLIPLoader",
-      "pos": [1391, 620],
+      "pos": [1503.7356999999965, 701.9896000000005],
       "size": [330, 110],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -166,10 +90,10 @@
     {
       "id": 9,
       "type": "UNETLoader",
-      "pos": [1391, 480],
+      "pos": [1503.7356999999965, 561.9896000000006],
       "size": [330, 90],
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -177,7 +101,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "slot_index": 0,
-          "links": [3]
+          "links": [21]
         }
       ],
       "properties": {
@@ -208,7 +132,7 @@
       "pos": [1816.210466215639, 1246.398277847411],
       "size": [310, 210],
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -221,114 +145,33 @@
       "bgcolor": "#653"
     },
     {
-      "id": 11,
-      "type": "LoraLoaderModelOnly",
-      "pos": [1804.225323867703, 486.70655227826046],
-      "size": [270, 82],
+      "id": 13,
+      "type": "VAELoader",
+      "pos": [1503.7356999999965, 851.9896000000005],
+      "size": [330, 60],
       "flags": {},
-      "order": 12,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [13]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.49",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "models": [
-          {
-            "name": "Qwen-Image-Lightning-8steps-V1.0.safetensors",
-            "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.0.safetensors",
-            "directory": "loras"
-          }
-        ]
-      },
-      "widgets_values": ["Qwen-Image-Lightning-8steps-V1.0.safetensors", 1]
-    },
-    {
-      "id": 18,
-      "type": "Power Lora Loader (rgthree)",
-      "pos": [2222.1920000000005, 443.9930000000002],
-      "size": [324.82119140625, 118],
-      "flags": {},
-      "order": 14,
-      "mode": 4,
-      "inputs": [
-        {
-          "dir": 3,
-          "name": "model",
-          "type": "MODEL",
-          "link": 13
-        },
-        {
-          "dir": 3,
-          "name": "clip",
-          "type": "CLIP",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "MODEL",
-          "shape": 3,
-          "type": "MODEL",
-          "links": [14]
-        },
-        {
-          "dir": 4,
-          "name": "CLIP",
-          "shape": 3,
-          "type": "CLIP",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
-        "Show Strengths": "Single Strength",
-        "aux_id": "rgthree/rgthree-comfy"
-      },
-      "widgets_values": [
-        {},
-        {
-          "type": "PowerLoraLoaderHeaderWidget"
-        },
-        {},
-        ""
-      ]
-    },
-    {
-      "id": 1,
-      "type": "EmptySD3LatentImage",
-      "pos": [1421, 940],
-      "size": [270, 106],
-      "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [17]
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [5, 19]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.3.48",
-        "Node name for S&R": "EmptySD3LatentImage",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "qwen_image_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+            "directory": "vae"
+          }
+        ],
         "enableTabs": false,
         "tabWidth": 65,
         "tabXOffset": 10,
@@ -338,17 +181,65 @@
         "secondTabWidth": 65,
         "widget_ue_connectable": {}
       },
-      "widgets_values": [1328, 1328, 1]
+      "widgets_values": ["qwen_image_vae.safetensors"]
+    },
+    {
+      "id": 5,
+      "type": "Note",
+      "pos": [2222.331000000002, 290.03500000000014],
+      "size": [300, 88],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Increase the shift if you get too many blury/dark/bad images. Decrease if you want to try increasing detail."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 17,
+      "type": "SaveImage",
+      "pos": [3423.4016493903177, 643.8012049618562],
+      "size": [490, 600],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "SaveImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": ["ComfyUI"]
     },
     {
       "id": 14,
       "type": "VAEDecode",
-      "pos": [2744.720377766702, 458.52932637326086],
+      "pos": [3194.3563777667046, 646.0793263732612],
       "size": [210, 46],
       "flags": {
         "collapsed": false
       },
-      "order": 17,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -388,11 +279,11 @@
     {
       "id": 15,
       "type": "VAEEncode",
-      "pos": [2571.031544626055, 454.84156329256956],
+      "pos": [2705.099544626051, 647.9575632925703],
       "size": [140, 46],
       "flags": {},
-      "order": 13,
-      "mode": 4,
+      "order": 12,
+      "mode": 0,
       "inputs": [
         {
           "name": "pixels",
@@ -409,7 +300,7 @@
         {
           "name": "LATENT",
           "type": "LATENT",
-          "links": []
+          "links": [20]
         }
       ],
       "properties": {
@@ -420,9 +311,27 @@
       "widgets_values": []
     },
     {
+      "id": 6,
+      "type": "Note",
+      "pos": [2150.2149691712557, 1303.3656419395102],
+      "size": [310, 120],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "For fp8 without 8steps LoRA",
+      "properties": {},
+      "widgets_values": [
+        "Set cfg to 1.0 for a speed boost at the cost of consistency. Samplers like res_multistep work pretty well at cfg 1.0\n\nThe official number of steps is 50 but I think that's too much. Even just 10 steps seems to work."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
       "id": 12,
       "type": "LoadImage",
-      "pos": [2267.0338850536227, 777.6519334739855],
+      "pos": [2399.867685053622, 756.8883334739846],
       "size": [274.080078125, 314.00000000000006],
       "flags": {},
       "order": 8,
@@ -445,36 +354,36 @@
         "ver": "0.3.66",
         "Node name for S&R": "LoadImage"
       },
-      "widgets_values": ["example.png", "image"]
+      "widgets_values": ["6e161394f8e1__.jpeg", "image"]
     },
     {
-      "id": 13,
-      "type": "VAELoader",
-      "pos": [1391, 770],
-      "size": [330, 60],
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [1945.6202, 900.8178999999996],
+      "size": [425.27801513671875, 180.6060791015625],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
-      "inputs": [],
-      "outputs": [
+      "inputs": [
         {
-          "name": "VAE",
-          "type": "VAE",
-          "slot_index": 0,
-          "links": [5, 19]
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
         }
       ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [10]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.3.48",
-        "Node name for S&R": "VAELoader",
-        "models": [
-          {
-            "name": "qwen_image_vae.safetensors",
-            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
-            "directory": "vae"
-          }
-        ],
+        "Node name for S&R": "CLIPTextEncode",
         "enableTabs": false,
         "tabWidth": 65,
         "tabXOffset": 10,
@@ -484,15 +393,115 @@
         "secondTabWidth": 65,
         "widget_ue_connectable": {}
       },
-      "widgets_values": ["qwen_image_vae.safetensors"]
+      "widgets_values": ["blurry"],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 19,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [2393.1104810637553, 651.4852010120873],
+      "size": [300, 58],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [8]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [2]
+    },
+    {
+      "id": 16,
+      "type": "KSampler",
+      "pos": [2874.5568549312816, 646.4158112780984],
+      "size": [300, 474],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 8
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 9
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 10
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [4]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        728150837255404,
+        "randomize",
+        30,
+        3.5,
+        "euler",
+        "simple",
+        0.85
+      ]
     },
     {
       "id": 2,
       "type": "CLIPTextEncode",
-      "pos": [1761, 670],
+      "pos": [1942.5483999999988, 694.8896999999998],
       "size": [422.84503173828125, 164.31304931640625],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -524,186 +533,93 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "portrait, masterpiece, 4k, ray tracing, intricate details, highly-detailed, hyper-realistic, 8k RAW Editorial Photo.1girl, solo, blush, short hair, simple background, shirt, black hair, dress, bow, closed mouth, upper body, hair bow, hairband, blunt bangs, black dress, black eyes, black shirt, looking to the side, bob cut, yellow background, yellow bow, pinafore dress, yellow hairband, Flatline,cinematic light, dramatic light, shallow depth of field,  high budget, bokeh, cinemascope, film grain,"
+        "am0rgn, A woman stands on a sandy beach in a fitted cream-colored dress. The image is a medium wide shot taken from a low eye-level angle. Her body faces forward with her head slightly tilted and her hands behind her back. The ocean extends behind her to the left, with small waves touching the shore. Trees and rocks line the distant coastline on the right. The background is in clear focus. The scene is lit by soft, natural daylight from the late afternoon sun, creating even illumination and gentle shadows on her dress and the sand. black hair, bangs, fair skin. Detailed skin\n"
       ],
       "color": "#232",
       "bgcolor": "#353"
     },
     {
-      "id": 16,
-      "type": "KSampler",
-      "pos": [2620.5778549312804, 650.5298112780985],
-      "size": [300, 474],
+      "id": 18,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [1987.2704999999992, 494.30479999999983],
+      "size": [324.82119140625, 142],
       "flags": {},
-      "order": 16,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
+          "dir": 3,
           "name": "model",
           "type": "MODEL",
-          "link": 8
+          "link": 21
         },
         {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 9
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 10
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 17
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "LATENT",
-          "type": "LATENT",
-          "slot_index": 0,
-          "links": [4]
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [14]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": null
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "KSampler",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
+        "cnr_id": "rgthree-comfy",
+        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
+        "Show Strengths": "Single Strength",
+        "aux_id": "rgthree/rgthree-comfy"
       },
       "widgets_values": [
-        222518378103538,
-        "randomize",
-        40,
-        2.5,
-        "euler",
-        "simple",
-        1
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {
+          "on": true,
+          "lora": "qwen-lora_000001750.safetensors",
+          "strength": 1,
+          "strengthTwo": null
+        },
+        {},
+        ""
       ]
-    },
-    {
-      "id": 17,
-      "type": "SaveImage",
-      "pos": [2991.9156493903165, 450.6852049618558],
-      "size": [490, 600],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 12
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "SaveImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": ["ComfyUI"]
-    },
-    {
-      "id": 19,
-      "type": "ModelSamplingAuraFlow",
-      "pos": [2280.1448810637457, 637.3161010120858],
-      "size": [300, 58],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 14
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [8]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "ModelSamplingAuraFlow",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [1]
     }
   ],
   "links": [
     [1, 8, 0, 2, 0, "CLIP"],
     [2, 8, 0, 3, 0, "CLIP"],
-    [3, 9, 0, 11, 0, "MODEL"],
     [4, 16, 0, 14, 0, "LATENT"],
     [5, 13, 0, 14, 1, "VAE"],
     [8, 19, 0, 16, 0, "MODEL"],
     [9, 2, 0, 16, 1, "CONDITIONING"],
     [10, 3, 0, 16, 2, "CONDITIONING"],
     [12, 14, 0, 17, 0, "IMAGE"],
-    [13, 11, 0, 18, 0, "MODEL"],
     [14, 18, 0, 19, 0, "MODEL"],
-    [17, 1, 0, 16, 3, "LATENT"],
     [18, 12, 0, 15, 0, "IMAGE"],
-    [19, 13, 0, 15, 1, "VAE"]
+    [19, 13, 0, 15, 1, "VAE"],
+    [20, 15, 0, 16, 3, "LATENT"],
+    [21, 9, 0, 18, 0, "MODEL"]
   ],
   "groups": [
     {
       "id": 1,
       "title": "Step1 - Load models",
-      "bounding": [1381, 410, 350, 433.6000061035156],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "id": 2,
-      "title": "Step2 - Image size",
-      "bounding": [1381, 860, 350, 210],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "id": 3,
-      "title": "Step3 - Prompt",
-      "bounding": [1751, 590, 450, 470],
-      "color": "#3f789e",
-      "font_size": 24,
-      "flags": {}
-    },
-    {
-      "id": 4,
-      "title": "Lightx2v 8steps LoRA",
-      "bounding": [1751, 410, 450, 170],
+      "bounding": [
+        1493.7356999999965, 491.98959999999937, 350, 433.6000061035156
+      ],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
@@ -713,9 +629,9 @@
   "extra": {
     "ds": {
       "scale": 0.8264462809917354,
-      "offset": [-1220.4722036793748, -260.51467673877175]
+      "offset": [-985.7738607456581, -381.4595468793188]
     },
-    "frontendVersion": "1.28.7"
+    "frontendVersion": "1.28.8"
   },
   "version": 0.4
 }

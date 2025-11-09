@@ -120,7 +120,7 @@ download_file() {
 
     echo "⬇️  Downloading $url → $output_path"
     if [[ "$url" == *"civitai.com"* ]]; then
-        # Use aria2c for CivitAI with proper header handling
+        # Use curl for CivitAI with proper header handling
         curl -L --retry 3 --retry-all-errors --retry-delay 2 --fail --continue-at - \
             -H "Authorization: Bearer ${CIVITAI_API_KEY}" \
             -o "$output_path" \
@@ -152,7 +152,7 @@ download_file() {
     fi
 }
 
-# --- Parallel download wrapper ---
+# --- Sequential download wrapper (OPTIMIZED FOR BANDWIDTH) ---
 download_category() {
     local category_name="$1"
     shift
@@ -164,29 +164,19 @@ download_category() {
 
     echo "📂 Downloading $category_name..."
     
-    # Create temporary file list for parallel downloads
-    local temp_list=$(mktemp)
+    # Download sequentially to maximize bandwidth per file
     for item in "${arr[@]}"; do
         IFS=',' read -r url output_path <<< "$item"
         [ -z "$url" ] && continue
-        echo "$url,$output_path" >> "$temp_list"
-    done
-    
-    # Process downloads with parallel execution (4 at a time)
-    cat "$temp_list" | xargs -P 4 -I {} bash -c '
-        IFS="," read -r url output_path <<< "{}"
-        '"$(declare -f download_file)"'
         download_file "$url" "$output_path"
-    '
-    
-    rm "$temp_list"
+    done
 }
 
-# --- Custom Nodes (parallel clone) ---
+# --- Custom Nodes (parallel clone - these benefit from parallelization) ---
 echo "🧩 Installing custom nodes..."
 cd "$COMFYUI_DIR/custom_nodes"
 
-# Clone repos in parallel
+# Clone repos in parallel (small files, not bandwidth-limited)
 echo "${CUSTOM_NODES[@]}" | tr ' ' '\n' | xargs -P 4 -I {} bash -c '
     url="{}"
     repo_name=$(basename "$url" .git)
@@ -216,7 +206,7 @@ if [ -d "$REPO_WORKFLOWS_DIR" ]; then
     echo "✅ Workflows copied to $TARGET_WORKFLOWS_DIR"
 fi
 
-# --- Download all categories ---
+# --- Download all categories (SEQUENTIAL for full bandwidth) ---
 download_category "Models" "${MODELS[@]}"
 download_category "VAEs" "${VAES[@]}"
 download_category "Text Encoders" "${TEXT_ENCODERS[@]}"
