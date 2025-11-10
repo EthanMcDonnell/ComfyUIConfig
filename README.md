@@ -32,6 +32,9 @@ https://www.youtube.com/watch?v=PhiPASFYBmk
 qwen 1girl+samsung
 https://civitai.com/models/1923241/1girl-qwen-image
 
+qwen edit minimalist
+https://www.reddit.com/r/comfyui/comments/1nxrptq/how_to_get_the_highest_quality_qwen_edit_2509/
+
 
 Information from author:\
 I'd be happy to explain.
