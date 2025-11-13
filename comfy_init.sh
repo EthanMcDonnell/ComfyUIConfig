@@ -32,6 +32,7 @@ declare -a CUSTOM_NODES=(
     "https://github.com/city96/ComfyUI-GGUF.git"
     "https://github.com/giriss/comfy-image-saver.git"
     "https://github.com/ClownsharkBatwing/RES4LYF.git"
+    https://github.com/hgabha/WWAA-CustomNodes.git
 )
 MODELS=()
 VAES=()

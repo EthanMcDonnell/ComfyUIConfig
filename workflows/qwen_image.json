@@ -435,37 +435,6 @@
       "widgets_values": []
     },
     {
-      "id": 58,
-      "type": "EmptySD3LatentImage",
-      "pos": [50, 510],
-      "size": [270, 106],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [107]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "EmptySD3LatentImage",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [1024, 1024, 1]
-    },
-    {
       "id": 3,
       "type": "KSampler",
       "pos": [968.8791422179445, 132.52180750373483],
@@ -517,7 +486,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        354611591421565,
+        483541254008621,
         "randomize",
         40,
         2.5,
@@ -527,55 +496,12 @@
       ]
     },
     {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [390, 440],
-      "size": [425.27801513671875, 180.6060791015625],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 75
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [52]
-        }
-      ],
-      "title": "CLIP Text Encode (Negative Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "CLIPTextEncode",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "low quality, blurry, bad anatomy, deformed,extra fingers, missing limbs, malformed hands, cartoonish, watermark, cinematic, glossy finish, shallow depth of field, cinematic bokeh, uncanny anatomy, frame-perfect symmetry, blurred background, fat, low resolution"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 71,
       "type": "Note",
       "pos": [849.0348909396324, -151.8485989921186],
       "size": [300, 88],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -587,55 +513,12 @@
       "bgcolor": "#653"
     },
     {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [390, 240],
-      "size": [422.84503173828125, 164.31304931640625],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 74
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [46]
-        }
-      ],
-      "title": "CLIP Text Encode (Positive Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "CLIPTextEncode",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "am0rgn, 1girl, \n\nFemale subject, medium shot mirror selfie, crouching down low in an indoor setting. The subject wears a black tank top and loose-fitting, wide-legged blue denim jeans. She wears white wireless earbuds, a thin silver necklace with a large round pendant, multiple silver bracelets, and silver rings on her right hand. Her nails are painted dark brown or black. Cleavage\n\nShe holds a black smartphone in her right hand, positioned in front of her face, with a small photo visible on the back of the phone case. Her left hand touches her chin.\n\nThe background shows a light pink wall, a dark wooden door with a silver handle on the right, and a tv mounted on the wall to the left. The floor is tiled with light beige or cream tiles. Artificial indoor lighting illuminates the scene, casting a slight glow on the subject's forehead. The camera angle is straight on"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 85,
       "type": "Note",
       "pos": [422.28594262869245, -218.43064107456027],
       "size": [313.71963086610026, 88],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -677,8 +560,125 @@
           "version": "7.2"
         }
       },
-      "widgets_values": [1, 0.07, 1, 5, 1],
+      "widgets_values": [1, 0.06, 1, 5, 1],
       "shape": 1
+    },
+    {
+      "id": 58,
+      "type": "EmptySD3LatentImage",
+      "pos": [50, 510],
+      "size": [270, 106],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [107]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "EmptySD3LatentImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [1024, 1024, 1]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [390, 240],
+      "size": [422.84503173828125, 164.31304931640625],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [46]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "am0rgn, 1girl, \n\nMedium shot of a woman standing on the bow of a boat, wearing a yellow floral print one-piece swimsuit with a keyhole cutout. She is smiling, looking to the side, and holding the boat railing. The background is open water with a forested shore under a clear blue sky. Bright, warm natural light from the setting sun is used; the depth of field is wide, keeping the water and distant shore in focus. Detailed skin. Visible Pores, \n\n\n\nLarge breasts.\n"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [390, 440],
+      "size": [425.27801513671875, 180.6060791015625],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [52]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "low quality, blurry, bad anatomy, deformed,extra fingers, missing limbs, malformed hands, cartoonish, watermark, cinematic, glossy finish, shallow depth of field, cinematic bokeh, uncanny anatomy, frame-perfect symmetry, blurred background, fat, low resolution, bad eyes"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 76,
@@ -732,19 +732,19 @@
         {
           "on": true,
           "lora": "am0rgn-qwen-lora_000002500.safetensors",
-          "strength": 1,
+          "strength": 0.85,
           "strengthTwo": null
         },
         {
           "on": true,
           "lora": "1GIRL_QWEN_V3.safetensors",
-          "strength": 0.2,
+          "strength": 0.05,
           "strengthTwo": null
         },
         {
           "on": true,
           "lora": "Samsung.safetensors",
-          "strength": 0.2,
+          "strength": 0.05,
           "strengthTwo": null
         },
         {},
@@ -806,8 +806,8 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8563242382962116,
-      "offset": [503.2316352334506, 283.11828959345974]
+      "scale": 1.379118749018434,
+      "offset": [-34.12395795393153, 157.88206284535883]
     },
     "frontendVersion": "1.28.8",
     "ue_links": [],

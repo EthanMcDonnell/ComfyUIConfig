@@ -1,0 +1,590 @@
+{
+  "id": "c7276f78-d929-45a6-99c7-49065485b5e4",
+  "revision": 0,
+  "last_node_id": 70,
+  "last_link_id": 48,
+  "nodes": [
+    {
+      "id": 28,
+      "type": "WWAA_DisplayAny",
+      "pos": [760, -1260],
+      "size": [710, 110],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Current Prompt",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "raw value",
+        "s wearing a suit standing in a bustling city street during the day."
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 29,
+      "type": "WWAA_DisplayAny",
+      "pos": [770, -1090],
+      "size": [210, 100],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Current Line",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "1"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 30,
+      "type": "WWAA_DisplayAny",
+      "pos": [1010, -1090],
+      "size": [232.86483764648438, 100],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Remaining Prompts to Process",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "7"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 65,
+      "type": "WWAA_DisplayAny",
+      "pos": [760, -430],
+      "size": [210, 100],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Current Line",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "1"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 66,
+      "type": "WWAA_DisplayAny",
+      "pos": [1000, -430],
+      "size": [232.86483764648438, 100],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Remaining Prompts to Process",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "40"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 67,
+      "type": "WWAA_DisplayAny",
+      "pos": [1240, -430],
+      "size": [210, 100],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Total Prompts",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "39"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 68,
+      "type": "Reroute",
+      "pos": [1839.6474609375, -639.4122924804688],
+      "size": [75, 26],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 20,
+      "type": "WWAA_AdvancedTextReader",
+      "pos": [330, -1270],
+      "size": [410, 530],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "current_line_text",
+          "type": "STRING",
+          "links": [36, 46]
+        },
+        {
+          "name": "current_line_number",
+          "type": "INT",
+          "links": [37]
+        },
+        {
+          "name": "total_lines",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "remaining_lines",
+          "type": "INT",
+          "links": [38, 39]
+        }
+      ],
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_AdvancedTextReader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text_input": true,
+            "traversal_mode": true,
+            "skip_lines": true,
+            "reset_counter": true,
+            "hold_current_text": true,
+            "starting_index": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "s wearing a suit standing in a bustling city street during the day.\nAn older man in his 60s wearing a raincoat walking down a wet street at night.\nA young man in her 20s wearing a hoodie standing in a forest during the day.\nA man in his 40s wearing a leather jacket leaning against a graffiti-covered wall at night.\nA boy wearing a baseball cap and jeans skateboarding in a park at night.\nA man in her 50s wearing a coat and scarf standing in a snowy park during the day.\nA man in his 20s wearing a t-shirt and shorts running on a city sidewalk at night.\nA young woman in her 20s wearing a sundress sitting on a rooftop with a city skyline in the background during the day.",
+        "forward",
+        0,
+        false,
+        false,
+        0
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 69,
+      "type": "Reroute",
+      "pos": [1840, -700],
+      "size": [75, 26],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      }
+    },
+    {
+      "id": 31,
+      "type": "WWAA_DisplayAny",
+      "pos": [1250, -1090],
+      "size": [210, 140],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Total Prompts",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "7"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 64,
+      "type": "WWAA_DisplayAny",
+      "pos": [750, -600],
+      "size": [710, 110],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Current Prompt",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "raw value",
+        "A young woman with a confident expression, standing in front of a city skyline at sunset, with a sleek skyscraper behind her"
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 19,
+      "type": "WWAA_AdvancedTextFileReader",
+      "pos": [340, -610],
+      "size": [380, 262],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "current_line_text",
+          "type": "STRING",
+          "links": [44, 45]
+        },
+        {
+          "name": "current_line_number",
+          "type": "INT",
+          "links": [42]
+        },
+        {
+          "name": "total_lines",
+          "type": "INT",
+          "links": [47]
+        },
+        {
+          "name": "remaining_lines",
+          "type": "INT",
+          "links": [43]
+        }
+      ],
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_AdvancedTextFileReader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "file_path": true,
+            "traversal_mode": true,
+            "skip_lines": true,
+            "reset_counter": true,
+            "reload_file": true,
+            "hold_current_text": true,
+            "starting_index": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "E:\\Resources\\LoRA Single Person Prompts.txt",
+        "forward",
+        0,
+        false,
+        false,
+        false,
+        0
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 27,
+      "type": "MarkdownNote",
+      "pos": [1660, -1300],
+      "size": [510, 340],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "## About this workflow - v2.0\n\nThis is a Prompt Cycler v2.0 which can be run either from the multi-line text field or external file. Use either of the group that you prefer. You can disable the one you don't need.\n\nThe workflow is using most of our custom nodes so you don't need anything else just make sure you install \"WWAA Custom Nodes\" available here https://github.com/hgabha/WWAA-CustomNodes and in **ComfyUI Manager**.\n\n## WWAA Advanced Text File Reader\nIt requires you to supply the full path of the file eg. /folder/filename.ext or C:\\foldername\\filename.ext \n\n## Workflow provided by **WeirdWonderfulAi.Art**\n\n## Connect with us\n[▶️ YouTube](https://www.youtube.com/@weirdwonderfulaiart) - [💻 Blog](https://weirdwonderfulai.art/) - [🏪 Shop](https://ko-fi.com/weirdwonderfulaiart/shop) - [𝕏 aka Twitter](https://x.com/wwAIArt)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [36, 20, 0, 28, 0, "*"],
+    [37, 20, 1, 29, 0, "*"],
+    [38, 20, 3, 30, 0, "*"],
+    [39, 20, 3, 31, 0, "*"],
+    [42, 19, 1, 65, 0, "*"],
+    [43, 19, 3, 67, 0, "*"],
+    [44, 19, 0, 64, 0, "*"],
+    [45, 19, 0, 68, 0, "*"],
+    [46, 20, 0, 69, 0, "*"],
+    [47, 19, 2, 66, 0, "*"]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "File Read or String - Prompt cycler",
+      "bounding": [320, -700, 1280, 540],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Feed either of these to your Clip Text Encoder",
+      "bounding": [1650, -800, 520, 220],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Read from Large Multiline Text",
+      "bounding": [320, -1340, 1280, 620],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8389939712378345,
+      "offset": [126.77654939737792, 1424.6327730059654]
+    },
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "frontendVersion": "1.26.13",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
