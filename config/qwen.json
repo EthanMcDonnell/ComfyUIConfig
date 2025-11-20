@@ -12,6 +12,7 @@
   "loras": [
     "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors,/workspace/ComfyUI/models/loras/Qwen-Image-Lightning-4steps-V2.0.safetensors",
     "https://civitai.com/api/download/models/2335968?type=Model&format=SafeTensor,/workspace/ComfyUI/models/loras/1GIRL_QWEN_V3.safetensors",
-    "https://civitai.com/api/download/models/2270374?type=Model&format=SafeTensor,/workspace/ComfyUI/models/loras/Samsung.safetensors"
+    "https://civitai.com/api/download/models/2270374?type=Model&format=SafeTensor,/workspace/ComfyUI/models/loras/Samsung.safetensors",
+    "https://civitai.com/api/download/models/2257815?type=Model&format=SafeTensor,/workspace/ComfyUI/models/loras/breast_slider_qwen_v1.safetensors"
   ]
 }

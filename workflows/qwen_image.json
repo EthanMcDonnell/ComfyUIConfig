@@ -1,8 +1,8 @@
 {
   "id": "91f6bbe2-ed41-4fd6-bac7-71d5b5864ecb",
   "revision": 0,
-  "last_node_id": 85,
-  "last_link_id": 140,
+  "last_node_id": 99,
+  "last_link_id": 153,
   "nodes": [
     {
       "id": 39,
@@ -87,32 +87,12 @@
       ]
     },
     {
-      "id": 69,
-      "type": "MarkdownNote",
-      "pos": [-540, -220],
-      "size": [390, 180],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "VRAM Usage",
-      "properties": {
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "## GPU:RTX4090D 24GB\n\n| Configuration            | VRAM Usage | 1st Generation | 2nd Generation |\n|---------------------|---------------|---------------|-----------------|\n| Fp8_e4m3fn             | 86%                | ≈ 94s               | ≈ 71s                   |\n| With 8steps LoRA    | 86%                | ≈ 55s               | ≈ 34s                  |\n| Distill fp8_e4m3fn   | 86%                | ≈ 69s               | ≈ 36s                  |"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 70,
       "type": "Note",
       "pos": [850, 910],
       "size": [310, 120],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -130,7 +110,7 @@
       "pos": [850, 660],
       "size": [310, 210],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -148,7 +128,7 @@
       "pos": [-540, 10],
       "size": [540, 630],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -163,88 +143,12 @@
       "bgcolor": "#653"
     },
     {
-      "id": 66,
-      "type": "ModelSamplingAuraFlow",
-      "pos": [850, 10],
-      "size": [300, 58],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 132
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [125]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "ModelSamplingAuraFlow",
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [1.3]
-    },
-    {
-      "id": 37,
-      "type": "UNETLoader",
-      "pos": [20, 50],
-      "size": [330, 90],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "slot_index": 0,
-          "links": [131]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.48",
-        "Node name for S&R": "UNETLoader",
-        "models": [
-          {
-            "name": "qwen_image_fp8_e4m3fn.safetensors",
-            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors",
-            "directory": "diffusion_models"
-          }
-        ],
-        "enableTabs": false,
-        "tabWidth": 65,
-        "tabXOffset": 10,
-        "hasSecondTab": false,
-        "secondTabText": "Send Back",
-        "secondTabOffset": 80,
-        "secondTabWidth": 65,
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": ["qwen_image_fp8_e4m3fn.safetensors", "default"]
-    },
-    {
       "id": 60,
       "type": "SaveImage",
       "pos": [1993.788430190375, 37.977720270616416],
       "size": [490, 600],
       "flags": {},
-      "order": 20,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -275,7 +179,7 @@
       "pos": [1458.0587952118399, -16.98046218251113],
       "size": [350, 160],
       "flags": {},
-      "order": 16,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -317,7 +221,7 @@
       "pos": [1458.0587952118399, 193.01953781748924],
       "size": [350.9100646972656, 82],
       "flags": {},
-      "order": 17,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -356,7 +260,7 @@
       "pos": [1458.0587952118399, 323.0195378174892],
       "size": [349.7084655761719, 82],
       "flags": {},
-      "order": 18,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -397,7 +301,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 15,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -440,7 +344,7 @@
       "pos": [968.8791422179445, 132.52180750373483],
       "size": [300, 474],
       "flags": {},
-      "order": 14,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -486,7 +390,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        483541254008621,
+        305596433029416,
         "randomize",
         40,
         2.5,
@@ -496,44 +400,12 @@
       ]
     },
     {
-      "id": 71,
-      "type": "Note",
-      "pos": [849.0348909396324, -151.8485989921186],
-      "size": [300, 88],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "Increase the shift if you get too many blury/dark/bad images. Decrease if you want to try increasing detail."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 85,
-      "type": "Note",
-      "pos": [422.28594262869245, -218.43064107456027],
-      "size": [313.71963086610026, 88],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": ["amorgan, 1girl, samsung\n0.8, 0, 0.7\n1, 0, 0.2"],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 84,
       "type": "Film Grain",
       "pos": [1458.0587952118399, 463.0005864014717],
       "size": [350, 154],
       "flags": {},
-      "order": 19,
+      "order": 25,
       "mode": 0,
       "inputs": [
         {
@@ -569,7 +441,7 @@
       "pos": [50, 510],
       "size": [270, 106],
       "flags": {},
-      "order": 9,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -600,13 +472,21 @@
       "pos": [390, 240],
       "size": [422.84503173828125, 164.31304931640625],
       "flags": {},
-      "order": 10,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
           "link": 74
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 153
         }
       ],
       "outputs": [
@@ -681,9 +561,325 @@
       "bgcolor": "#533"
     },
     {
+      "id": 86,
+      "type": "WWAA_DisplayAny",
+      "pos": [-86.94376592125101, -777.0648346061566],
+      "size": [710, 110],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Current Prompt",
+      "properties": {
+        "aux_id": "hgabha/WWAA-CustomNodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "cnr_id": "wwaa-customnodes",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "raw value",
+        "Silhouette of a woman standing near the water's edge in a medium close-up, facing left. She wears a bikini top and bottoms. A **bright orange sunset** is the background, with the **circular sun disc** centered just above the **horizon line** over the calm, **golden water**. The subject is completely **underexposed**, appearing as a **solid black shape**. The camera is straight-on. **Natural light** from the sunset provides the sole, intense illumination. The **depth of field is large**, with the water and subject sharp."
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 87,
+      "type": "WWAA_DisplayAny",
+      "pos": [-76.94376592125096, -607.0648346061564],
+      "size": [210, 100],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 142
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Current Line",
+      "properties": {
+        "aux_id": "hgabha/WWAA-CustomNodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "cnr_id": "wwaa-customnodes",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "22"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 88,
+      "type": "WWAA_DisplayAny",
+      "pos": [163.05623407874936, -607.0648346061564],
+      "size": [232.86483764648438, 100],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 143
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Remaining Prompts to Process",
+      "properties": {
+        "aux_id": "hgabha/WWAA-CustomNodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "cnr_id": "wwaa-customnodes",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "60"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 95,
+      "type": "WWAA_DisplayAny",
+      "pos": [403.05623407874975, -607.0648346061564],
+      "size": [210, 140],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 149
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Total Prompts",
+      "properties": {
+        "aux_id": "hgabha/WWAA-CustomNodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "cnr_id": "wwaa-customnodes",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "mode": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": ["raw value", "60"],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 37,
+      "type": "UNETLoader",
+      "pos": [20.505357527728307, 61.17387243298913],
+      "size": [330, 90],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [131]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "qwen_image_fp8_e4m3fn.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": ["qwen_image_fp8_e4m3fn.safetensors", "default"]
+    },
+    {
+      "id": 85,
+      "type": "Note",
+      "pos": [809.6749166250913, -646.4370161344589],
+      "size": [313.71963086610026, 88],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": ["amorgan, 1girl, samsung\n0.8, 0, 0.7\n1, 0, 0.2"],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 71,
+      "type": "Note",
+      "pos": [816.0223582400704, -521.4658758998007],
+      "size": [300, 88],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Increase the shift if you get too many blury/dark/bad images. Decrease if you want to try increasing detail."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 69,
+      "type": "MarkdownNote",
+      "pos": [-540, -220],
+      "size": [390, 180],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "VRAM Usage",
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "## GPU:RTX4090D 24GB\n\n| Configuration            | VRAM Usage | 1st Generation | 2nd Generation |\n|---------------------|---------------|---------------|-----------------|\n| Fp8_e4m3fn             | 86%                | ≈ 94s               | ≈ 71s                   |\n| With 8steps LoRA    | 86%                | ≈ 55s               | ≈ 34s                  |\n| Distill fp8_e4m3fn   | 86%                | ≈ 69s               | ≈ 36s                  |"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 93,
+      "type": "WWAA_AdvancedTextReader",
+      "pos": [-516.9437659212513, -787.0648346061569],
+      "size": [410, 530],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "current_line_text",
+          "type": "STRING",
+          "links": [141, 152]
+        },
+        {
+          "name": "current_line_number",
+          "type": "INT",
+          "links": [142]
+        },
+        {
+          "name": "total_lines",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "remaining_lines",
+          "type": "INT",
+          "links": [143, 149]
+        }
+      ],
+      "properties": {
+        "aux_id": "hgabha/WWAA-CustomNodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_AdvancedTextReader",
+        "cnr_id": "wwaa-customnodes",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text_input": true,
+            "traversal_mode": true,
+            "skip_lines": true,
+            "reset_counter": true,
+            "hold_current_text": true,
+            "starting_index": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Female subject, medium shot, sitting directly on a dark brown, dry, patchy grass surface. The subject wears a dark brown sleeveless mini-dress with side tie details and tall, loose-fitting cream or beige leather boots. She has long dark hair with straight bangs and wears small black sunglasses covering her eyes that are not visible. Makeup includes dark, defined lips. Low shot. Cleavage, smirk. A black shoulder bag with a gold chain rests on the ground to the subject's right. Her hands are visible resting on the ground, showing a white manicure. Diffuse natural light illuminates the scene from overhead. The camera angle is high, looking down onto the subject. The depth of field is shallow; the subject is in focus, while the ground texture immediately surrounding her is slightly blurred but still recognizable. The background is entirely dominated by the rough texture of the ground.\nFemale subject, medium close-up selfie taken from a high angle, lying down on white bedding. Dark Black hair frames the face. The subject wears a white ribbed tank top with wide straps, large gold hoop earrings, and a delicate gold chain necklace with a small pendant resting on the upper chest. Makeup includes defined eyebrows, dark lashes, and matte pink lipstick. The subject's light-colored eyes look directly toward the camera. Natural light illuminates the subject from above and slightly to the left, causing subtle highlights on the skin and fabric. The depth of field is shallow, with the subject in sharp focus and the white bedding directly behind her appearing slightly soft\nA young woman sits outdoors, facing the camera with a slight smile. She wears a white puffer jacket, dark sunglasses, and a red patterned beanie. She is centered in a medium close-up. The camera angle is straight-on. She is situated on a wooden deck railing, set against a backdrop of a large blue lake (Lake Tahoe) and tree-covered mountains under a clear, bright blue sky. The background mountains feature patches of white snow. Natural light is bright and highlights the white jacket. The depth of field is large, with both the subject and the distant scenery in focus.\nA long-haired young woman stands in a medium wide shot, with her back to the camera, facing the Eiffel Tower in Paris. She wears a white long-sleeve top and carries a red textured shoulder bag over her right shoulder. The camera is straight-on and slightly low-angle, capturing the towering structure. Two dark sedans are visible on the street. The surrounding buildings are multi-story with light-brown stone facades. Bright natural light shines from behind the tower. The depth of field is large, keeping the woman, cars, and the Eiffel Tower in focus.\nA young woman stands outdoors in a medium shot, looking up with her head and neck arched back. She wears a brown-beaded triangle bikini top and light wash denim shorts. She has yellow sneakers and white socks. She stands on gravel next to a dark green station wagon with its door ajar, revealing a warm orange interior light. The background is dense dark green foliage. The camera is straight-on. Lighting is dim natural light during the evening, supplemented by the orange artificial light from the car's interior. The depth of field is large, with all elements in focus.\nA young woman sits on grey concrete steps outside a building in a medium close-up. She wears a dark navy off-the-shoulder top, dark-wash baggy jeans, and black Tabi-style shoes with white socks. She holds a bright yellow baguette-style handbag and wears clear-rimmed glasses. The camera is straight-on. Behind her is a dark grey exterior wall and a tall reddish-brown wooden door. Warm natural light falls on the subject and the steps. The depth of field is shallow, slightly blurring the building details behind her.\nA young woman squats, taking a mirror selfie with a black smartphone in a medium close-up. She wears a black tank top and loose, light-wash blue jeans. She has wireless earbuds and several silver rings and bracelets. The camera is angled slightly from above. She is indoors in a room with a light pink wall, dark brown door, and a large black screen on the wall. Indoor artificial light illuminates the scene evenly. The depth of field is shallow, with the subject sharp and the background slightly softer.\nA young woman sits on a wooden park bench in a medium close-up. She wears a dark blue jersey with white and green stripes, gold hoop earrings, stacked gold bracelets, and brown-tinted sunglasses. She holds a dark, tie-dye patterned shoulder bag and a smartphone. The camera is straight-on. She is under trees with bright green leaves in a park. Bright natural sunlight casts strong shadows on her face and shoulder. The depth of field is shallow, keeping the subject sharp and blurring the trees and background.\nA young woman stands, leaning on the trunk of a black vintage sedan parked on a city street in a medium shot. She wears a dark brown leather jacket over a white shirt, blue jeans, and a long fringed beige scarf. Autumn leaves litter the cobblestone street. The background features brownstone buildings. The camera is straight-on. Soft natural light illuminates the scene. The depth of field is large, with the subject, car, and buildings mostly in focus.\nA young woman is seated in the passenger seat of a car in a medium close-up, embracing a small, brown curly-haired dog. She wears blue jeans and a bikini top is partially visible. A white surfboard rests near her. The background, visible through the window, shows large pink hydrangea flowers and green foliage. The camera is angled slightly from above. Bright natural light enters the car. The depth of field is shallow, clearly focusing on the woman and the dog while blurring the flowers outside.\nA young woman stands in a public bathroom, taking a mirror selfie with a black smartphone in a medium close-up. She wears a white fitted tank top, a white long-sleeve cropped cardigan, and light blue striped drawstring pants. She holds a light pink blended drink and a white ruched shoulder bag. She has gold necklaces and a top-knot hairstyle. The camera is straight-on. The background features white stall doors, white walls, and a black tile floor. Bright artificial light illuminates the subject and room. The depth of field is large, with all elements in focus.\nWoman holding a glass of iced matcha in a medium close-up, viewed from a high angle. She wears a white athletic tank top; her sun-tanned back and shoulder are prominent. Her left hand grips the glass jar containing a green liquid with ice and a white straw. Bright natural sunlight casts a strong shadow of the subject onto the asphalt ground. A white commercial vehicle with dark text reading \"Cargo Qld\" is visible in the blurred background. Depth of field is shallow, blurring the background. Text visible is \"Followed by a walk & matcha\" and \"In @csb\".\nWoman in a medium shot standing outside a rustic building with thick, pink bougainvillea flowers cascading over the facade. She wears a white off-the-shoulder top and white trousers. She faces the ocean and holds her right arm out toward a teal-green wooden door. Bright natural light illuminates the scene under a clear blue sky. The camera is straight-on. The depth of field is large, keeping the woman and the building in focus.\nYoung woman lying on her back on concrete and tiled subway stairs in a medium shot, seen from a steep high angle. She has curly Black Hair, red lipstick, and wears a black top, black tights, and black shoes. She rests her head on the side wall, which is covered in white square tiles with a green border. Two pairs of black shoes are visible at the bottom of the frame, indicating the camera person's feet. Lighting is dim artificial light within the stairwell. Text visible is \"@vibehjorth\".\nYoung woman stands with her back to the camera in a medium shot, viewing two large, gold-framed classical paintings in a gallery. She wears a light beige cropped cardigan and loose, dark blue jeans with a star design on the back pocket. She holds a brown patterned shoulder bag. The walls are plain white; the floor is a dark reflective material. The camera is straight-on. Even, bright artificial light illuminates the art and subject. The depth of field is large, with all elements in focus.\nYoung woman crouches on a grey sidewalk in a medium close-up, drinking from a small white cup with a blue Apple logo. She has curly Black Hair, dark sunglasses, a sheer white long-sleeve crop top, and a green and white plaid skirt. She is positioned against a yellow metal pole and a white brick wall in a back alley. White chalk graffiti is on the sidewalk: \"USA 100\". The camera is straight-on. Natural daylight is overhead, casting soft shadows. The depth of field is shallow, blurring the pipes and brick wall slightly.\nYoung woman sits sideways on a long, white bathroom counter in a medium close-up. She wears a black striped corset top and a short black skirt. A large, square red lamp with a clear base sits next to her. A brown, textured handbag is placed on the counter. The background wall is covered in dark teal, rectangular, textured tiles. A mirror reflects her profile and a framed picture hanging on the side wall. The camera is straight-on. The light is warm, dim artificial light from the lamp and overhead fixtures. The depth of field is large.\nYoung woman sits on an apartment balcony, hugging her knees in a medium close-up. She wears an oversized white sweatshirt, a white skirt, and black leather boots. A round white cup, a blue and white patterned mug, and a black smartphone rest on a small green table. The background shows Parisian buildings with wrought iron balconies and the white dome of the Sacré-Cœur Basilica on a hill. The camera is straight-on. Bright natural light from the side illuminates her face and the balcony. The depth of field is large, with both the subject and distant buildings in focus.\nYoung woman lies on a straw mat on a grey pebble beach in a close-up, shielding her face with her right arm. She wears dark sunglasses and is tanned. Gold bracelets are visible on her wrist and arm, and a small bee tattoo is on her shoulder. The image is split, with the top half showing her face and the lower half showing a straw tote bag with a folded blue bikini top and a blue, red, and white patterned cloth on the dark pebbles. The background shows a turquoise ocean, a rocky brown cliff, and people under colorful umbrellas. Bright natural sunlight is overhead. Text visible is \"@sol_brand\".\nYoung woman walks across a dark city street at night in a medium shot, with one leg lifted and her arms spread slightly. She wears a black long blazer-style dress and tall black leather boots. The street is dark with light filtering from storefront windows and streetlights. Buildings are dark brown brick. The camera is slightly low-angle and straight-on. Artificial streetlights and indoor lights provide the main illumination. The depth of field is large.\nYoung woman sits at a wooden outdoor cafe table at night in a medium close-up, looking to the side. She wears a black lace strapless top. A decanter of amber liquid, a wine glass of clear liquid, and scattered playing cards sit on the table. Red booth seating is visible behind her. The camera is straight-on. The lighting is dim, warm artificial light from overhead fixtures. The depth of field is large, with the table objects and the woman in sharp focus.\nSilhouette of a woman standing near the water's edge in a medium close-up, facing left. She wears a bikini top and bottoms. A **bright orange sunset** is the background, with the **circular sun disc** centered just above the **horizon line** over the calm, **golden water**. The subject is completely **underexposed**, appearing as a **solid black shape**. The camera is straight-on. **Natural light** from the sunset provides the sole, intense illumination. The **depth of field is large**, with the water and subject sharp.\nWoman in a dark, intimate setting, seated in a **medium close-up**. She wears a **strapless black satin mini-dress** and **dark sunglasses**, with her hair slicked back. She is seated next to a **red-textured wall** with **dark foliage print**. A **gold-framed picture** hangs on the wall. A **table set with white linens** is visible in the foreground. **Dim, warm artificial light** illuminates the subject. The camera is straight-on. The **depth of field is shallow**, with the background elements slightly softer.\nWoman in a **medium close-up** sitting in the passenger seat of a **white car**, leaning out the window and holding a **white disposable coffee cup**. She wears a **white tank top** and **black rectangular sunglasses**. The camera is angled **slightly high and close**. Tall, **modern city buildings** line the street in the bright background. **Bright natural sunlight** shines from the right, casting harsh shadows. The **depth of field is large**, with the subject and the busy city street in focus.\nWoman sitting on a concrete step outside a building at night in a **medium shot**, looking up at the camera. She wears a **black tank top**, a **black midi skirt**, and **tan strappy sandals**. She wears a **silver arm cuff** and **necklace**. A **black handbag** and a **smartphone** rest on the ground beside her. The background is a **stone/brick wall** of a building. The camera is angled **high**. **Artificial overhead light** illuminates the scene, creating hard shadows. The **depth of field is large**.\nWoman with her back to the camera in a **medium close-up**, reaching for flowers at an **outdoor flower stall**. She wears a **tan bikini top** and **light blue denim shorts**. White buckets filled with **pink, purple, yellow, and red flowers** are arranged on display shelves. Text visible on one bucket is \"STOCK $2.25\". The camera is straight-on. **Bright natural light** illuminates the subject and stall. The **depth of field is large**.\nHands holding a **cheeseburger** and a **black smartphone** in a **close-up**. The phone screen displays a picture of a woman wearing sunglasses and a white outfit. The subject wears a **light grey metallic jacket** and **grey sweatpants** and has **silver rings** on her fingers. A **tall white leather boot** with a **black stripe** is visible in the background. The camera is angled **directly overhead**. Natural daylight is diffused and overcast. The **depth of field is shallow**, focusing on the hands and food.\nWoman standing with one foot on a black object in a **medium close-up**, leaning on a **white porcelain sink** in a **red-walled bathroom**. She wears a **long-sleeve tan mini-dress** and **tall black leather boots**. She holds a **black smartphone** up to her face. A **mirror** and **framed pictures** hang on the **red wall**. **Warm artificial candlelight** and overhead fixtures illuminate the scene. The camera is straight-on. The **depth of field is large**.\nWoman seated outdoors at a cafe table in a **medium close-up** on a city street. She wears a **grey tweed jacket**, **blue jeans**, and **yellow framed sunglasses**. She rests her hands on her face. A **bowl of salad**, **brown paper bags**, and a **smartphone** are on the white table. **Grey and yellow multi-story buildings** line the narrow street in the background. The camera is straight-on. Diffused **natural daylight** is present. The **depth of field is shallow**, blurring the street and buildings behind her.\nWoman in a **close-up** selfie, seated on an outdoor patio chair. She wears a **white ribbed tank top** and has her long dark hair styled in **two braids**. The camera is held close, **straight-on**. The background includes a **white wooden railing** and a **dark cabin wall** with a **window** reflecting the sky. **Bright natural sunlight** illuminates the subject's face. The **depth of field is large**.\nWoman sitting on the **dark brown ground/grass** in a **medium shot**, wearing a **brown halter mini-dress** and **tall cream-colored boots**. She wears **dark sunglasses**. A **black saddle bag** rests beside her. The camera is angled **high**. **Bright natural sunlight** casts soft shadows. The **depth of field is large**.\nWoman seated on a **wooden chair** in a **medium close-up** indoors. She wears a **short black mesh dress** and **tall black leather pointed-toe boots**. She wears **layered necklaces**. The interior features a **wood-paneled ceiling**, **light wooden support pillars**, and a **textured white accent wall**. A **small wooden side table** is visible to her left. The camera is straight-on. **Bright artificial indoor lighting** illuminates the scene. The **depth of field is large**. Text visible is \"@lunaparadaa\".\nWoman seated on the **edge of a high concrete barrier** outdoors at night in a **medium shot**, looking downward. She wears a **black off-the-shoulder top** and **wide-leg blue jeans**, with **black heels**. She is holding a **cigarette** near her mouth and a **black patent handbag** rests beside her. The camera is angled **high**. The background shows a **dense cityscape of buildings and lights** under a dark sky. **Dim artificial light** illuminates the foreground and the buildings. The **depth of field is large**, with all elements in focus.\nWoman walking on a city sidewalk in a **cowboy shot**, facing right. She wears a **white tank top**, **white wide-leg jeans**, and **black flip-flops**. She has a **dark brown polka dot bandana** and holds **black sunglasses** in her right hand. The background is a **light-colored building wall** with **graffiti**. The camera is straight-on. **Overcast natural light** provides even lighting. The **depth of field is large**.\nWoman in an **arcade** in a **medium shot**, seated on a **pink arcade motorcycle** machine. She wears a **black cropped t-shirt**, **light blue baggy cargo jeans** with a **white strap**, and **white sneakers**. She is turned to the side, looking over her shoulder. The camera is straight-on. **Intense colorful artificial lights** from the arcade machines create **pink, blue, and green illumination**. The **depth of field is shallow**, slightly blurring the arcade machines behind her.\nWoman stands on a street corner in a **medium close-up**, obscuring her face with her hand. She wears a **marbled brown/pink sheer top**, **dark grey pleated trousers**, and carries a **brown suede shoulder bag**. She holds a **small silver camera**. The background shows a busy **New York City street** with **brown brick buildings**, **traffic lights**, and the **Empire State Building** spire in the distance. The camera is straight-on. **Warm natural light** from the setting sun illuminates the tops of the buildings. The **depth of field is large**. Text visible is \"W 19 ST\" and \"@ssense\".\nWoman stands in a **medium shot** in a **convenience store aisle**. She wears a **dark navy cropped top** and **black leggings**, holding **two bottles of white wine** and a **brown paper bag** filled with goods. She wears **black oval sunglasses**. The background is filled with **shelves of snacks** and **bottled products**. The camera is straight-on. **Bright artificial fluorescent lights** illuminate the products. The **depth of field is shallow**, slightly blurring the background shelves.\nWoman standing at night in a **medium shot** against an **old grey stone wall** of a building. She wears a **black tank top** and **light khaki wide-leg pants**. She holds a **yellow woven handbag**. A **red scooter** is parked next to the wall. A **large terra cotta planter** with green foliage sits on the right. The camera is straight-on. **Warm artificial light** from the side illuminates the wall. The **depth of field is large**.\nWoman sitting on the floor indoors in a **medium close-up**, looking directly at the camera. She wears an **orange and black tiger print strapless corset top**, **layered gold necklaces**, and **dark red trousers** with a **patterned belt**. The floor is **light wooden planks**. The camera is angled **slightly high and straight-on**. **Warm, low-angled artificial light** illuminates her face and casts long shadows. The **depth of field is large**.\nTorso of a woman in a **medium close-up**, standing in a **record store**. Her face is obscured by a **vinyl record sleeve** featuring a **roaring lion** titled \"BAD INGER\". She wears a **red patent leather bustier top**, **dark blue low-rise jeans**, and a **leopard print faux fur coat**. She carries a **dark red patent shoulder bag**. The camera is straight-on. **Warm artificial indoor lighting** illuminates the vinyl bins and wood shelves. Text visible is \"BAD INGER\", \"OVERSTOCK SALE BIN\", and \"50th\".\nWoman seated in the **back seat of a car** at night in a **medium close-up**, speaking on a **smartphone**. She wears a **black top** and has her **legs up**, resting her foot against the car frame, showing a **black snakeskin boot**. The car interior is dark red. **Bright green foliage** is visible outside the window. The camera is straight-on. **Dim artificial interior lights** and **green light** reflecting from the exterior foliage illuminate the scene. The **depth of field is shallow**, blurring the background foliage.\nMedium shot of a woman standing on a narrow, paved street in front of a light yellow building. She wears a white tiered, ruffled top, floral rose-print shorts, and dark oval sunglasses. A patterned scarf hangs from her neck. Her arms are raised behind her head. The background features a white-awning storefront labeled \"TABACCHI COLD DRINKS\" and a glass display case with small objects. A sign with Italian street text is on the wall. Natural daylight illuminates the scene; the background is largely in focus.\nMedium close-up of a woman sitting on dark stone stairs. She wears a black mini dress with thin straps and black, knee-high patent leather boots over black lace-trim stockings. A small black handbag sits beside her. The lighting is low and dramatic, likely from artificial sources like spotlights, casting shadows. The background of the stairs and a textured wall is in focus.\nMedium shot of a woman leaning over a red-felt pool table in a dimly lit, dark interior space. She wears a white halter top tied in the back and loose-fitting denim jeans with a tan leather patch on the back right hip. Her back is to the camera; her face is not visible. A pool cue is in her hand, poised over a cue ball. The background is dark with a large mural of a deer and yellow light rays. Artificial, low lighting is present; the background is slightly out of focus.\nMedium close-up of a woman sitting on light-colored concrete steps outdoors. She wears a white tank top, light grey, wide-leg cargo pants, and black and white sneakers. She holds her hands near her chin, blowing a kiss gesture. Dark oval sunglasses, a gold watch, and bracelets are on her wrists. A bouquet of pink and burgundy flowers wrapped in light pink paper and a blue patterned tote bag are next to her. Bright natural sunlight from the top right illuminates her. The background of a dark door and grate is slightly out of focus.\nMedium close-up of a woman sitting on a dark curb at night. She wears a white tank top and a white, feathery mini-skirt, paired with black, knee-high patent leather boots. The image has text overlay on the left side. Street-level artificial lighting illuminates the foreground. The background of a dark street and building is slightly out of focus.\nMedium close-up of a smiling woman crouching on a dark, wet street surface at night. She wears a white crop top with a small red heart and a black mini skirt. She is wearing hoop earrings and multiple bracelets. A black Dior saddle bag rests on the ground next to her. The lighting is artificial and bright; the background is slightly out of focus.\nMedium shot of a woman sitting on a cobblestone curb at night. She wears a black leather jacket, dark leggings, and knee-high, pointed-toe, burgundy patent leather boots. A large woven red leather hobo bag rests on the curb next to her. She is smoking a cigarette. Artificial street lighting illuminates the scene. The background of a dark city street and buildings is slightly out of focus.\nMedium close-up of a woman sitting on a concrete curb outdoors. She wears a light grey sleeveless top, a brown leather shoulder bag, and black-rimmed glasses. She holds a clear plastic cup. She wears black loafers with white socks. Bright natural sunlight illuminates her. The background of a tree and street grate is in focus.\nMedium close-up of a woman sitting on a step. She wears a black string bikini top and bright red athletic shorts. She wears dark sunglasses and multiple gold necklaces and bracelets. A black bag with a wide strap is across her torso. A cup of coffee and a dark-colored bag are near her feet. Bright natural daylight illuminates her. The tiled and concrete background is in focus.\nMedium close-up of a woman standing in a grey, concrete parking garage. She is viewed from a slightly low angle, looking over her shoulder. She wears a black tank top, a dark, textured mini-skirt with contrast stitching, black pantyhose, and holds a small black handbag. Her dark hair is pulled into a high ponytail. The lighting is dim and artificial. The concrete wall and exit sign in the background are in focus.\nMedium close-up shot of a woman with wet hair, wearing a straw sunhat that shadows her face, smiling directly at the camera. She wears a gold necklace and a patterned bikini top. Her tanned, wet shoulders and knees fill the bottom foreground. The camera is angled low, shooting upward against a bright blue sky with white clouds. The depth of field is shallow, the background sky and clouds are somewhat blurred. Natural bright sunlight illuminates the woman, creating strong highlights and shadows.\nMedium close-up shot of a woman's reflection in a laptop screen, holding a green drink in a clear plastic cup with a pink logo in her right hand and a light pink smartphone in her left hand, taking a mirror selfie. She wears a dark gray long-sleeved top and has long, dark brown hair. The laptop screen shows a keyboard in the foreground and the woman's image in the center. The background of the reflection is an indoor space with shelves and neutral furniture. The depth of field is deep, the background inside the reflection is in focus. Indoor artificial lighting is used.\nMedium close-up shot of a woman sitting on a dark teal, tufted banquette in dim indoor lighting. She wears a dark red, strapless corset-style top and a silver wristwatch. Her hair is pulled back. Pink and red flowers on vines hang above her in the background. The depth of field is shallow, the background foliage is blurred. Warm, low artificial lighting illuminates the woman's face and shoulders.\nMedium shot of a black haired woman wearing a black one-shoulder top and cat-eye sunglasses, holding a large ice cream cone with the scoop edited to look like the Leaning Tower of Pisa. She stands on a grassy lawn in the foreground. In the background, the Leaning Tower of Pisa and the Duomo di Pisa stand under a clear blue sky. The depth of field is deep, the buildings are in focus. Bright natural sunlight illuminates the scene.\nMedium close-up shot of a woman lying on a striped beach lounger, wearing a black and white bikini and dark cat-eye sunglasses. She props her head on her right hand. A clear glass bottle with a blue label sits in the bottom right corner. Beach umbrellas and the ocean are visible in the background. The depth of field is shallow, the distant beach and water are slightly blurred. Natural bright sunlight illuminates the woman.\nMedium close-up shot of a woman sitting on a white wooden chair on a white sand beach, drinking from a clear glass with a straw. She wears a white long-sleeved cover-up and tortoiseshell sunglasses. Palm trees line the beach in the background under a bright sky. The depth of field is shallow, the distant beach and trees are blurred. Natural bright sunlight illuminates the scene.\nMedium shot of a woman standing on a wooden boardwalk at a rocky beach during sunset. She wears a long, sparkly, bronze spaghetti strap dress and holds a small cream-colored clutch. A large rocky hill dominates the background under an orange and yellow sky. The ocean is calm and dark. The depth of field is deep, the background hill and water are in focus. Natural low, warm sunlight illuminates the woman.\nMedium shot of a woman lying upside down on an orange leather couch, wearing a sheer black top and a black miniskirt with black boots visible in the top right. A silver cross necklace hangs from her neck. Her dark hair spills onto the couch and floor. The depth of field is shallow, the background is slightly blurred. Indoor artificial lighting illuminates the scene.\nMedium wide shot of a woman standing in front of a metal wall covered in graffiti. She wears a white cropped tank top with a graphic design, oversized olive green cargo pants, and white sneakers. Her hair is pulled up. A black shoulder bag hangs from her shoulder. The depth of field is deep, the metal wall is in focus. Natural bright daylight illuminates the woman and the wall.\nMedium close-up shot of a woman sitting on a rock near the ocean, reading a small book. She wears a red bikini, gold body jewelry, and a multicolored crochet bucket hat. The clear turquoise water, a large rock formation with a single small tree, and a few boats are in the background. The depth of field is deep, the ocean and rocks are in focus. Natural bright sunlight illuminates the scene.\nMedium close-up shot of a woman with long dark hair, sunglasses, and a white lace-trimmed tank top, seated on a grey asphalt street, holding a clear glass with a light beverage; she is looking up towards the camera. Natural sunlight illuminates her face; the depth of field is shallow, blurring the area behind her head and the pavement further away.\nMedium close-up shot of a torso and lower body submerged in bright blue pool water, viewed from the side. The subject wears an orange bikini bottom with textured, gathered fabric that is highly visible above the water line on the right side. Rippling water creates bright reflections and distortions; the subject's skin is wet and shiny under direct sunlight. The background is a blurred pool edge.\nMedium shot of a woman standing outdoors against a white wall with three white flowerpots mounted high. She wears a white cropped tank top and a long, textured, lime-green maxi skirt, holding a small, light-pink crocheted shoulder bag. The lighting is even and bright natural light; the depth of field is shallow, slightly blurring the background details on the right.\nMedium close-up shot of a woman holding a clear glass of a light liquid with a straw, positioned for a selfie. She has long, wavy black hair with braided sections and wears a white tank top and multiple gold rings and a thick gold cuff bracelet. Bright indoor lighting is used; the background, including a white sofa, is slightly blurred due to shallow depth of field.\nMedium shot of a woman standing in the middle of a narrow, old European street. She wears a white lace-trimmed tank top, a light-colored crocheted mini skirt, sunglasses, and a patterned, earth-toned scarf tied over her hair. Her jewelry includes layered gold necklaces and bracelets. Direct, warm natural light is used; the depth of field is shallow, blurring the buildings behind her slightly.\nMedium wide shot of a woman sitting on a striped blanket on a sandy beach, with her knees pulled up and arms wrapped around them, looking off-camera. She wears a multi-colored floral bikini top and dark shorts. The background shows trees and a cloudy sky. Soft natural light is used; the depth of field is moderate, keeping the subject in focus while the distant trees are slightly blurred.\nMedium shot from a high angle of a person with Black Hair tied up, leaning over the edge of a bright blue swimming pool. They wear a swimsuit and have brightly painted fingernails. A clear plastic bottle is on the grey stone edge of the pool. Direct, bright natural sunlight is used; the depth of field is moderate, showing the pool water texture clearly.\nMedium wide shot of a person leaning out of a car window, looking up at a lush, green, mountainous landscape with palm trees and a road below. They have light black hair styled in a half-up clip. Bright, overcast natural lighting is used; the depth of field is wide, keeping both the subject and the distant mountains in focus.\nMedium close-up shot of a woman in a bright pink bikini top, sitting outdoors on a wooden deck under a white canopy, biting into a sandwich held in both hands, with a plate of fries to the side. Natural light is bright and overhead; the depth of field is shallow, blurring the background palm trees and white structures.\nMedium close-up shot of a woman sitting on a wooden dock with her back to the camera, looking down at clear, blue-green water below. She wears a black bikini bottom and has her dark hair in a long braid. A pair of light-green slides are positioned on the dock next to her. Strong overhead sunlight creates sharp shadows; the depth of field is moderate, keeping both the subject and the water clearly visible.\nMedium close-up shot of a woman with dark hair and a white headband, wearing a blue Adidas zip-up jacket with a white collar and stripes, sitting in a car with red leather seats, secured by a seatbelt. Natural light illuminates her face; the depth of field is shallow, blurring the background outside the car window.\nMedium close-up shot of a torso and lower face, viewed from above, showing a woman in a black and white zebra-print bikini top, lying on her back on a light-colored lounge chair covered by a white towel. She wears a thin gold necklace. Soft, diffused natural light is used; the depth of field is shallow, blurring the top and bottom edges of the image.\nMedium close-up shot of a woman tying the side string of a white, gold, and green paisley-print bikini bottom. She wears a matching bikini top and a thin gold necklace. She is seated outdoors on a white chair. Bright natural light illuminates her tan skin; the depth of field is shallow, blurring the background.\nExtreme close-up shot of a woman's face and upper body, lying in bed under white bedding, looking directly at the camera with a scrunched-up expression. Her dark black hair is messy and spread across the pillow. Bright, even indoor lighting is used; the depth of field is shallow, slightly blurring the background closet and wall.\nMedium close-up shot of a woman's body floating on her back in deep blue pool water. She wears a dark bikini top and a gold bracelet on her right wrist, with her hands near her face. Water ripples and reflections distort the view. Direct sunlight creates bright highlights; the depth of field is shallow, focusing on the torso and arms.\nMedium close-up shot of a woman's upper body in a pool, viewed from a high angle. She wears a gray bikini top and shields her eyes from the sun with her right hand. The pool edge is lined with small teal mosaic tiles. Strong sunlight creates deep shadows; the depth of field is wide, showing the tiled pool bottom texture.\nClose-up shot of a woman taking a mirror selfie using a phone held in front of her face. She wears sunglasses, a white cropped top, and camo-print pants, seated on an asphalt road with yellow painted lines. The phone screen displays the image being captured. Bright natural light is used; the depth of field is wide, keeping the asphalt and subject in focus.\nClose-up selfie shot of a woman outdoors, wearing a red and white polka-dot bandana and a white lace-trimmed tank top, with a red shoulder bag strap visible. She wears large gold hoop earrings and a thin gold necklace with a charm. She is smiling. Natural light is used; the depth of field is shallow, blurring the people and scenery in the background.\nMedium close-up shot of a woman seated on a grey stone step outdoors, holding a melting vanilla ice cream cone above her head, with small drops of ice cream falling onto her lap. She wears a white and red striped rugby shirt, sunglasses, and multiple gold bracelets, with a woven bag next to her feet. Bright natural light is used; the depth of field is shallow, blurring the asphalt behind her.\nMedium shot of a woman with long dark hair, wearing a black satin mini-dress with a deep V-neck halter, sitting on a grey textured outdoor sofa, holding a white rectangular handbag. The background features modern, beige geometric buildings. Warm, low-angle natural sunset light illuminates the scene; the depth of field is moderate, keeping the buildings in the background slightly soft.\nMedium shot of a woman with long dark hair, wearing a short black dress with cutouts and a black blazer draped over her shoulders, standing in an indoor space with wood-paneled walls and a vertical mirror. Warm artificial indoor light is used; the depth of field is shallow, blurring the door handles and background wood grain.\nMedium close-up shot of a woman taking a mirror selfie in a retail store. She wears a black cropped t-shirt with a red graphic, a very low-rise light-wash denim mini-skirt, and holds a phone. The background shows clothing racks and a mirrored wall with the word \"HARRODS\" reversed. Bright, even indoor lighting is used; the depth of field is shallow, blurring the far background.\nMedium wide shot of a woman standing on a sandy beach at sunset, wearing a white bikini top and white wide-leg pants. The sun is setting over the ocean horizon, casting an orange glow. Soft natural light from the sunset is the primary source; the depth of field is wide, keeping both the subject and the distant beach elements in focus.\nMedium close-up selfie shot of a woman sitting in a car, wearing a white long-sleeve top and jeans, with a black seatbelt across her chest. She is looking directly at the camera with her tongue out. Direct sunlight enters from the top right, creating a bright reflection on the car door; the depth of field is shallow, blurring the background interior.\nClose-up selfie shot of a woman lying on a bed with white sheets, wearing a white tank top and gold hoop earrings, looking up at the camera. Soft, bright indoor lighting is used; the depth of field is shallow, blurring the edges of the bed.\nMedium close-up selfie shot of a woman sitting on a sandy beach at dusk, wearing a navy blue sweatshirt. She smiles directly at the camera. The ocean and a cloudy sky form the backdrop. Soft, diffused natural light is used; the depth of field is shallow, blurring the background ocean and sky.\nMedium wide shot of a woman wearing a black halter mini-dress and dark heels, leaning on a black, decorative metal railing on a second-story interior balcony. The background features large, arched windows with white curtains and stone walls. Dim, warm artificial light is used indoors; the depth of field is wide, keeping the railing and windows in focus.\nMedium shot of a woman sitting on a low, light-colored stone wall at night, wearing a black mini-dress and gold-colored heels. The background shows the brightly lit Dubai skyline, including the Burj Khalifa, and outdoor restaurant seating with people. Artificial city lights and downlights illuminate the scene; the depth of field is wide, showing both the foreground plants in white planters and the distant high-rise buildings.\nMedium shot of a woman standing on the bow of a boat, wearing a yellow floral print one-piece swimsuit with a keyhole cutout. She is smiling, looking to the side, and holding the boat railing. The background is open water with a forested shore under a clear blue sky. Bright, warm natural light from the setting sun is used; the depth of field is wide, keeping the water and distant shore in focus.\nMedium close-up shot of a woman with her hair in a high ponytail, facing slightly to the right in an indoor restaurant setting. She wears a maroon, lace-trimmed top with a keyhole cutout at the chest. Her right hand adjusts a large, gold teardrop earring. A bracelet with large clear stones wraps around her right wrist, and multiple rings decorate her fingers. Warm, dim ambient lighting illuminates her face from the left, highlighting her cheekbones; an ornate light fixture with multiple globular, white elements is visible behind her left shoulder. The background is dark with red and gold patterned wall sections and seated patrons visible out of focus, indicating a shallow depth of field.\nMedium wide shot silhouette of a woman standing waist-deep in ocean water during sunset. The sun is a bright orange disc sinking near the horizon, casting an intense, shimmering orange and gold reflection path across the water directly toward the camera. Her long hair hangs down her back, and she raises her right hand near her head. The sky shows orange, yellow, and soft blue clouds. The entire figure and water in the foreground are dark shadows against the bright sunset, indicating strong backlighting from the natural light source. The background sea extends to the horizon and is in focus.\nMedium shot of a woman lying on a white towel on a sandy beach, leaning on her left arm, facing the camera. She wears a minimal electric blue string bikini. Her skin is wet and glistening, showing a tan. The background features a large, steep, rocky cliff face of light brown and gray stone. Sparse green vegetation grows on the cliff. Bright, natural midday sunlight from the right illuminates her body, casting a small shadow under her. The background is slightly less sharp than the foreground, indicating moderate depth of field.\nMedium wide shot of a woman standing on a white sand beach surrounded by tall palm trees. She faces the ocean, looking out at the water, and wears a pale yellow two-piece set consisting of a crop top and a sheer maxi skirt. The sky is sunset-toned with pink, orange, and pale blue clouds over the ocean horizon. Bright, ambient, natural light from the setting sun provides soft illumination. The background, including the palm trees and the distant ocean, is clearly in focus, indicating a deep depth of field.\nExtreme close-up shot, taken from a low angle, of a woman with Black Hair pulled up into a spiky bun, looking directly into the lens. She wears red-rimmed glasses and holds a teal coffee cup to her mouth, sipping the drink with a latte art heart visible on top. Her hands are adorned with several large, colorful rings, including a prominent magenta stone. Bright, diffuse daylight illuminates her face, causing minor reflection on the glasses. The background shows an out-of-focus street and a woman seated at a nearby table, suggesting a very shallow depth of field.\nMedium close-up shot of a woman posing in a white bathroom, facing forward but looking down at the camera. She wears a patterned orange and blue triangle bikini. A straw cowboy hat covers her face, and she holds an orange smartphone with a pop socket, obscuring her head. She rests her left hand on a white vanity counter. The background includes white subway tile walls and a freestanding tub. The lighting is bright, even, artificial light, characteristic of indoor overhead lighting. The entire scene is in sharp focus, indicating a deep depth of field.\nMedium wide shot of a woman walking into the foaming white edge of a turquoise ocean. Her back is to the camera, and she wears a small black bikini bottom. She stands on a sandy beach, looking down at the water. The background features a large, tall cliff covered in thick green vegetation under a bright blue sky. Bright, natural sunlight illuminates the scene, casting a small shadow under her. The water and sand in the foreground are sharp, and the background cliff is also in sharp focus, indicating a deep depth of field.\nMedium wide shot of a woman from behind, standing on a stone staircase looking down at an outdoor dining area. She wears a light blue, backless maxi dress and carries a brown shoulder bag. The courtyard below is filled with white-clothed tables, chairs, and seated patrons, dimly lit by small table lamps and overhead string lights. The surroundings include stone walls, trees, and distant hills under a twilight sky. The lighting is a mix of dim artificial light from the lamps and the fading natural light of dusk. The foreground is clear, and the background dining area is also clearly visible, indicating a deep depth of field.\nMedium shot of a woman reclining on a yellow and white striped deck chair next to the ocean. She lies on her right side, facing toward the right, wearing a tan two-piece bikini with gold seashell embellishments. Her dark hair is pulled into a low ponytail, and she wears sunglasses. Her left arm is draped back over her head. The background consists of a wooden railing, steep rocky cliffs, and a deep blue ocean with a small boat visible in the distance. The lighting is harsh, direct natural sunlight, creating strong contrast. The background is in sharp focus, indicating a deep depth of field.\nMedium shot of a woman standing indoors on a wooden staircase, facing the camera. She wears a strapless, floor-length black dress with a loose black scarf detail and holds a sparkling, silver pyramid-shaped clutch purse in her right hand. She wears gold bracelets and rings. The staircase has a curved wooden railing and matching wooden steps. The background shows a dimly lit restaurant with tables and chairs. Soft, even artificial light illuminates her. The foreground and midground are in focus, with the deeper background appearing slightly softer, indicating a moderate depth of field.\nMedium shot selfie of a standing woman in a light pink string bikini outdoors on a stone patio. The woman is centered, holding a phone to take a picture in a mirror-like reflection. Her black hair is pulled back. The bikini top is a halter triangle style and the bottoms tie at the hips. Natural daylight from an unseen source casts minimal shadow on the subject and a bright wash over the scene. Background shows an arched patio area with stone walls, wicker chairs, and green foliage; the background is softly blurred with a shallow depth of field. Camera angle is straight-on.\nClose-up of a woman's hand and feet standing on a textured gray shower floor. The hand, positioned in the upper center, wears a silver tennis bracelet and has white square-tipped fingernails. The feet, in the lower center, have white painted toenails. Water runs over the skin and the tiled floor. The lighting is diffuse and even, likely from an overhead bathroom light, highlighting the wet surfaces. Camera angle is a high-angle overhead shot. Depth of field is deep, with the floor and limbs in sharp focus.\nMedium shot of a standing woman on stone steps outdoors. She wears a white strapless mini-dress with a corset-style bodice and high heels. Her dark hair is down, and she is leaning against a metal railing. The background includes a yellowish wall, lush green plants, and a large, round outdoor light fixture. The lighting is bright daylight, with soft shadows indicating a diffuse natural light source. Camera angle is straight-on and slightly low. The subject is in sharp focus, with the background slightly blurred, indicating a moderate depth of field.\nMedium close-up of a seated woman on a boat in the ocean. She wears a pink and white chevron-patterned string bikini and a matching sarong/skirt. Her dark hair is in a low ponytail, and she wears sunglasses. She holds a straw tote bag and sits on the white cushion of the boat. The background is bright blue water and a large, heavily vegetated cliff face. Natural sunlight is bright and comes from the right, creating a highlight on the subject's skin and shadows on the left side. Camera angle is straight-on. Subject is in sharp focus, with the background water and cliff in moderate focus, a deep depth of field\nExtreme close-up selfie of a woman drinking from a coffee mug. The woman has Black Hair pulled up in a messy bun, wears red-framed glasses, and has multiple rings on her fingers, including a large pink stone ring and a red plastic ring. The coffee mug is light teal and contains latte art; the woman holds it with white-manicured hands. Bright, diffuse daylight illuminates the subject's face from the front. Camera angle is a high-angle close-up. The foreground subject is in sharp focus, with the background being completely blurred due to a shallow depth of field.\nMedium shot of a seated woman indoors. She wears a leopard print slip dress with black lace trim. Her Black Hair is styled with volume. She is sitting on a light-colored leather couch next to a white vanity table. On the vanity are a round mirror, a mushroom-shaped lamp with warm light, and small decorative objects. The background shows a white curtained window and red and white checkered wallpaper. The lighting is a mix of soft natural light from the window and warm, low artificial light from the lamp. Camera angle is straight-on. Subject and foreground elements are in focus with a deep depth of field.\nMedium shot of a woman walking away from the camera down a stone path. She wears a two-piece cream/white outfit: a strapless crop top and high-waisted, wide-leg trousers with a cutout detail at the waist. Her long black hair covers her back. She carries a small cream handbag and yellow shoes in her hands. The background shows stone paving, lush green foliage, and buildings under a clear sky at dusk or dawn. Natural soft light is even across the scene. Camera angle is straight-on and behind the subject. Subject and path are in sharp focus, with the far background buildings slightly softer, a deep depth of field.\nMedium close-up of a woman lying face down on a yellow towel on a rocky beach. She wears a dark gray/black bikini bottom and matching top and is reading a small book. A light gray patterned headscarf covers her hair. Her torso and legs are visible. The background is a large, textured brown rock/cliff face. Bright, direct sunlight from a high angle creates strong highlights on the subject's skin and harsh shadows beneath the body. Camera angle is straight-on and slightly low. The subject is in sharp focus, with the rock background in focus as well, a deep depth of field.\nMedium wide shot of a woman standing on a sandy beach near the ocean. She wears a floor-length, cowl-neck, sleeveless cream-colored satin dress. Her dark hair is long and flowing. The background features the ocean, gentle waves, and a forested headland under a cloudy sky during sunset or sunrise. Soft, warm natural light illuminates the scene, with the sun low on the horizon. Camera angle is straight-on. The subject is in focus, with the beach and ocean also in focus, a deep depth of field.\nMedium close-up selfie of a woman seated on the wooden deck of a boat. She wears a multicolored striped bikini top and a blue and gray snorkeling mask over her eyes. The water around the boat is a bright turquoise. Bright natural daylight illuminates her face, casting minimal shadows. Camera angle is a high-angle self-shot. The subject's face and foreground deck are in sharp focus, with the background water in moderate focus, a deep depth of field.\nAdult woman in a cropped black zip-up hoodie, white sports bra, and black leggings walks outdoors, holding two black dog leashes in her right hand; her dark hair is down, and she wears large white over-ear headphones; she smiles, looking left. The camera is positioned at eye level for a medium shot, with natural, diffuse daylight illuminating her from the front. The depth of field is shallow, blurring the brick wall, climbing plants, and tree trunk in the background.\nAdult woman in a white and yellow floral print bikini lies on her stomach on a cream-colored wooden lounge chair outdoors, resting her face on her left forearm; her dark hair is slicked back, wet from swimming. She is heavily tanned, with shiny, possibly oiled skin. The camera is angled slightly low, capturing a medium close-up shot. Strong, direct midday sunlight is the natural light source, casting bright highlights on her skin. The background features a white cushion and part of a white sun umbrella, which are slightly out of focus with a shallow depth of field.\nAdult woman in a black triangle micro bikini sits on a concrete ledge next to a small outdoor pool or jacuzzi; she has long Black Hair, looking down with a neutral expression. The camera is positioned at a medium angle for a medium shot. The natural light is the warm, golden light of sunset, illuminating her from the side. The depth of field is deep, with a dry, rocky hillside visible and in focus in the distant background under a pale blue sky.\nAdult woman holds a wine glass up to her face, smiling slightly; she wears a light yellow, ruffled top and large, tear-drop earrings. Her dark hair is styled back in an updo, and she has visible freckles across her nose and cheeks. The camera is in a close-up, positioned at eye level. The natural light is the soft, warm light of early evening, highlighting her face. The depth of field is very shallow, blurring the large white house, trees, and sunset sky in the background.\nAdult woman lies on a white railing, leaning back with her arms extended to the sides, wearing a sleeveless, bright lime green dress with fringe detailing on the neckline; her eyes are closed, and her dark hair is flowing backward. The camera is positioned high, capturing a medium close-up shot of her upper body. Bright, natural sunlight illuminates her from above. The deep blue ocean water in the background is in soft focus, indicating a shallow depth of field.\nAdult woman in a multi-colored striped string bikini sits facing the camera on a large white bed with a canopy of sheer white fabric. She is leaning back slightly on one arm with one leg extended, looking directly at the camera with a neutral expression. The camera is positioned low for a medium shot. Artificial lighting from indoors illuminates the scene evenly. The depth of field is deep, with the dark wooden paneling behind the bed in focus.\nAdult blonde woman wearing a green and beige bikini top and a green baseball cap is seated on a sandy beach, looking down and to the right in profile. Her hair is pulled back in a ponytail. The camera is in a medium close-up, positioned at eye level. Bright, natural sunlight from a high angle creates strong highlights and shadows on her skin and the cap. The background features people, beach umbrellas, and a hillside covered with buildings, all slightly blurred with a shallow depth of field.\nAdult woman in a patterned, orange and blue string bikini stands facing a bathroom mirror, holding a pink smartphone that partially covers her face; she wears a straw cowboy hat. The camera is positioned at eye level for a medium shot, capturing her reflection. Bright, artificial light illuminates the white-tiled bathroom evenly. The depth of field is deep, showing the large white bathtub and vanity counter clearly in the background.\nAdult woman in a light blue and pastel bikini is positioned on the edge of a boat or yacht, leaning back and resting her chin on her hand; her dark hair is pulled back. She is looking at the camera. The camera is positioned low for a medium shot, angled slightly up. Bright, natural sunlight illuminates the woman and the wooden deck. The deep blue ocean water in the background is in soft focus, indicating a shallow depth of field.\nAdult woman in a red and white knitted string bikini stands on a sandy beach, facing the camera; her hands are near her head, adjusting her dark hair. The camera is positioned at eye level for a wide shot, capturing her full body and the surroundings. The natural light is the soft, diffuse light of dusk or early morning, with a dark green hillside visible in the background against a pale sky. The depth of field is deep, showing the sand and foliage in focus.",
+        "random",
+        0,
+        false,
+        false,
+        0
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
       "id": 76,
       "type": "Power Lora Loader (rgthree)",
-      "pos": [432.9804418896122, -63.13281732128905],
+      "pos": [410.9155466076003, -56.61667509650229],
       "size": [324.82119140625, 190],
       "flags": {},
       "order": 12,
@@ -732,24 +928,93 @@
         {
           "on": true,
           "lora": "am0rgn-qwen-lora_000002500.safetensors",
-          "strength": 0.85,
+          "strength": 1,
           "strengthTwo": null
         },
         {
-          "on": true,
+          "on": false,
           "lora": "1GIRL_QWEN_V3.safetensors",
-          "strength": 0.05,
+          "strength": 0.15,
           "strengthTwo": null
         },
         {
           "on": true,
           "lora": "Samsung.safetensors",
-          "strength": 0.05,
+          "strength": 0.2,
           "strengthTwo": null
         },
         {},
         ""
       ]
+    },
+    {
+      "id": 66,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [753.4658294100449, -49.05816971924506],
+      "size": [300, 58],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 132
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [125]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [1.2]
+    },
+    {
+      "id": 99,
+      "type": "StringConcatenate",
+      "pos": [-51.33280214407809, -448.84618850030955],
+      "size": [400, 200],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 152
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [153]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": ["am0rgn, ", "", ""]
     }
   ],
   "links": [
@@ -767,7 +1032,13 @@
     [137, 82, 0, 83, 0, "IMAGE"],
     [138, 83, 0, 84, 0, "IMAGE"],
     [139, 8, 0, 81, 0, "IMAGE"],
-    [140, 84, 0, 60, 0, "IMAGE"]
+    [140, 84, 0, 60, 0, "IMAGE"],
+    [141, 93, 0, 86, 0, "*"],
+    [142, 93, 1, 87, 0, "*"],
+    [143, 93, 3, 88, 0, "*"],
+    [149, 93, 3, 95, 0, "*"],
+    [152, 93, 0, 99, 0, "STRING"],
+    [153, 99, 0, 6, 1, "STRING"]
   ],
   "groups": [
     {
@@ -801,13 +1072,21 @@
       "color": "#e73168",
       "font_size": 24,
       "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "Read from Large Multiline Text",
+      "bounding": [-526.9437659212514, -857.0648346061569, 1280, 620],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
     }
   ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.379118749018434,
-      "offset": [-34.12395795393153, 157.88206284535883]
+      "scale": 0.8563242382962138,
+      "offset": [969.6311849348039, 605.4232323942375]
     },
     "frontendVersion": "1.28.8",
     "ue_links": [],

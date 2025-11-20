@@ -33,6 +33,10 @@ declare -a CUSTOM_NODES=(
     "https://github.com/giriss/comfy-image-saver.git"
     "https://github.com/ClownsharkBatwing/RES4LYF.git"
     https://github.com/hgabha/WWAA-CustomNodes.git
+    https://github.com/ltdrdata/ComfyUI-Impact-Pack # sdxl detailer
+    https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git # sdxl detailer
+    https://github.com/yolain/ComfyUI-Easy-Use # sdxl detailer
+    https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git # sdxl detailer
 )
 MODELS=()
 VAES=()

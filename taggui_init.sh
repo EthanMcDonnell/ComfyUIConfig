@@ -40,9 +40,11 @@ pip install ./flash_attn-2.8.3+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64
 
 pip install -r requirements.txt
 
-echo "Downloading WD-VIT-Tagger model..."
-mkdir -p "$TAGGUI_DIR/models"
-curl -L -o "$TAGGUI_DIR/models/wd-vit-tagger-v3.safetensors" "https://huggingface.co/SmilingWolf/wd-vit-tagger-v3/resolve/main/model.safetensors"
+pip install hf_transfer
+
+# echo "Downloading WD-VIT-Tagger model..."
+# mkdir -p "$TAGGUI_DIR/models"
+# curl -L -o "$TAGGUI_DIR/models/wd-vit-tagger-v3.safetensors" "https://huggingface.co/SmilingWolf/wd-vit-tagger-v3/resolve/main/model.safetensors"
 
 deactivate
 sudo update-alternatives --set python /usr/bin/python3.12
